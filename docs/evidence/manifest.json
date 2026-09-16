@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "scope": "local component, standalone hwsim and guide evidence; no physical or EasyMesh wire qualification",
+  "scope": "Component, nested Ubuntu runtime, standalone hwsim, independent controller outbound baseline and guide evidence; no EMOSA onboarding or physical qualification",
   "artifacts": [
     {
       "path": "api-results.xml",
@@ -351,6 +351,166 @@
       "path": "wsc-component.json",
       "sha256": "07edabab557d6c93842f5a27035406195e765757dc7e2fd44f211a1acb06774a",
       "size": 1465
+    },
+    {
+      "path": "peer/controller-baseline-capture.log",
+      "sha256": "1b9e800946b2fb549af9d02cc68ec8fb4b92027732d00135b88dc01d992a08a9",
+      "size": 169
+    },
+    {
+      "path": "peer/controller-baseline.pcap",
+      "sha256": "704e5e5b3234433c01fcfd1b20a306e77e985038120492dc53965c3edd38a4ea",
+      "size": 24
+    },
+    {
+      "path": "peer/controller-hwsim-baseline.pcap",
+      "sha256": "1e2df377c464e39cfb592ccbef3399f04904cdaf4ee27e6593186cca9c7c10d5",
+      "size": 142
+    },
+    {
+      "path": "peer/controller-hwsim-wireshark.json",
+      "sha256": "dc9a713f4f33302f29a2d1119c37fa934ecefc45cddb4fb401e6f368aba8bf4e",
+      "size": 6428
+    },
+    {
+      "path": "peer/controller-inventory.json",
+      "sha256": "f5a5e8e73a45767ba34050be178060ab6e5c2477fc67cb28083fdb1e8cddbed4",
+      "size": 779
+    },
+    {
+      "path": "peer/controller-packages.txt",
+      "sha256": "babe20b622658b6bd3bcc0b85caae57f4d0cd369cafb79759f540be9e3499296",
+      "size": 19392
+    },
+    {
+      "path": "peer/emosa-packages.txt",
+      "sha256": "1d28e4410c654d4472a4fb4f0338d0bceb83f1c6b1c525710fb9586fced1b070",
+      "size": 21860
+    },
+    {
+      "path": "peer/environment.json",
+      "sha256": "229f8d1d50033546959eaba576843e314f5d3cfc1a1c39a2da38b7300af0927d",
+      "size": 2196
+    },
+    {
+      "path": "peer/peer-journal.txt",
+      "sha256": "53d371dd7009c7498bfbe468a38d664fa2babd52aa84487431b9d0721f3a7635",
+      "size": 12089
+    },
+    {
+      "path": "peer/qualification-summary.json",
+      "sha256": "4826fc8f9bc334c07fc1c00fe26f8858c57649275f71cca9a31bd5cc320ab4f5",
+      "size": 2830
+    },
+    {
+      "path": "peer/repeat-bridge.pcap",
+      "sha256": "1d162aaab3a5d053a038ad0237cc4fae557bcab3d823228fa22f9d4bd1d76c22",
+      "size": 83
+    },
+    {
+      "path": "peer/repeat-decoded.json",
+      "sha256": "f45f3d13ef01186a01c5902ad77840b3ebfa80ee0b96d954bc6792f80168149e",
+      "size": 3214
+    },
+    {
+      "path": "peer/repeat-receiver.pcap",
+      "sha256": "c919c3d149d7580e6b0c3e9dc62a21d2328894bca3378a1b32aed44b171e2b9d",
+      "size": 83
+    },
+    {
+      "path": "peer/run-02348298ed6f4f79/artifact-manifest.json",
+      "sha256": "0a9617ecb48570a6eb2608138be20b0da565a3c3c138af5a41b2ee9a32989b00",
+      "size": 955
+    },
+    {
+      "path": "peer/run-02348298ed6f4f79/events.json",
+      "sha256": "95d5be4d9cf557d715536eaec4bc5f2ca25bab97fd624fe889b100e41e6f4869",
+      "size": 6209
+    },
+    {
+      "path": "peer/run-02348298ed6f4f79/inputs.json",
+      "sha256": "8f5e3e488b31ecf222b68050b9c2633fb37958d7983a7ec16a3d5254c1cfe80c",
+      "size": 1214
+    },
+    {
+      "path": "peer/run-02348298ed6f4f79/observations.json",
+      "sha256": "7aa011ac4a45bca220aeeb642a478e013c5485ae2c9b81db6c1a1dd4bd7f5e16",
+      "size": 1041
+    },
+    {
+      "path": "peer/run-02348298ed6f4f79/report.html",
+      "sha256": "a00dc55cd031fbea4e743b9ca804380e10b931bc1b699f3d72575d6cd3d7472a",
+      "size": 23004
+    },
+    {
+      "path": "peer/run-02348298ed6f4f79/report.md",
+      "sha256": "2add99d8b9cab0445505a41c3bd6a7eb8daf8ebf97f2b6bda7af8e36e0bae026",
+      "size": 1706
+    },
+    {
+      "path": "peer/run-02348298ed6f4f79/run.json",
+      "sha256": "2358c667bc9f4e2b3c2117347f0cdbd860203f0fd622c2a1c2185db7b64521d1",
+      "size": 9257
+    },
+    {
+      "path": "peer/run-aaef446cd0e74cb3/artifact-manifest.json",
+      "sha256": "0599de761c9dc5b417a365df181507f6554770239f7cc95d6cb6ff11158ba191",
+      "size": 955
+    },
+    {
+      "path": "peer/run-aaef446cd0e74cb3/events.json",
+      "sha256": "f67654789d5d8adb96fce8fec711d238ecc52fab83048ef430cecf91b5d51f6c",
+      "size": 6262
+    },
+    {
+      "path": "peer/run-aaef446cd0e74cb3/inputs.json",
+      "sha256": "9644169c636573001758b169246d339c057b521b32befa3e0ec761bd8f726c37",
+      "size": 1185
+    },
+    {
+      "path": "peer/run-aaef446cd0e74cb3/observations.json",
+      "sha256": "12e29548d7d5caa73832e39f1e0a172de217f7af125dda54475789b320f20ce8",
+      "size": 1041
+    },
+    {
+      "path": "peer/run-aaef446cd0e74cb3/report.html",
+      "sha256": "1a2a970894032f8ca2d3303469ec17eb89b45062025d8eb564130be2914e5462",
+      "size": 22770
+    },
+    {
+      "path": "peer/run-aaef446cd0e74cb3/report.md",
+      "sha256": "d860e7117442de5f16d29f11160e03a497b5c7897fd18d46dcb28d4b1721fd4f",
+      "size": 1727
+    },
+    {
+      "path": "peer/run-aaef446cd0e74cb3/run.json",
+      "sha256": "ab80e2e341f4847da1f224bd3e6606869bd4362462dba4a920a61e6584926797",
+      "size": 8973
+    },
+    {
+      "path": "peer/ubuntu24-ovsdb.xml",
+      "sha256": "066e9a5e380c958071858ecca29519dbde5f52a3b5958cd153b6e98236d044e5",
+      "size": 1719
+    },
+    {
+      "path": "peer/ubuntu24-unit.xml",
+      "sha256": "ca45975f14ee5439e9d1c45c50108cadfb961f63c4755cb8c357529b77c4a676",
+      "size": 4269334
+    },
+    {
+      "path": "peer/units-after-stop.txt",
+      "sha256": "f7ca376ff60039a36c11169e7fa7e2cba7d5244f4156c3b25cdcf5005b8b6704",
+      "size": 434
+    },
+    {
+      "path": "peer/units-before-stop.txt",
+      "sha256": "5eb95c8c1cbdc3f70fb8cd2aee29f8249118b3aca969d2a4b53915b650be898a",
+      "size": 386
+    },
+    {
+      "path": "peer/vm-packages.txt",
+      "sha256": "7552bc61dc7f1944dafb29203364a16d5e9e435ef62a2bad38d0a006ad4c916b",
+      "size": 21972
     }
   ]
 }

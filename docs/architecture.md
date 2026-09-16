@@ -40,7 +40,7 @@ wire agent, physical mapping and independent-controller path remain gated.
 
 | Building block | Responsibility | Current evidence |
 | --- | --- | --- |
-| Reference controller / independent peer | Originate actual protocol messages | P0/I3/I4 pending |
+| Reference controller / independent peer | Originate actual protocol messages | Candidate discovery baseline captured; EMOSA exchanges and clean recovery pending |
 | Virtual agent | Terminate selected EasyMesh procedures and bind the complete request | Normative research; implementation pending |
 | Operation engine | Validate, guard, serialize, track deadlines and reconcile | Model and OVSDB component tests |
 | Journal / secret mechanism | Preserve operations and attribution through restart | SQLite and private-secret tests |

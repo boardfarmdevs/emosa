@@ -60,6 +60,12 @@ The real OVSDB simulator uses the pinned OpenSync schema and a separate manager
 process. Wire provisioning, physical-pod mapping and independent-controller
 acceptance remain gated; simulator passes do not establish interoperability.
 
+The [independent controller candidate](deploy/peer/README.md) now emits real
+discovery frames captured at the EMOSA container. Its agent inventory is empty:
+EMOSA has not answered or onboarded an extender. Ubuntu 24.04 nested-container
+component tests and VM-driven semantic scenarios pass; the peer's shutdown
+aborts are recorded as an unresolved recovery issue.
+
 ```sh
 uv sync --frozen
 uv run ruff check .

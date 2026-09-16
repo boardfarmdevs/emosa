@@ -149,6 +149,15 @@
       "reviewed_scope": "Message-name/ID definitions for the proposed procedure subset only.",
       "validation_status": "No independent vectors or captures executed; source predates EasyMesh 6.1 and cannot qualify its complete extensions.",
       "normative_substitute": false
+    },
+    {
+      "id": "prplmesh-6.0.0-lab-baseline",
+      "kind": "observed_controller_capture_not_a_normative_substitute",
+      "profile": "deploy/peer/prplmesh.reference.json",
+      "evidence": "docs/evidence/peer/qualification-summary.json",
+      "reviewed_scope": "Outbound topology discovery captured on isolated VM bridge and received in EMOSA container; interpreted by Wireshark 4.2.2",
+      "validation_status": "Peer baseline only; no EMOSA decoder or procedure validation; IEEE normative gate remains blocked",
+      "normative_substitute": false
     }
   ],
   "procedures": [

@@ -2,9 +2,12 @@
 
 The recorded development host is Ubuntu 22.04.5 x86-64, with CPython 3.13.7,
 uv 0.11.17 and LXD client/server 6.9. The pinned Ubuntu 24.04 image fingerprints
-in `deploy/images.lock.json` were resolved from the Ubuntu LXD remote; their
-runtime compatibility, installed package manifest and retained exports are still
-pending. No existing instances or host network settings were modified.
+in `deploy/images.lock.json` were resolved from the Ubuntu LXD remote. The later
+[dedicated-VM evidence](evidence/peer/qualification-summary.json) records Ubuntu
+24.04 component runtime compatibility, installed packages and a retained base
+image export. Final runtime image exports and full procedure reruns remain
+pending. Only the project-owned `emosa-lab` VM and its inner containers were
+configured for this experiment.
 
 ## Open vSwitch experiment
 

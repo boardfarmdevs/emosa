@@ -16,6 +16,12 @@ and protocol trace before discovery, after onboarding, after a supported BSS
 change, and after reconnect. Advertise only capabilities supported by the
 qualified pod mapping. A passing internal semantic API call is insufficient.
 
+The [prplMesh 6.0.0 candidate](../deploy/peer/README.md) now has verified startup,
+an empty agent inventory and independently captured discovery traffic delivered
+to the EMOSA container. This establishes the peer and transport setup for the
+next implementation. No EMOSA exchange has occurred; the candidate's native
+controller/helper shutdown aborts are a recorded qualification gap.
+
 ## Priority and exit evidence
 
 | Order | Work | Exit evidence / decision |

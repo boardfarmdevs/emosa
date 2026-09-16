@@ -35,3 +35,8 @@
 - No populated pod connection file exists. Operator examples use local secret
   references; actual configuration, credentials and raw pod evidence belong
   outside the repository on the EMOSA machine. Collection remains read-only.
+- Prepare a named independent prplMesh controller in the dedicated peer
+  container. Pin its upstream/build/patch and binary hashes separately from
+  EMOSA. Its controller-only helper requires hwsim for startup. Outbound
+  discovery and empty inventory are baseline evidence; its repeatable shutdown
+  aborts and all actual EMOSA exchanges remain unqualified.

@@ -4,8 +4,8 @@
 | --- | --- | --- | --- |
 | P0 | Full IEEE 1905.1-2013/1905.1a-2014 and applicable 802.11-2024 text; final profile selection, complete rule matrix and independent vectors. EasyMesh 6.1 and WPS 2.0.10 were obtained from their publisher. | I3, I4, wire tests/provisioning | I0–I2, component evaluation |
 | M0 | Named pod/build, actual schema, endpoint direction/trust, managed radio/VIF, writer evidence, management/recovery and client profile | I5 and hardware writes | Simulators, package, reports |
-| X1 | Independent controller/build, scope, evaluator environment | I7 | Local component development |
-| LXD | Application-container qualification and retained Ubuntu images/exports; dedicated VM/inner daemon now exercised by the standalone hwsim smoke | Full reference deployment acceptance | Unprivileged tests; radio harness passed independently |
+| X1 | The prplMesh candidate now starts and sends discovery to the EMOSA container; actual EMOSA exchanges, profile/BSS policy and shutdown/recovery remain unqualified | I7 | [Peer baseline and startup commands](../deploy/peer/README.md) |
+| LXD | Ubuntu 24.04 component tests and VM-driven scenarios passed; base image export retained. Final runtime images and clean full-procedure reruns remain pending | Full reference deployment acceptance | Component and peer baselines now exercised in the dedicated VM |
 
 `qualified` requires referenced evidence and compatible current configuration.
 No boolean in an input manifest enables hardware writes. The upstream schema is

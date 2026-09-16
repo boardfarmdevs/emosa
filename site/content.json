@@ -3,16 +3,16 @@
     "controller": {
       "label": "01",
       "title": "An actual protocol peer",
-      "status": "Wire implementation pending",
+      "status": "Independent peer baseline captured",
       "state": "pending",
-      "description": "The reference controller and a later independent controller drive the same real IEEE 1905 / EasyMesh boundary.",
+      "description": "A pinned prplMesh controller now emits real discovery frames into the isolated EMOSA container network. Its inventory remains empty because EMOSA has not answered or onboarded an extender.",
       "responsibilities": [
         "Use the isolated em-protocol bridge, separate from pod management.",
         "Exercise discovery, capabilities and selected provisioning procedures.",
         "Retain captures from an independent bridge observation point."
       ],
-      "next": "Select a real controller/build early. Freeze P0, validate packets independently, and retain the controller topology/agent view through discovery and onboarding. The bundled controller is currently gated.",
-      "path": "docs/protocol-matrix.json"
+      "next": "Use the recorded peer build for actual EMOSA discovery/WSC after P0. Configure its BSS policy first and resolve the recorded native shutdown aborts before recovery qualification.",
+      "path": "deploy/peer/README.md"
     },
     "agent": {
       "label": "02",
@@ -326,6 +326,18 @@
       "description": "Selected WPS rules, independent hostap vectors, negative tests and limits before full onboarding.",
       "path": "docs/wsc-component.md",
       "category": "Component implementation"
+    },
+    {
+      "title": "Independent controller baseline",
+      "description": "Pinned prplMesh peer, hwsim startup requirement, paired captures and observed shutdown failures. No EMOSA onboarding yet.",
+      "path": "deploy/peer/README.md",
+      "category": "Controller peer"
+    },
+    {
+      "title": "Ubuntu 24.04 & peer evidence",
+      "description": "69 unit / 13 OVSDB tests, VM-driven semantic scenarios and identical discovery bytes at two capture points.",
+      "path": "docs/evidence/peer/qualification-summary.json",
+      "category": "Retained evidence"
     }
   ]
 }

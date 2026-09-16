@@ -3,7 +3,7 @@
   "architecture_version": "3.6",
   "status_policy": "verified is always scoped to its recorded mode; no global completion or interoperability claim",
   "tasks": {
-    "I0": "local foundation verified; reference deployment qualification pending",
+    "I0": "local and nested Ubuntu 24.04 component foundation tested; full reference wire/hardware deployment and runtime image exports pending",
     "I1": "implemented with model tests",
     "I2": "real OVSDB component path implemented and tested; no wire procedure",
     "R0": "bounded build experiment blocked at protoc-c",
@@ -11,7 +11,7 @@
     "I4": "blocked P0/I3",
     "I5": "read-only draft collector implemented; physical qualification and writes blocked M0/P0",
     "I6": "incremental component runner/watch/inspect/report/compare; complete reference release pending",
-    "I7": "blocked X1 and wire/hardware baseline"
+    "I7": "independent controller candidate baseline captured; EMOSA exchanges, clean peer shutdown and hardware interoperability pending"
   },
   "rows": [
     {
@@ -145,11 +145,13 @@
         "deploy/images.lock.json"
       ],
       "test_refs": [],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "docs/evidence/peer/qualification-summary.json"
+      ],
       "mode": null,
       "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
       "blocker": "Reference LXD runtime and/or actual M0 topology/trust qualification incomplete.",
-      "independent_work": "Local unprivileged components; deployment scripts."
+      "independent_work": "Ubuntu 24.04 component tests, VM-driven semantic scenarios, base image export and independent peer baseline verified; full procedure deployment remains pending."
     },
     {
       "id": "DEP-02",
@@ -159,11 +161,13 @@
         "deploy/images.lock.json"
       ],
       "test_refs": [],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "docs/evidence/peer/qualification-summary.json"
+      ],
       "mode": null,
       "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
       "blocker": "Reference LXD runtime and/or actual M0 topology/trust qualification incomplete.",
-      "independent_work": "Local unprivileged components; deployment scripts."
+      "independent_work": "Ubuntu 24.04 component tests, VM-driven semantic scenarios, base image export and independent peer baseline verified; full procedure deployment remains pending."
     },
     {
       "id": "DEP-03",
@@ -173,11 +177,13 @@
         "deploy/images.lock.json"
       ],
       "test_refs": [],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "docs/evidence/peer/qualification-summary.json"
+      ],
       "mode": null,
       "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
       "blocker": "Reference LXD runtime and/or actual M0 topology/trust qualification incomplete.",
-      "independent_work": "Local unprivileged components; deployment scripts."
+      "independent_work": "Ubuntu 24.04 component tests, VM-driven semantic scenarios, base image export and independent peer baseline verified; full procedure deployment remains pending."
     },
     {
       "id": "DEP-04",
@@ -187,11 +193,13 @@
         "deploy/images.lock.json"
       ],
       "test_refs": [],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "docs/evidence/peer/qualification-summary.json"
+      ],
       "mode": null,
       "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
       "blocker": "Reference LXD runtime and/or actual M0 topology/trust qualification incomplete.",
-      "independent_work": "Local unprivileged components; deployment scripts."
+      "independent_work": "Ubuntu 24.04 component tests, VM-driven semantic scenarios, base image export and independent peer baseline verified; full procedure deployment remains pending."
     },
     {
       "id": "DEP-05",
@@ -201,11 +209,13 @@
         "deploy/images.lock.json"
       ],
       "test_refs": [],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "docs/evidence/peer/qualification-summary.json"
+      ],
       "mode": null,
       "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
       "blocker": "Reference LXD runtime and/or actual M0 topology/trust qualification incomplete.",
-      "independent_work": "Local unprivileged components; deployment scripts."
+      "independent_work": "Ubuntu 24.04 component tests, VM-driven semantic scenarios, base image export and independent peer baseline verified; full procedure deployment remains pending."
     },
     {
       "id": "DEP-06",
@@ -215,11 +225,13 @@
         "deploy/images.lock.json"
       ],
       "test_refs": [],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "docs/evidence/peer/qualification-summary.json"
+      ],
       "mode": null,
       "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
       "blocker": "Reference LXD runtime and/or actual M0 topology/trust qualification incomplete.",
-      "independent_work": "Local unprivileged components; deployment scripts."
+      "independent_work": "Ubuntu 24.04 component tests, VM-driven semantic scenarios, base image export and independent peer baseline verified; full procedure deployment remains pending."
     },
     {
       "id": "DEP-07",
@@ -229,11 +241,13 @@
         "deploy/images.lock.json"
       ],
       "test_refs": [],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "docs/evidence/peer/qualification-summary.json"
+      ],
       "mode": null,
       "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
       "blocker": "Reference LXD runtime and/or actual M0 topology/trust qualification incomplete.",
-      "independent_work": "Local unprivileged components; deployment scripts."
+      "independent_work": "Ubuntu 24.04 component tests, VM-driven semantic scenarios, base image export and independent peer baseline verified; full procedure deployment remains pending."
     },
     {
       "id": "DEP-08",
@@ -243,11 +257,13 @@
         "deploy/images.lock.json"
       ],
       "test_refs": [],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "docs/evidence/peer/qualification-summary.json"
+      ],
       "mode": null,
       "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
       "blocker": "Reference LXD runtime and/or actual M0 topology/trust qualification incomplete.",
-      "independent_work": "Local unprivileged components; deployment scripts."
+      "independent_work": "Ubuntu 24.04 component tests, VM-driven semantic scenarios, base image export and independent peer baseline verified; full procedure deployment remains pending."
     },
     {
       "id": "DEP-09",
@@ -257,11 +273,13 @@
         "deploy/images.lock.json"
       ],
       "test_refs": [],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "docs/evidence/peer/qualification-summary.json"
+      ],
       "mode": null,
       "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
       "blocker": "Reference LXD runtime and/or actual M0 topology/trust qualification incomplete.",
-      "independent_work": "Local unprivileged components; deployment scripts."
+      "independent_work": "Ubuntu 24.04 component tests, VM-driven semantic scenarios, base image export and independent peer baseline verified; full procedure deployment remains pending."
     },
     {
       "id": "DEP-10",
@@ -271,11 +289,13 @@
         "deploy/images.lock.json"
       ],
       "test_refs": [],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "docs/evidence/peer/qualification-summary.json"
+      ],
       "mode": null,
       "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
       "blocker": "Reference LXD runtime and/or actual M0 topology/trust qualification incomplete.",
-      "independent_work": "Local unprivileged components; deployment scripts."
+      "independent_work": "Ubuntu 24.04 component tests, VM-driven semantic scenarios, base image export and independent peer baseline verified; full procedure deployment remains pending."
     },
     {
       "id": "DEP-11",
@@ -285,11 +305,13 @@
         "deploy/images.lock.json"
       ],
       "test_refs": [],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "docs/evidence/peer/qualification-summary.json"
+      ],
       "mode": null,
       "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
       "blocker": "Reference LXD runtime and/or actual M0 topology/trust qualification incomplete.",
-      "independent_work": "Local unprivileged components; deployment scripts."
+      "independent_work": "Ubuntu 24.04 component tests, VM-driven semantic scenarios, base image export and independent peer baseline verified; full procedure deployment remains pending."
     },
     {
       "id": "DEP-12",
@@ -299,11 +321,13 @@
         "deploy/images.lock.json"
       ],
       "test_refs": [],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "docs/evidence/peer/qualification-summary.json"
+      ],
       "mode": null,
       "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
       "blocker": "Reference LXD runtime and/or actual M0 topology/trust qualification incomplete.",
-      "independent_work": "Local unprivileged components; deployment scripts."
+      "independent_work": "Ubuntu 24.04 component tests, VM-driven semantic scenarios, base image export and independent peer baseline verified; full procedure deployment remains pending."
     },
     {
       "id": "SW-01",
@@ -1837,9 +1861,12 @@
         "deploy/README.md"
       ],
       "test_refs": [],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "docs/evidence/peer/qualification-summary.json"
+      ],
       "mode": null,
-      "scope": "Implemented foundation path; full requirement/environment qualification is incomplete."
+      "scope": "Implemented foundation path; full requirement/environment qualification is incomplete.",
+      "independent_work": "Ubuntu 24.04 component tests, VM-driven semantic scenarios, base image export and independent peer baseline verified; full procedure deployment remains pending."
     },
     {
       "id": "TP-06",
@@ -2581,56 +2608,81 @@
     {
       "id": "T01",
       "status": "blocked",
-      "implementation_refs": [],
+      "implementation_refs": [
+        "deploy/peer/README.md",
+        "deploy/peer/prplmesh.reference.json"
+      ],
       "test_refs": [],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "docs/evidence/peer/qualification-summary.json"
+      ],
       "mode": null,
       "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
-      "blocker": "X1: independent controller/build, selected wire scope and evaluator environment missing.",
+      "blocker": "Independent candidate baseline exists; actual selected EMOSA wire exchanges, native shutdown/recovery and physical-pod evaluation are still unqualified.",
       "independent_work": "Component evaluator package and reports."
     },
     {
       "id": "T02",
       "status": "blocked",
-      "implementation_refs": [],
+      "implementation_refs": [
+        "deploy/peer/README.md",
+        "deploy/peer/prplmesh.reference.json"
+      ],
       "test_refs": [],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "docs/evidence/peer/qualification-summary.json"
+      ],
       "mode": null,
       "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
-      "blocker": "X1: independent controller/build, selected wire scope and evaluator environment missing.",
+      "blocker": "Independent candidate baseline exists; actual selected EMOSA wire exchanges, native shutdown/recovery and physical-pod evaluation are still unqualified.",
       "independent_work": "Component evaluator package and reports."
     },
     {
       "id": "T03",
       "status": "blocked",
-      "implementation_refs": [],
+      "implementation_refs": [
+        "deploy/peer/README.md",
+        "deploy/peer/prplmesh.reference.json"
+      ],
       "test_refs": [],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "docs/evidence/peer/qualification-summary.json"
+      ],
       "mode": null,
       "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
-      "blocker": "X1: independent controller/build, selected wire scope and evaluator environment missing.",
+      "blocker": "Independent candidate baseline exists; actual selected EMOSA wire exchanges, native shutdown/recovery and physical-pod evaluation are still unqualified.",
       "independent_work": "Component evaluator package and reports."
     },
     {
       "id": "T04",
       "status": "blocked",
-      "implementation_refs": [],
+      "implementation_refs": [
+        "deploy/peer/README.md",
+        "deploy/peer/prplmesh.reference.json"
+      ],
       "test_refs": [],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "docs/evidence/peer/qualification-summary.json"
+      ],
       "mode": null,
       "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
-      "blocker": "X1: independent controller/build, selected wire scope and evaluator environment missing.",
+      "blocker": "Independent candidate baseline exists; actual selected EMOSA wire exchanges, native shutdown/recovery and physical-pod evaluation are still unqualified.",
       "independent_work": "Component evaluator package and reports."
     },
     {
       "id": "T05",
       "status": "blocked",
-      "implementation_refs": [],
+      "implementation_refs": [
+        "deploy/peer/README.md",
+        "deploy/peer/prplmesh.reference.json"
+      ],
       "test_refs": [],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "docs/evidence/peer/qualification-summary.json"
+      ],
       "mode": null,
       "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
-      "blocker": "X1: independent controller/build, selected wire scope and evaluator environment missing.",
+      "blocker": "Independent candidate baseline exists; actual selected EMOSA wire exchanges, native shutdown/recovery and physical-pod evaluation are still unqualified.",
       "independent_work": "Component evaluator package and reports."
     },
     {

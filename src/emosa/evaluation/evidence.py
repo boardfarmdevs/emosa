@@ -55,7 +55,7 @@ def build_manifest():
         "source_hash_scope": "checkout code/contracts/scenarios"
         if source_checkout
         else "installed package code/contracts",
-        "dependencies": {name: version(name) for name in ("ovs", "jsonschema")},
+        "dependencies": {name: version(name) for name in ("ovs", "jsonschema", "cryptography")},
         "python": platform.python_version(),
         "platform": platform.platform(),
         "uv_lock_sha256": hashlib.sha256(lock.read_bytes()).hexdigest() if lock.exists() else None,

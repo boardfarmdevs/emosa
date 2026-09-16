@@ -1,11 +1,13 @@
 # Reference deployment and qualification
 
 The runnable local simulator uses the same session/mapping code in unprivileged
-processes. It has been tested on the inspected Ubuntu 22.04 host. The required
-Ubuntu 24.04 nested-LXD reference deployment is **not yet runtime qualified**.
-`images.lock.json` records exact image fingerprints obtained from the official
-Ubuntu LXD remote. Package versions, image exports and measurements must be
-retained during deployment; a fingerprint alone is not compatibility evidence.
+processes. It has been tested on the inspected Ubuntu 22.04 host and in the
+dedicated Ubuntu 24.04 nested-LXD environment: 69 unit and 13 OVSDB tests passed,
+and VM-driven component provisioning/lost-reply scenarios completed. See
+[the retained runtime evidence](../docs/evidence/peer/qualification-summary.json).
+Full wire/hardware deployment remains unqualified. `images.lock.json` records
+the base image and its retained split export; final runtime image exports and
+clean full-procedure reruns remain pending.
 
 ## Dedicated VM and inner system containers
 
@@ -88,3 +90,9 @@ the isolated protocol bridge, stops the bundled controller, records its exact
 build/scope and captures at an independent bridge point. This future X1 path
 must use actual frames. There is no internal API substitute for third-party
 interoperability. Wired and wireless pod management need separate qualification.
+
+The [independent prplMesh candidate](peer/README.md) now has a tested startup
+path and controller discovery captures delivered to the EMOSA container. Its
+controller-only helper requires one hwsim radio, and both native controller and
+helper abort on shutdown. No EMOSA discovery/onboarding or physical-pod
+interoperability is established by that baseline.
