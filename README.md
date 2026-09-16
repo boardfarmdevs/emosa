@@ -4,11 +4,20 @@
 
 EMOSA is an evaluation platform for exploring whether a controller-side adaptation layer can make **unchanged OpenSync pods work seamlessly with an EasyMesh controller**.
 
+The concrete proof is an EasyMesh controller **discovering and onboarding an
+OpenSync extender as another EasyMesh agent**, represented by EMOSA around the
+controller. The extender remains an OpenSync device; the adapter translates
+supported management procedures to its existing OVSDB interface.
+
 The goal is to demonstrate what works, expose compatibility gaps, and provide repeatable experiments with clear visibility into protocol exchanges, configuration changes, and actual device behavior.
 
 The name also echoes **エモさ (*emosa*)**, a Japanese expression for emotional resonance, often with a nostalgic feeling. The banner illustrates this wordplay; see [Sanseido's explanation of エモい (*emoi*)](https://dictionary.sanseido-publ.co.jp/topic/shingo2016/2016Best10.html), from which エモさ is formed.
 
 ## Architecture
+
+[Interactive explorer & lab manual](https://boardfarmdevs.github.io/emosa/) ·
+[Architecture diagram and boundaries](docs/architecture.md) ·
+[Next viability experiments](docs/viability-roadmap.md)
 
 ```text
 EasyMesh controller
@@ -40,7 +49,9 @@ Success is assessed per procedure, controller version, and pod firmware. Unsuppo
 - **Initial device target:** existing OpenSync 6.6.0 pods.
 - **Dependencies:** no prplMesh build-time or runtime dependency in EMOSA.
 
-The first milestone is one supported provisioning flow to an existing BSS, followed by a failure-and-recovery experiment, with independently verifiable results.
+The first milestone is controller-visible discovery and onboarding, followed by
+one supported BSS provisioning change and a failure/recovery experiment, with
+independently verifiable results on the unchanged extender.
 
 ## Status and quick start
 
@@ -82,5 +93,11 @@ Prepare actual pod evidence without changing it using
 [deployment](deploy/README.md), [mapping scope](docs/operation-mappings.md),
 [dependency/R0 findings](docs/dependency-qualification.md),
 [open inputs](docs/open-inputs.md), and [traceability](docs/traceability.json).
-The Ubuntu 24.04 LXD reference layout has scripts and pinned candidate image
-fingerprints; runtime/package qualification and retained VM exports are pending.
+The Ubuntu 24.04 LXD layout has pinned candidate images. Its standalone radio
+smoke has passed; full application deployment and retained image exports remain
+pending.
+
+When a simulated radio is useful, use the optional
+[mac80211_hwsim AP and wpa_supplicant LXD client](deploy/hwsim/README.md).
+That standalone radio smoke harness is separate from the current OVSDB simulator.
+Physical-pod acceptance requires an independent client with a real Wi-Fi interface.

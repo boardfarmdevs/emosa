@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "scope": "local foundation/component evidence; no physical or wire qualification",
+  "scope": "local component, standalone hwsim and guide evidence; no physical or EasyMesh wire qualification",
   "artifacts": [
     {
       "path": "api-results.xml",
@@ -296,6 +296,56 @@
       "path": "wire-gate.xml",
       "sha256": "ab42516da2911b015ec4731cb8a1c3cca80169cd0c2a9d077c788ed2cc747e1e",
       "size": 925
+    },
+    {
+      "path": "hwsim/capture.log",
+      "sha256": "c3c73104f0ed424e91bbd12272af1db50418dae2f64fc6951055fb96370dcdfd",
+      "size": 197
+    },
+    {
+      "path": "hwsim/guard-results.xml",
+      "sha256": "1a0f82cdebb7c13e3d661eaef466649ed687b8277e3909ac94af2f4fb931f205",
+      "size": 696
+    },
+    {
+      "path": "hwsim/initial-failure.json",
+      "sha256": "f559523a3fa3e792af771a957e975bab9d14ea18d76fadf1400c811e38a55711",
+      "size": 334
+    },
+    {
+      "path": "hwsim/initial-retest.json",
+      "sha256": "a37dcdaa78f429ca7ea9f4ab4bb9f7c7da17c94eeeb0959b73e69d505a295350",
+      "size": 390
+    },
+    {
+      "path": "hwsim/qualification-summary.json",
+      "sha256": "6d883b0bb2067fca0e4631b0ff81e8cb295b97a4475e0dd387c726b42f4378a1",
+      "size": 1473
+    },
+    {
+      "path": "hwsim/result.json",
+      "sha256": "7e601dd1ba9498134616936fd361cf7ae3f9d28ec53a85fe885d2f273153ab5a",
+      "size": 422
+    },
+    {
+      "path": "hwsim/station-link.txt",
+      "sha256": "647a018023d933f6275bd584b65097433ce9b0c523369afe6dd123421b036729",
+      "size": 256
+    },
+    {
+      "path": "hwsim/station-ping.txt",
+      "sha256": "9a7010c3d94558c1aa1091b8f88e36453b0317930941aed3bb701ceb7e0eb4aa",
+      "size": 390
+    },
+    {
+      "path": "hwsim/station-status.txt",
+      "sha256": "3050b3eb6f23ccaa38e60e11affc1223b3e50193d495ac496dfc6ed62be41529",
+      "size": 272
+    },
+    {
+      "path": "site-browser.json",
+      "sha256": "c4b6dd0b9cd228b7e9abf77cac8ac781b3459a0c9b285684e1618c19f8d2146c",
+      "size": 653
     }
   ]
 }

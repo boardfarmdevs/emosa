@@ -7,6 +7,28 @@ evaluation tooling and a read-only physical-pod preparation command. It does
 Every architecture requirement and acceptance row is listed in
 `traceability.json`; verification is scoped to the recorded mode.
 
+## Explorer and radio-lab increment
+
+The [interactive field guide](https://boardfarmdevs.github.io/emosa/) adds a
+clickable architecture, lab commands, six retained run timelines/comparisons and
+searchable traceability. It centers the intended proof: a real EasyMesh
+controller discovers and onboards an unchanged OpenSync extender as an agent
+represented by EMOSA, then manages it through the adapter. See the
+[viability roadmap](viability-roadmap.md).
+
+The optional [hwsim harness](../deploy/hwsim/README.md) was executed in a new
+dedicated `emosa-lab` VM, with separate unprivileged AP/station containers.
+A clean setup/retest passed WPA2 authentication, three wireless-interface-bound
+pings and virtual-medium capture. Four unprivileged tests cover VM mutation
+guards and cleanup ownership. [Retained evidence](evidence/hwsim/qualification-summary.json)
+includes the initial service-startup failure. Existing unrelated LXD instances
+and physical pods were not modified.
+
+This radio smoke is separate from EMOSA's OVSDB manager simulator. Full reference
+application deployment, package/image exports, controller-visible onboarding,
+physical-pod acceptance and independent-peer interoperability remain pending.
+The tables below preserve the earlier foundation delivery's validation scope.
+
 ## Implemented behavior
 
 - CPython 3.13.7, locked uv package, three console entry points, strict versioned

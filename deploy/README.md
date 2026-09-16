@@ -71,6 +71,12 @@ pass. No Docker or Compose dependency is used.
 
 ## Physical and independent-controller gates
 
+For Linux Wi-Fi component experiments, see the optional
+[mac80211_hwsim AP and wpa_supplicant LXD client](hwsim/README.md). It runs only
+inside the dedicated VM and is separate from the current OVSDB simulator manager.
+The physical observer needs a real Wi-Fi interface; hwsim does not provide an RF
+link to actual pods.
+
 Copy `doc/emosa-input-manifest.example.json` to the ignored local manifest and
 complete M0 with actual pod/build, schema, trusted endpoint/direction, resource
 bindings, writer controls and recovery/client evidence. Hardware configuration
