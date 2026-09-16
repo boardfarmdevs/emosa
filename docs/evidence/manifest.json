@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "scope": "Component, nested Ubuntu runtime, native manager R0 with recovery failure, standalone hwsim, independent controller outbound baseline and guide evidence; no EMOSA onboarding or physical qualification",
+  "scope": "Component, nested Ubuntu runtime, native manager R0 with recovery failure, standalone hwsim, bounded native controller-agent onboarding/recovery and guide evidence; no EMOSA onboarding or physical qualification",
   "artifacts": [
     {
       "path": "api-results.xml",
@@ -671,6 +671,206 @@
       "path": "wsc-radio.json",
       "sha256": "e5e79d7e4d3a54b2bbe03fcdec22d2ac5055c650f5876d788874b23acda83530",
       "size": 2742
+    },
+    {
+      "path": "peer-baseline/build-packages.txt",
+      "sha256": "6bbc3f83c9c763b15f74404f758258d5cee96eca78df82fdb805809790b5cd36",
+      "size": 226
+    },
+    {
+      "path": "peer-baseline/bwl-build-packages.txt",
+      "sha256": "5e732e120990b5e6c7b5b6c3024be2f8297acff61b884a2f1dca43afaa82fccc",
+      "size": 166
+    },
+    {
+      "path": "peer-baseline/controller-packages.txt",
+      "sha256": "c430c36939364bcdaa0d0d983adb78fa6777bd05cefd8150f7e9fa5b83369bbd",
+      "size": 18016
+    },
+    {
+      "path": "peer-baseline/curator-regression.json",
+      "sha256": "f002c25128b36687795718fdfe7ed600541fb55da229b1828957663bea083cba",
+      "size": 238
+    },
+    {
+      "path": "peer-baseline/failure-catalog.json",
+      "sha256": "d07b669ecdb734ea1119e480efe3c814faff4a1fb99b6f76627a9b4207956455",
+      "size": 9392
+    },
+    {
+      "path": "peer-baseline/ownership.json",
+      "sha256": "1ff2ed2a19902b2276fd603026f12b0f348d044a570465cc7cba006628f6fbfb",
+      "size": 376
+    },
+    {
+      "path": "peer-baseline/primary-bss-failure.json",
+      "sha256": "3be85092efa9a65f2abd346c8fb59d301f14e9bcc15cbacceec14003c6a06a61",
+      "size": 918
+    },
+    {
+      "path": "peer-baseline/retention.json",
+      "sha256": "01da6c7d4807f77981e5a7c7d28d0aaa3e23a042daa8c278d72449d7b3bdee6e",
+      "size": 5676
+    },
+    {
+      "path": "peer-baseline/runtime-provenance.json",
+      "sha256": "72aee3e80a37d75cac86f255f691bd7c29e5d05b261379f616e979376dc4de71",
+      "size": 13376
+    },
+    {
+      "path": "peer-baseline/samples/wired/client-probes-01.json",
+      "sha256": "d1f6ae1f41cd8ef376dc795c7cf949824620f9b5dbe99ebbf8018e14f5d80539",
+      "size": 4889
+    },
+    {
+      "path": "peer-baseline/samples/wired/client-probes-02.json",
+      "sha256": "ffabda1dde83e454cb6d94753ae1dd34c841828fe40113560dac4ec2552277b7",
+      "size": 4893
+    },
+    {
+      "path": "peer-baseline/samples/wired/em-baseline-agent-agent-state.json",
+      "sha256": "874905b0f56391fae4cd7ef085e36d24b053ae8759663e7a6509fee697ee6490",
+      "size": 457
+    },
+    {
+      "path": "peer-baseline/samples/wired/em-baseline-controller-agent-state.json",
+      "sha256": "b441b292b34f3c04b9fcdab64507161260bd04d7b5e37a65f4dc33918a15bbc7",
+      "size": 472
+    },
+    {
+      "path": "peer-baseline/samples/wired/ethernet.pcap",
+      "sha256": "6cf3010c059058c6c8a9abeb39bc6eedf46c68cca65c8e8e0010694c0c36b964",
+      "size": 10255
+    },
+    {
+      "path": "peer-baseline/samples/wired/ieee1905.tsv",
+      "sha256": "dcf3b014d81481193ebf8da4272273cbda652dfc6de74a013ab2d142bb214147",
+      "size": 2782
+    },
+    {
+      "path": "peer-baseline/samples/wired/index.json",
+      "sha256": "fa7e54748f6d0213cb649ceea1760e1489337971202a805855ad8fe1057572aa",
+      "size": 2045
+    },
+    {
+      "path": "peer-baseline/samples/wired/inventory-identity.json",
+      "sha256": "557bd6df9f186a7e478672d8485d31c42e9868e455536146c0b40075ea0023bf",
+      "size": 359
+    },
+    {
+      "path": "peer-baseline/samples/wired/post-client-stability.json",
+      "sha256": "ce3f13705e62600686c55728588c0758f6037a83e56aaafd878e68318fb497fa",
+      "size": 1094
+    },
+    {
+      "path": "peer-baseline/samples/wired/protocol-observation.json",
+      "sha256": "6682bb7cb3cac78e54c3658a63674e338dfe1ee9987455fa5071aea9a4ba9181",
+      "size": 281
+    },
+    {
+      "path": "peer-baseline/samples/wired/radio.pcap",
+      "sha256": "042c6d656e1ab5628270478a6aff8ed76a56e41d1d556c74d735c85144ee2082",
+      "size": 1363555
+    },
+    {
+      "path": "peer-baseline/samples/wired/result.json",
+      "sha256": "948244f7d4f1e12e832cc15c23de446d4c44e5bc9e6a7f849fc864026afed031",
+      "size": 1039
+    },
+    {
+      "path": "peer-baseline/samples/wired/runtime-reference.json",
+      "sha256": "8079ed9d76012d755c14da7b0e7f53f57298535538e41fc7df285152611ee2ae",
+      "size": 4569
+    },
+    {
+      "path": "peer-baseline/samples/wireless/client-probes-01.json",
+      "sha256": "f98ac522e81305cf7997a6a61c5d1aafd790f9e7ba183718cc6c12eea72f0e5b",
+      "size": 4889
+    },
+    {
+      "path": "peer-baseline/samples/wireless/client-probes-02.json",
+      "sha256": "18554352ade5785b9e731d42ff111cadf3c7ecf0c7058350332dee9b952a69b9",
+      "size": 4893
+    },
+    {
+      "path": "peer-baseline/samples/wireless/em-baseline-agent-agent-state.json",
+      "sha256": "874905b0f56391fae4cd7ef085e36d24b053ae8759663e7a6509fee697ee6490",
+      "size": 457
+    },
+    {
+      "path": "peer-baseline/samples/wireless/em-baseline-controller-agent-state.json",
+      "sha256": "b441b292b34f3c04b9fcdab64507161260bd04d7b5e37a65f4dc33918a15bbc7",
+      "size": 472
+    },
+    {
+      "path": "peer-baseline/samples/wireless/ethernet.pcap",
+      "sha256": "3e86b432d70be6a5855ee38fe9202b74bc237dc03a74147dbc17bcd305fddcda",
+      "size": 9980
+    },
+    {
+      "path": "peer-baseline/samples/wireless/four-address.tsv",
+      "sha256": "938c2a02d71e4c58e862aef2f7b28aa5e8c79069fa23a39a3a33fb8b4c014820",
+      "size": 9389
+    },
+    {
+      "path": "peer-baseline/samples/wireless/ieee1905.tsv",
+      "sha256": "3693cfacbb29b877fdcc03cd0df45f5f1aa3af52e95d9cac54c554c67e3fe035",
+      "size": 2500
+    },
+    {
+      "path": "peer-baseline/samples/wireless/index.json",
+      "sha256": "cd1de58d5d6fa147d9fb5a39d1a48e931da673c212c9dbf4dba0e1857f4d162d",
+      "size": 2110
+    },
+    {
+      "path": "peer-baseline/samples/wireless/inventory-identity.json",
+      "sha256": "4fdcc478152e22a28cdb0d6ea9c7aef09c5ca1d7d6fa7705ab4be48c129518d3",
+      "size": 356
+    },
+    {
+      "path": "peer-baseline/samples/wireless/post-client-stability.json",
+      "sha256": "f5945ea7cc10e04226134a30ca7f67f9f51d077825d9116f62e984c7849af615",
+      "size": 996
+    },
+    {
+      "path": "peer-baseline/samples/wireless/protocol-observation.json",
+      "sha256": "59849b9835f9199a7286b457593e0dae350fb601eddabe946209f7fc67f23803",
+      "size": 344
+    },
+    {
+      "path": "peer-baseline/samples/wireless/radio.pcap",
+      "sha256": "c3107c9f8580bbb906cf2a94aacc8c7b547e42716bbc244e194db7d2a37917a8",
+      "size": 1628315
+    },
+    {
+      "path": "peer-baseline/samples/wireless/result.json",
+      "sha256": "b8caee0bc1a7deb6de63ad69c270ec2087d18ac6f276e196a3219f9bb9f0defe",
+      "size": 1115
+    },
+    {
+      "path": "peer-baseline/samples/wireless/runtime-reference.json",
+      "sha256": "e1ef4fb9caf03654f7aad977f1fcb6f548121cdc46bb8f8424af181b4174f981",
+      "size": 4672
+    },
+    {
+      "path": "peer-baseline/samples/wireless/wps.tsv",
+      "sha256": "c0e13677cacb64b090b5749f019603cdf63090cbc3b292860336624b6b0c028a",
+      "size": 414
+    },
+    {
+      "path": "peer-baseline/site-smoke.json",
+      "sha256": "e80612c7a9976434f2aee8c00f0cd88db840a60735a11a0b6518c891bc4af68b",
+      "size": 487
+    },
+    {
+      "path": "peer-baseline/source-cross-check.json",
+      "sha256": "5f8c2097146d5a2d57c96daae2665cf5077398294766f59fd9bfb172bfdaaa5e",
+      "size": 405
+    },
+    {
+      "path": "peer-baseline/summary.json",
+      "sha256": "4318abd5f9935d52d0bc3bbdd8702905afc0997db7b5034e1bc28b8e2418fa25",
+      "size": 1154412
     }
   ]
 }

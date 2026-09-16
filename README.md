@@ -72,6 +72,13 @@ EMOSA has not answered or onboarded an extender. Ubuntu 24.04 nested-container
 component tests and VM-driven semantic scenarios pass; the peer's shutdown
 aborts are recorded as an unresolved recovery issue.
 
+The separate [native controller–agent baseline](docs/peer-baseline.md) exercises
+that controller against a normal prplMesh agent over Ethernet and hwsim wireless
+backhaul, with independent wired and wpa_supplicant client containers. It retains
+real discovery/WSC captures, applied BSS configuration, client traffic and failed
+restart procedures. This establishes the existing peer's behavior; EMOSA and
+OpenSync are absent from that experiment.
+
 ```sh
 uv sync --frozen
 uv run ruff check .

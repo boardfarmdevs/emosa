@@ -17,5 +17,22 @@ COPYING/NOTICE files remain in that archive/build tree. Retain them with any
 distributed binary bundle. Ruff/pytest/uv and the native experiment's
 kconfiglib/Jinja build tools retain their respective upstream licenses.
 
-No prplMesh dependency is linked, imported or fetched by the build. Normative
+No prplMesh dependency is linked, imported or fetched by the Python package build. Normative
 IEEE/Wi-Fi Alliance specification documents are referenced, not redistributed.
+
+The native peer baseline builds a separate hostapd/wpa_supplicant runtime from
+hostap commit `cff80b4f7d3c0a47c052e8187d671710f48939e4`, with the explicit
+fixed-BSS file-update patch under `deploy/peer-baseline/patches/`. That patch
+contains upstream context; its BSD license and copyright notice are retained in
+`deploy/peer-baseline/LICENSE.hostap`. The build/configuration/binary digests and
+source URL are recorded in that directory's `reference.json`. Preserve the
+upstream license with any distributed source or binary bundle. These native
+artifacts are separate from EMOSA's Python package.
+
+The separate native peer experiment also rebuilds prplMesh's NL80211 `libbwl`
+with a recorded primary-BSS identity patch. It uses the pinned upstream source
+and companion patchset identified in `deploy/peer/prplmesh.reference.json`.
+The additional patch retains upstream context; the BSD+Patent license is in
+`deploy/peer-baseline/LICENSE.prplmesh`. Keep that license and the source's
+copyright notices with redistributed artifacts. The native controller/agent
+executables and other native libraries remain the pinned companion build.

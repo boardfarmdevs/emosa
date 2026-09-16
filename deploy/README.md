@@ -79,6 +79,12 @@ inside the dedicated VM and is separate from the current OVSDB simulator manager
 The physical observer needs a real Wi-Fi interface; hwsim does not provide an RF
 link to actual pods.
 
+For an existing-controller baseline before inserting EMOSA, use the
+[native controller–agent harness](peer-baseline/README.md). It owns four separate
+unprivileged containers and three hwsim PHYs, removes setup Ethernet, and checks
+wired/wireless onboarding and independent client traffic. Run it separately from
+the two-radio smoke harness; both require exclusive ownership of hwsim in the VM.
+
 Copy `doc/emosa-input-manifest.example.json` to the ignored local manifest and
 complete M0 with actual pod/build, schema, trusted endpoint/direction, resource
 bindings, writer controls and recovery/client evidence. Hardware configuration

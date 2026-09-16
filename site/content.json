@@ -5,13 +5,13 @@
       "title": "An actual protocol peer",
       "status": "Independent peer baseline captured",
       "state": "pending",
-      "description": "A pinned prplMesh controller now emits real discovery frames into the isolated EMOSA container network. Its inventory remains empty because EMOSA has not answered or onboarded an extender.",
+      "description": "In the EMOSA-facing experiment, a pinned prplMesh controller emits discovery frames but its inventory remains empty because EMOSA has not answered or onboarded an extender. A separate native-agent baseline exercises wired and wireless provisioning and independent clients; see the Native peers manual mode.",
       "responsibilities": [
         "Use the isolated em-protocol bridge, separate from pod management.",
         "Exercise discovery, capabilities and selected provisioning procedures.",
         "Retain captures from an independent bridge observation point."
       ],
-      "next": "Use the recorded peer build for actual EMOSA discovery/WSC after P0. Configure its BSS policy first and resolve the recorded native shutdown aborts before recovery qualification.",
+      "next": "Use the recorded peer build and explicit BSS-policy readiness sequence for EMOSA discovery/WSC after P0. Keep the native shutdown aborts and unguarded-restart failure visible when assessing reliability.",
       "path": "deploy/peer/README.md"
     },
     "agent": {
@@ -166,6 +166,19 @@
       "command": "# Create the private connection file per docs/pod-qualification.md\n# The output directory must not already exist.\nuv run emosa qualify-pod \\\n  --connection /home/rev/.config/emosa/pods/pod-1/connection.json \\\n  --output /home/rev/.local/state/emosa/qualification/pod-1-first-read",
       "note": "The first actuation experiment should use wired management and one qualified sole-BSS radio. Test lost replies and restart before progressing to wireless management and an independent controller.",
       "reference": "docs/pod-qualification.md"
+    },
+    "peer": {
+      "title": "Establish the controller–standard-agent baseline",
+      "status": "28 selected native onboarding/recovery cases passed",
+      "state": "pass",
+      "description": "A pinned native prplMesh controller provisions an external native prplMesh agent. Four isolated LXD containers provide the peers and independent wired/wireless clients.",
+      "path": "Native controller ⇄ Ethernet or Multi-AP hwsim backhaul ⇄ native agent ⇄ wired client / wpa_supplicant client",
+      "proves": "For each backhaul mode: five fresh onboardings, three agent restarts, three managed controller restarts and three backhaul interruptions passed. Check discovery/WSC, applied BSS policy, exact inventory, empty-profile WPS and four-address backhaul, both native agents OPERATIONAL, and independent client traffic before and after 30 seconds of stable state.",
+      "limits": "One named prplMesh build with hostapd UPDATE compatibility and a primary-BSS HAL fix. Earlier passes lacked operational/stability checks and are preliminary. No universal or cross-vendor onboarding, normative conformance, EMOSA integration or physical-pod proof. Native shutdown aborts remain.",
+      "prerequisites": "The dedicated VM, three hwsim radios, four owned unprivileged containers and the exact peer/hostap inputs in deploy/peer-baseline/reference.json. Follow the preparation guide first.",
+      "command": "# Inside the prepared emosa-lab VM; choose unused labels\npython3 /opt/emosa-baseline/run.py --mode wired --label wired-rerun-01 --suite\npython3 /opt/emosa-baseline/negative.py --mode wired --label wired-negative-rerun-01\npython3 /opt/emosa-baseline/run.py --mode wireless --label wireless-rerun-01 --suite\npython3 /opt/emosa-baseline/negative.py --mode wireless --label wireless-negative-rerun-01",
+      "note": "The agent has no Ethernet backhaul in wireless trials. The station is pinned to the agent BSSID. Each client binds its ping and fresh application request to its data interface. Failed attempts and shutdown results are retained.",
+      "reference": "deploy/peer-baseline/README.md"
     }
   },
   "run_catalog": [
@@ -362,6 +375,18 @@
       "description": "Encrypted BSS roles, teardown and whole-set candidate checks; controller/radio binding and writes remain pending.",
       "path": "docs/wsc-radio.md",
       "category": "Protocol components"
+    },
+    {
+      "title": "Controller–standard-agent baseline",
+      "description": "Pinned native peers, wired/wireless bootstrap, isolated client containers, recovery matrix and retained compatibility failures.",
+      "path": "deploy/peer-baseline/README.md",
+      "category": "Lab deployment"
+    },
+    {
+      "title": "Native baseline results and limitations",
+      "description": "Independent packet/client observations, required controller restart sequence, compatibility fixes and retained failures.",
+      "path": "docs/peer-baseline.md",
+      "category": "Observed peer behavior"
     }
   ]
 }

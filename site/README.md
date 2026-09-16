@@ -35,7 +35,7 @@ publication is complete only after the deployment succeeds and the URL serves
 the new guide; a pushed workflow alone does not establish that.
 
 The build validates hashes and JavaScript syntax. Manual/browser checks should
-exercise diagram selection, all four lab modes, command copy, evidence comparison,
+exercise diagram selection, all five lab modes, command copy, evidence comparison,
 event/reference filters, keyboard navigation and narrow layouts. The page uses
 relative asset URLs so a repository subpath works without a custom domain.
 

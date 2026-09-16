@@ -22,6 +22,13 @@ to the EMOSA container. This establishes the peer and transport setup for the
 next implementation. No EMOSA exchange has occurred; the candidate's native
 controller/helper shutdown aborts are a recorded qualification gap.
 
+A separate [controller–standard-agent baseline](../deploy/peer-baseline/README.md)
+now exercises that controller with a normal native prplMesh agent and independent
+wired/wireless client containers. Its Ethernet and WPS/hwsim paths establish the
+existing peer's behavior before inserting EMOSA. This is a separate experiment
+from the empty EMOSA-facing inventory above. Its observed native exchanges do
+not remove EMOSA's specification or physical-pod gates.
+
 ## Priority and exit evidence
 
 | Order | Work | Exit evidence / decision |
