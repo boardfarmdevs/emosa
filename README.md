@@ -42,6 +42,45 @@ Success is assessed per procedure, controller version, and pod firmware. Unsuppo
 
 The first milestone is one supported provisioning flow to an existing BSS, followed by a failure-and-recovery experiment, with independently verifiable results.
 
-## Status
+## Status and quick start
 
-**Design stage.** Implementation, protocol compatibility, and hardware behavior have not yet been validated. This repository is intended to develop and evaluate the adaptation approach, with production suitability assessed from the resulting evidence.
+The Python foundation and direct semantic component evaluation are implemented.
+The real OVSDB simulator uses the pinned OpenSync schema and a separate manager
+process. Wire provisioning, physical-pod mapping and independent-controller
+acceptance remain gated; simulator passes do not establish interoperability.
+
+```sh
+uv sync --frozen
+uv run ruff check .
+uv run ruff format --check .
+uv run pytest -m unit
+bash scripts/build-ovsdb.sh
+uv run pytest -m ovsdb
+uv run emosa-lab run scenarios/component-bss-change.json --backend ovsdb-sim
+uv run emosa-lab run scenarios/component-lost-reply.json --backend ovsdb-sim
+uv run emosa-lab report RUN_ID --format json
+uv run emosa-lab watch RUN_ID
+uv run emosa-lab inspect RUN_ID --operation OPERATION_ID
+uv run emosa-lab compare RUN_A RUN_B --format html
+```
+
+`--backend model` runs deterministic model scenarios without OVSDB binaries or
+privileged resources. Each run retains its journal, effective inputs, redacted
+observations, HTML/Markdown timeline and artifact hashes under `.lab/runs/`.
+Fault scenarios cover conflicts, partial/withheld application, lost responses,
+controller/server restart and multi-pod isolation. `--ssid`, `--seed`, `--repeat`
+and `--apply-seconds` create parameterized reruns with new identities.
+
+`scenarios/provision-one-bss.json` and `scenarios/lost-reply.json` explicitly
+require genuine EasyMesh provisioning. They currently produce blocked reports,
+exit 5, and perform no semantic fallback. `pytest -m wire`, `-m hardware` or
+`-m external` fails explicitly at its missing gate instead of reporting success
+with no applicable tests. Default CI runs unit and OVSDB component suites only.
+
+Prepare actual pod evidence without changing it using
+[read-only qualification](docs/pod-qualification.md). Review
+[deployment](deploy/README.md), [mapping scope](docs/operation-mappings.md),
+[dependency/R0 findings](docs/dependency-qualification.md),
+[open inputs](docs/open-inputs.md), and [traceability](docs/traceability.json).
+The Ubuntu 24.04 LXD reference layout has scripts and pinned candidate image
+fingerprints; runtime/package qualification and retained VM exports are pending.

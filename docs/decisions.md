@@ -1,0 +1,30 @@
+# Implementation decisions
+
+- I0: CPython 3.13.7 is the installed bootstrap runtime and is pinned in
+  `.python-version`. Ubuntu 22.04 x86-64 is the inspected development host;
+  it is not the required Ubuntu 24.04 nested-LXD reference deployment.
+- Dependencies: upstream `ovs` is evaluated first, with a bounded worker per
+  session; `jsonschema` is the single JSON Schema validator. Tool versions and
+  all transitive dependencies are pinned in `uv.lock`.
+- Use real disposable `ovsdb-server` processes without a switching datapath.
+  No host packages, networking, cloud settings or existing LXD instances are
+  changed by tests. Build test binaries into an ignored local dependency tree.
+- The only initial mapping is explicitly synthetic: one existing AP BSS with
+  modern WPA2-PSK fields in the pinned upstream OpenSync schema. It cannot
+  qualify a physical pod. Missing P0 prevents wire/provisioning implementation.
+- Secrets are private files; keyed intent fingerprints use a persistent private
+  HMAC key. Public records contain secret references and redacted predicates.
+- Default runner initiation is `easymesh-wire`. The runnable intermediate
+  scenario explicitly selects `semantic` and never emits protocol success.
+- The user requested specification resolution in parallel and confirmed that no
+  physical profile exists. A bounded research subtask produced the proposed
+  corpus in `protocol-matrix.json`; exact selection and full P0 validation remain
+  pending. The radio-wide WSC scope finding is an additional mapping check.
+- Actual pod preparation is a separate read-only collector with a restricted
+  monitor allowlist. It never retrieves PSKs/security maps and never enables
+  writes. Dialing TLS requires existing client credentials, verified CA chain
+  and a trusted peer certificate pin; native listening TLS remains unqualified.
+- Per-pod modifying queue capacity is zero in this foundation: one operation
+  may be active and excess requests receive `BUSY`. This is a finite queue and
+  avoids retaining stale queued intents; a bounded waiting queue can be added
+  after its scheduling policy is selected.
