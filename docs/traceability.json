@@ -8,7 +8,7 @@
     "I2": "real OVSDB component path implemented and tested; no wire procedure",
     "R0": "bounded build experiment blocked at protoc-c",
     "I3": "blocked P0",
-    "I4": "blocked P0/I3",
+    "I4": "WSC M1/M2 payload component independently tested; full procedure remains blocked P0/I3",
     "I5": "read-only draft collector implemented; physical qualification and writes blocked M0/P0",
     "I6": "incremental component runner/watch/inspect/report/compare; complete reference release pending",
     "I7": "independent controller candidate baseline captured; EMOSA exchanges, clean peer shutdown and hardware interoperability pending"
@@ -1522,35 +1522,42 @@
       "implementation_refs": [
         "docs/protocol-matrix.json",
         "src/emosa/wsc.py",
-        "docs/wsc-component.md"
+        "docs/wsc-component.md",
+        "src/emosa/wsc_messages.py"
       ],
       "test_refs": [
         "tests/test_gated.py",
-        "tests/test_wsc.py"
+        "tests/test_wsc.py",
+        "tests/test_wsc_messages.py"
       ],
       "evidence_refs": [
         "tests/fixtures/protocol/wsc/provenance.json",
-        "docs/evidence/unit-results.xml"
+        "docs/evidence/unit-results.xml",
+        "docs/evidence/wsc-messages.json"
       ],
       "mode": null,
       "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
       "blocker": "P0: selected complete normative corpus, independent vectors and wire procedures required.",
-      "independent_work": "WPS 2.0.10 crypto component checked with hostap vectors; full M1/M2 procedure, identity, replay, whole-radio mapping and no-write guarantees remain pending."
+      "independent_work": "WSC M1/M2 payload structure and crypto verified with independent hostap output; peer/radio binding, full CMDU/profile semantics, replay/state and pod writes remain gated."
     },
     {
       "id": "WIRE-08",
       "status": "blocked",
       "implementation_refs": [
-        "docs/protocol-matrix.json"
+        "docs/protocol-matrix.json",
+        "src/emosa/wsc_messages.py"
       ],
       "test_refs": [
-        "tests/test_gated.py"
+        "tests/test_gated.py",
+        "tests/test_wsc_messages.py"
       ],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "docs/evidence/wsc-messages.json"
+      ],
       "mode": null,
       "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
       "blocker": "P0: selected complete normative corpus, independent vectors and wire procedures required.",
-      "independent_work": "Model, OVSDB simulation, read-only qualification and reports."
+      "independent_work": "WSC M1/M2 payload structure and crypto verified with independent hostap output; peer/radio binding, full CMDU/profile semantics, replay/state and pod writes remain gated."
     },
     {
       "id": "WIRE-09",

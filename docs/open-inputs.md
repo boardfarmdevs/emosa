@@ -12,6 +12,9 @@ No boolean in an input manifest enables hardware writes. The upstream schema is
 a simulation reference. Complete protocol frames remain pending; the separately
 selected [WSC cryptographic component](wsc-component.md) has synthetic payload
 vectors independently checked with hostap 2.11.
+The [M1/M2 payload component](wsc-messages.md) also has independent required-field
+and cryptographic checks; actual IEEE messages, exchange state and complete
+radio mapping remain gated.
 
 The user confirmed that no specification editions or actual pod profile have yet
 been selected/supplied. See [the proposed corpus and access details](protocol-inputs.md).

@@ -274,8 +274,8 @@
     },
     {
       "path": "unit-results.xml",
-      "sha256": "5b81a356c8684c67d5f4bd74556bdf20736795aed86ab1114c4c8db3ab214161",
-      "size": 4269335
+      "sha256": "07c041923bb1d2d643742282fd1976db06f0c6359226192c8eb62dc90613b23e",
+      "size": 4276865
     },
     {
       "path": "watch-smoke.log",
@@ -511,6 +511,16 @@
       "path": "peer/vm-packages.txt",
       "sha256": "7552bc61dc7f1944dafb29203364a16d5e9e435ef62a2bad38d0a006ad4c916b",
       "size": 21972
+    },
+    {
+      "path": "wsc-message-reference.log",
+      "sha256": "5fe6d7c3a0bc303c99184f163d5e0cf6dbaa1dd62508f37f028192b6f6e358b9",
+      "size": 133
+    },
+    {
+      "path": "wsc-messages.json",
+      "sha256": "5deb243c12ef05012d99744ce9e5a1edf706649323d989057486e8aa03c7cba5",
+      "size": 2042
     }
   ]
 }

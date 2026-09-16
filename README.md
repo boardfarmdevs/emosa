@@ -60,6 +60,12 @@ The real OVSDB simulator uses the pinned OpenSync schema and a separate manager
 process. Wire provisioning, physical-pod mapping and independent-controller
 acceptance remain gated; simulator passes do not establish interoperability.
 
+The [WSC payload component](docs/wsc-messages.md) builds M1 and authenticates
+M2 AP settings against its exact bytes, with independent hostap fixtures. It
+checks complete sets of payloads before returning settings; controller trust,
+IEEE exchange state and approval of the complete radio configuration are still
+required before connecting those results to OVSDB.
+
 The [independent controller candidate](deploy/peer/README.md) now emits real
 discovery frames captured at the EMOSA container. Its agent inventory is empty:
 EMOSA has not answered or onboarded an extender. Ubuntu 24.04 nested-container

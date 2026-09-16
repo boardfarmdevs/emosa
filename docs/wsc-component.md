@@ -6,6 +6,11 @@ below. Its publisher PDF and digest are recorded in
 component; the proposed IEEE/EasyMesh procedure profile is still unfrozen and
 P0 remains blocked. No Ethernet messages or pod writes are enabled by it.
 
+The separate [M1/M2 payload component](wsc-messages.md) now uses these primitives
+to build M1 and authenticate/decrypt sets of M2 AP settings. Its own required
+field checks and independent payload vectors remain separate from full wire
+procedure and physical-pod qualification.
+
 | Rule | WPS 2.0.10 reference | Component behavior |
 | --- | --- | --- |
 | Attribute encoding | §8 and §8.1, p.67; §12 Table 28, pp.100–104 | Two-byte type and length, big endian; preserve unknown attributes and original authenticated bytes; reject truncation |

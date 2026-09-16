@@ -45,3 +45,8 @@
   both pending external inputs. Maintain one specification acquisition checklist,
   including direct and conditional dependencies; independent implementation and
   testing continue without enabling unvalidated wire procedures.
+- Implement the obtained WPS M1/M2 payload rules independently of missing IEEE
+  transport rules. Preserve exact authenticated bytes and optional settings,
+  validate a whole M2 payload set, and keep the result separate from write
+  authorization. Use the native hostap M1 builder and strict message/crypto
+  checks as independent evidence, with their older-version limits recorded.

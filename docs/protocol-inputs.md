@@ -67,6 +67,9 @@ those definitions. Reading the crypto specification does not establish crypto
 validation. The [bounded crypto component](wsc-component.md) now has independent
 synthetic hostap vectors and negative decryption tests. Full M1/M2 validation,
 exchange state, profile semantics and packet/peer tests are still required.
+The additional [M1/M2 payload component](wsc-messages.md) now builds M1,
+checks required M2 fields and authenticates/decrypts an entire payload set using
+the original M1. Its independent full-payload fixtures are not IEEE frames.
 
 ## Consequence for the one-BSS experiment
 

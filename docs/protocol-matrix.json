@@ -138,7 +138,7 @@
     "A complete mandatory/optional/conditional field and profile-applicability audit is pending; current entries are partial source-backed research.",
     "Byte-level lengths, ordering, duplicate detection, message-ID rollover, all timers/retries, reassembly limits and malformed/unknown-field behavior are not yet frozen.",
     "IEEE 802.11-2024 reference [1] must be accessible wherever capability fields require its operating-class and radio-capability definitions; no such values may be fabricated.",
-    "Independent full-message packet vectors and peer interpretation remain pending. Synthetic WSC crypto component vectors are now retained separately.",
+    "Independent full-message packet vectors and peer interpretation remain pending. Independent WSC crypto and M1/M2 payload vectors are retained separately; they contain no IEEE frames.",
     "No physical-pod mapping or independent-controller qualification has been completed.",
     "IEEE 802.3-2015 Ethernet link/frame definitions referenced by EasyMesh 5.2.6 and 14.1.3 require review.",
     "Wi-Fi Alliance Security Requirements referenced by EasyMesh section 13 have no obtained full text or resolved edition."
@@ -528,6 +528,24 @@
       "vectors": "tests/fixtures/protocol/wsc/vectors.json",
       "provenance": "tests/fixtures/protocol/wsc/provenance.json",
       "validation": "25 unit component cases and two independently generated hostap cases; full protocol vectors remain pending"
+    },
+    "wsc_payloads": {
+      "status": "selected_component_only",
+      "specifications": [
+        "wfa-wps-2.0.10",
+        "wfa-easymesh-6.1"
+      ],
+      "rules": "docs/wsc-messages.md",
+      "implementation": "src/emosa/wsc_messages.py",
+      "procedure_gate_satisfied": false,
+      "scope": "M1 builder, M2 required-field structure/transcript authentication/AP settings decryption and within-set nonce/index checks; no IEEE messages, peer trust, radio binding, replay state or write permission",
+      "tests": [
+        "tests/test_wsc_messages.py"
+      ],
+      "vectors": "tests/fixtures/protocol/wsc-messages/vectors.json",
+      "provenance": "tests/fixtures/protocol/wsc-messages/provenance.json",
+      "evidence": "docs/evidence/wsc-messages.json",
+      "validation": "55 unit component cases; independent native M1 builder, strict M1/M2/AP settings validators and message/KWA verification"
     }
   },
   "acquisition_checklist": "docs/specification-acquisition.md",

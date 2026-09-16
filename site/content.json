@@ -26,7 +26,7 @@
         "Authenticate and validate genuine WSC provisioning.",
         "Bind the complete radio BSS request to supported semantic operations."
       ],
-      "next": "WPS payload cryptography now has independent hostap component vectors. Complete the IEEE rule matrix, message/profile validation and discovery/onboarding state machine; P0 still blocks actual wire provisioning.",
+      "next": "M1 construction and M2 payload authentication now have independent hostap fixtures. Complete IEEE framing, controller/radio binding, exchange state and complete-radio mapping before any wire-driven pod operation.",
       "path": "docs/protocol-inputs.md"
     },
     "engine": {
@@ -344,6 +344,12 @@
       "description": "Exact pending IEEE editions, Ethernet/security dependencies, conditional documents and already obtained WFA PDFs.",
       "path": "docs/specification-acquisition.md",
       "category": "Pending external inputs"
+    },
+    {
+      "title": "WSC M1/M2 payload validation",
+      "description": "Native hostap M1 match, authenticated M2 settings, whole-set checks and explicit remaining procedure gates.",
+      "path": "docs/wsc-messages.md",
+      "category": "Component implementation"
     }
   ]
 }
