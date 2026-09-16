@@ -1,5 +1,5 @@
 const $ = (selector) => document.querySelector(selector);
-const repo = "https://github.com/boardfarmdevs/emosa/blob/";
+const repo = "https://github.com/boardfarmdevs/emosa-lab/blob/";
 let snapshot;
 const esc = (text) =>
   String(text ?? "").replace(

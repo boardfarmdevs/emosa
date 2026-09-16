@@ -1,4 +1,4 @@
-# EMOSA interactive field guide
+# EMOSA Lab interactive field guide
 
 The site is a static, dependency-free explorer of the system architecture, lab
 modes, retained run timelines/comparisons, requirement traceability and next
@@ -30,7 +30,7 @@ environment. The repository's Pages source must be **GitHub Actions**:
 
 Repository Settings → Pages → Build and deployment → Source → GitHub Actions.
 
-Then the workflow publishes at <https://boardfarmdevs.github.io/emosa/>. Site
+Then the workflow publishes at <https://boardfarmdevs.github.io/emosa-lab/>. Site
 publication is complete only after the deployment succeeds and the URL serves
 the new guide; a pushed workflow alone does not establish that.
 

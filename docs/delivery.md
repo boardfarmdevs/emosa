@@ -9,7 +9,7 @@ Every architecture requirement and acceptance row is listed in
 
 ## Explorer and radio-lab increment
 
-The [interactive field guide](https://boardfarmdevs.github.io/emosa/) adds a
+The [interactive field guide](https://boardfarmdevs.github.io/emosa-lab/) adds a
 clickable architecture, lab commands, six retained run timelines/comparisons and
 searchable traceability. It centers the intended proof: a real EasyMesh
 controller discovers and onboards an unchanged OpenSync extender as an agent

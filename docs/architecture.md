@@ -8,7 +8,7 @@ device; its agent/radio/BSS identities and advertised capabilities must be backe
 by the actual qualified pod mapping. Qualification and evidence determine which
 procedures work.
 
-[Open the interactive explorer](https://boardfarmdevs.github.io/emosa/#architecture)
+[Open the interactive explorer](https://boardfarmdevs.github.io/emosa-lab/#architecture)
 or [download the standalone diagram](../site/architecture.svg).
 
 ```mermaid
