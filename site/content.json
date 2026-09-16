@@ -338,6 +338,12 @@
       "description": "69 unit / 13 OVSDB tests, VM-driven semantic scenarios and identical discovery bytes at two capture points.",
       "path": "docs/evidence/peer/qualification-summary.json",
       "category": "Retained evidence"
+    },
+    {
+      "title": "Specification acquisition checklist",
+      "description": "Exact pending IEEE editions, Ethernet/security dependencies, conditional documents and already obtained WFA PDFs.",
+      "path": "docs/specification-acquisition.md",
+      "category": "Pending external inputs"
     }
   ]
 }

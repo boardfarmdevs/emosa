@@ -94,20 +94,19 @@ must be kept distinct from the actual pod's physical topology.
 
 ## Access and review still required
 
-1. Provide a lawful local copy or authorized subscription route for **IEEE
-   1905.1-2013 and IEEE 1905.1a-2014**. Record their hashes and applicable
-   corrections once obtained. The publisher's supplementary ZIP link is not
-   evidence that the complete standard is freely available; its contents were
-   not obtained in this review.
-2. Obtain **IEEE 802.11-2024** definitions wherever required by emitted capability
-   fields, such as operating classes and radio capabilities. EasyMesh 6.1
-   section 2 reference [1] selects that edition. Scope and verify any further
-   normative dependencies before using their definitions.
-3. Resolve the complete mandatory/optional/conditional TLV and field matrix for
+All document requests and access status are consolidated in the
+[specification acquisition checklist](specification-acquisition.md). The operator
+confirmed that the exact IEEE 1905 base/amendment editions have no local copies
+or supplied access mechanism. The follow-up dependency audit also records
+IEEE 802.3-2015 (EasyMesh §5.2.6 and §14.1.3) and Wi-Fi Alliance Security
+Requirements (EasyMesh §13), whose revision must be identified. No missing
+document is replaced by a peer implementation or an older fixture.
+
+1. Resolve the complete mandatory/optional/conditional TLV and field matrix for
    the proposed profile. IEEE base rules, timers, retry/duplicate behavior,
    rollover, reassembly and error semantics remain incomplete. Hardware-only
    capability values remain dependent on pod qualification.
-4. Obtain independently derived packet and cryptographic vectors with permitted
+2. Obtain independently derived packet and cryptographic vectors with permitted
    provenance, exact expected outcomes and a pinned independent parser or peer.
    The separate crypto component supplies synthetic payload vectors only;
    complete message vectors and independently interpreted captures are pending.

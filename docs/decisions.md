@@ -40,3 +40,8 @@
   EMOSA. Its controller-only helper requires hwsim for startup. Outbound
   discovery and empty inventory are baseline evidence; its repeatable shutdown
   aborts and all actual EMOSA exchanges remain unqualified.
+- Record the operator's confirmation that IEEE Std 1905.1-2013 and IEEE Std
+  1905.1a-2014 have no local copies or supplied subscription mechanism. Keep
+  both pending external inputs. Maintain one specification acquisition checklist,
+  including direct and conditional dependencies; independent implementation and
+  testing continue without enabling unvalidated wire procedures.

@@ -20,6 +20,6 @@ def test_hardware_acceptance_requires_M0():
 @pytest.mark.external
 def test_external_acceptance_requires_X1():
     pytest.fail(
-        "MISSING_PREREQUISITE X1: independent controller/build and evaluator missing; "
-        "no interoperability claim"
+        "MISSING_PREREQUISITE X1: actual EMOSA exchanges and peer recovery unqualified; "
+        "the independent controller baseline does not establish interoperability"
     )

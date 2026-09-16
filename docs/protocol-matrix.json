@@ -21,11 +21,21 @@
       "base_doi": "10.1109/IEEESTD.2013.6502164",
       "amendment_edition": "IEEE Std 1905.1a-2014",
       "amendment_reference": "https://standards.ieee.org/ieee/1905.1a/5820/",
-      "access_status": "publisher_metadata_accessible_full_text_not_obtained",
+      "access_status": "pending_external_inputs_operator_confirmed_no_local_copies_or_subscription",
       "publisher_status": "Inactive-Reserved; still explicitly referenced by EasyMesh 6.1 section 2",
       "selection_status": "proposed",
       "content_sha256": null,
-      "user_access_needed": "Lawfully accessible base and amendment PDFs, or an IEEE subscription-access route. Full clauses, amendments and applicable corrections must be reviewed before freezing P0."
+      "user_access_needed": "Lawfully accessible base and amendment PDFs, or an IEEE subscription-access route. Full clauses, amendments and applicable corrections must be reviewed before freezing P0.",
+      "operator_confirmation": {
+        "date": "2026-09-15",
+        "editions": [
+          "IEEE Std 1905.1-2013",
+          "IEEE Std 1905.1a-2014"
+        ],
+        "local_copies": "not_available",
+        "subscription_access_mechanism": "not_supplied",
+        "dependent_wire_validation": "pending"
+      }
     },
     "easymesh": {
       "id": "wfa-easymesh-6.1",
@@ -129,7 +139,9 @@
     "Byte-level lengths, ordering, duplicate detection, message-ID rollover, all timers/retries, reassembly limits and malformed/unknown-field behavior are not yet frozen.",
     "IEEE 802.11-2024 reference [1] must be accessible wherever capability fields require its operating-class and radio-capability definitions; no such values may be fabricated.",
     "Independent full-message packet vectors and peer interpretation remain pending. Synthetic WSC crypto component vectors are now retained separately.",
-    "No physical-pod mapping or independent-controller qualification has been completed."
+    "No physical-pod mapping or independent-controller qualification has been completed.",
+    "IEEE 802.3-2015 Ethernet link/frame definitions referenced by EasyMesh 5.2.6 and 14.1.3 require review.",
+    "Wi-Fi Alliance Security Requirements referenced by EasyMesh section 13 have no obtained full text or resolved edition."
   ],
   "document_ambiguities": [
     "EasyMesh 6.1 section 2 reference [2] names the IEEE 1905.1-2013 base but links to an amendment URL; reference [11] separately names 1905.1a-2014. Preserve and review both documents.",
@@ -517,5 +529,70 @@
       "provenance": "tests/fixtures/protocol/wsc/provenance.json",
       "validation": "25 unit component cases and two independently generated hostap cases; full protocol vectors remain pending"
     }
-  }
+  },
+  "acquisition_checklist": "docs/specification-acquisition.md",
+  "additional_normative_inputs": [
+    {
+      "id": "ieee80211-2024",
+      "edition": "IEEE Std 802.11-2024",
+      "reference": "https://standards.ieee.org/ieee/802.11/10548/",
+      "access_route": "https://ieeexplore.ieee.org/browse/standards/get-program/page/series?id=68",
+      "access_status": "publisher_offers_GET_full_text_not_retrieved_HTTP_418",
+      "source_sections": [
+        "EasyMesh 6.1 section 2 reference [1]",
+        "EasyMesh 6.1 section 9.1 and applicable 17.2 capability fields"
+      ],
+      "affected_work": "operating-class and actual radio capability encoding",
+      "content_sha256": null
+    },
+    {
+      "id": "ieee8023-2015",
+      "edition": "IEEE Std 802.3-2015",
+      "reference": "https://ieeexplore.ieee.org/document/7428776/",
+      "access_status": "full_text_not_obtained",
+      "source_sections": [
+        "EasyMesh 6.1 section 2 reference [3]",
+        "EasyMesh 6.1 section 5.2.6",
+        "EasyMesh 6.1 section 14.1.3 references IEEE section 3; IEEE text not read"
+      ],
+      "affected_work": "logical Ethernet link-driven onboarding and applicable frame handling",
+      "content_sha256": null
+    },
+    {
+      "id": "wfa-security-requirements",
+      "edition": null,
+      "reference": "https://www.wi-fi.org/members/wi-fi-alliance-security-requirements",
+      "access_status": "publisher_redirects_to_member_login_no_access_supplied_full_text_and_edition_pending",
+      "source_sections": [
+        "EasyMesh 6.1 section 2 reference [22] is unversioned",
+        "EasyMesh 6.1 section 13"
+      ],
+      "affected_work": "review Personal AP requirements for represented fronthaul BSS; STA requirements if backhaul STA scope is added",
+      "content_sha256": null
+    },
+    {
+      "id": "iso3166-1",
+      "edition": null,
+      "linked_edition": "ISO 3166-1:2013",
+      "reference": "https://www.iso.org/standard/63545.html",
+      "access_status": "conditional_full_standard_not_obtained_edition_and_code_source_review_pending",
+      "source_sections": [
+        "EasyMesh 6.1 section 2 reference [6] is unversioned",
+        "EasyMesh 6.1 section 9.1 CAC country code"
+      ],
+      "affected_work": "CAC reporting only if applicable to selected capabilities; no inferred regulatory domain",
+      "content_sha256": null
+    },
+    {
+      "id": "ieee80211-2012",
+      "edition": "IEEE Std 802.11-2012",
+      "access_status": "conditional_historical_reference_not_obtained",
+      "source_sections": [
+        "WPS 2.0.10 section 2 reference [17]",
+        "WPS 2.0.10 section 8.2 management frame path not implemented"
+      ],
+      "affected_work": "historical WPS cross-reference review if those definitions are used; no automatic substitution by 802.11-2024",
+      "content_sha256": null
+    }
+  ]
 }
