@@ -43,7 +43,7 @@ EMOSA combines real protocol exchanges, controlled simulations and physical-pod 
 - Section 18: EMOSA evaluation modes, scenario contract, evidence, and reporting.
 - Section 19: third-party evaluation contract and independent controller tests.
 - Section 20: assessment of the supplied controller/cloud-adapter proposal.
-- Section 21: coding-agent handoff, contract clarifications and readiness gates. Start with the companion `EMOSA-CODING-HANDOFF.md`.
+- Section 21: coding-agent handoff, contract clarifications and readiness gates. Start with the companion `../project/EMOSA-CODING-HANDOFF.md`.
 - Section 22: direct reuse of OpenSync core as a separate reference backend and its qualification experiment.
 
 ## 1. Executive decision and meaning of EasyMesh
@@ -283,10 +283,14 @@ tests/
   fixtures/                 # sanitized schemas, snapshots, event streams
 scenarios/                  # reusable simulation and hardware scenarios
 deploy/
-docs/
-  supported-pods.md
-  operation-mappings.md
-  writer-ownership.md
+doc/
+  README.md                 # documentation index
+  guides/                   # setup, operation, qualification and demos
+  architecture/             # requirements, mappings, ownership and recovery
+  protocol/                 # specification inputs, matrix and WSC components
+  evaluation/               # experiment findings and supported-pods.json
+  project/                  # handoff, status, open inputs and traceability
+  evidence/                 # reviewed artifacts and original hashes
 ```
 
 **SW-01.** Use one long-lived test-controller process and one long-lived EMOSA service with per-pod protocol/session objects and bounded queues. Each CLI is a short-lived local client. Simulator and external client probes are separate test components.
@@ -1041,7 +1045,7 @@ The most useful additions are the optional telemetry consumer, explicit manageme
 
 ### 21.1 Readiness and authoritative inputs
 
-Use `EMOSA-CODING-HANDOFF.md` as the execution guide and `emosa-input-manifest.example.json` as the input checklist. This architecture remains the behavioral baseline. The handoff selects routine implementation defaults; it cannot silently weaken a requirement. Neither document is a substitute for the selected protocol specifications or evidence from the actual pods.
+Use `../project/EMOSA-CODING-HANDOFF.md` as the execution guide and `../project/emosa-input-manifest.example.json` as the input checklist. This architecture remains the behavioral baseline. The handoff selects routine implementation defaults; it cannot silently weaken a requirement. Neither document is a substitute for the selected protocol specifications or evidence from the actual pods.
 
 The project is ready to begin repository setup, the semantic model, state machine, journal, mock backend, scenario runner and OVSDB simulation. Three external gates remain:
 
@@ -1155,7 +1159,7 @@ Stop expanding the native experiment once these criteria are established; teleme
 | N03: non-application is visible | Delayed/withheld driver feedback does not become false applied success; session restart resynchronizes correctly |
 | N04: isolated and honestly labelled | No host or physical-pod changes; simulation provenance, native patches, limits and resource use recorded |
 
-**Verification status:** the bounded [R0 experiment](../deploy/native/README.md)
+**Verification status:** the bounded [R0 experiment](../../deploy/native/README.md)
 builds and runs the pinned target, passes 39 selected upstream tests, and exercises
 native application/withholding with a dummy driver. N03 remains blocked by a
 reproducible post-database-restart failure to process new Config. The native

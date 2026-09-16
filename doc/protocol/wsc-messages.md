@@ -78,7 +78,7 @@ peer/radio and complete-request mapping checks above still apply.
 
 ## Independent validation
 
-[The retained fixture](../tests/fixtures/protocol/wsc-messages/README.md) uses
+[The retained fixture](../../tests/fixtures/protocol/wsc-messages/README.md) uses
 unmodified hostap 2.11 source. Its native enrollee builder produces a 440-byte
 M1 that EMOSA reproduces byte-for-byte under injected synthetic test entropy.
 Its helpers produce a 594-byte M2, including encrypted AP settings, and its
@@ -94,6 +94,6 @@ No hostap code is linked into the EMOSA package.
 Python tests also exercise correctly authenticated malformed payloads, identity
 and nonce mismatches, duplicate/missing fields, unknown extensions, version
 compatibility, conditional password fields, size bounds and multi-M2 rejection.
-The [retained component evidence](evidence/wsc-messages.json) states exact scope.
+The [retained component evidence](../evidence/wsc-messages.json) states exact scope.
 The physical acceptance path remains real EasyMesh messages → EMOSA → unchanged
 OpenSync pod → independently observed behavior.

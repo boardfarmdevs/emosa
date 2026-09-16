@@ -16,13 +16,13 @@ and protocol trace before discovery, after onboarding, after a supported BSS
 change, and after reconnect. Advertise only capabilities supported by the
 qualified pod mapping. A passing internal semantic API call is insufficient.
 
-The [prplMesh 6.0.0 candidate](../deploy/peer/README.md) now has verified startup,
+The [prplMesh 6.0.0 candidate](../../deploy/peer/README.md) now has verified startup,
 an empty agent inventory and independently captured discovery traffic delivered
 to the EMOSA container. This establishes the peer and transport setup for the
 next implementation. No EMOSA exchange has occurred; the candidate's native
 controller/helper shutdown aborts are a recorded qualification gap.
 
-A separate [controller–standard-agent baseline](../deploy/peer-baseline/README.md)
+A separate [controller–standard-agent baseline](../../deploy/peer-baseline/README.md)
 now exercises that controller with a normal native prplMesh agent and independent
 wired/wireless client containers. Its Ethernet and WPS/hwsim paths establish the
 existing peer's behavior before inserting EMOSA. This is a separate experiment
@@ -74,11 +74,11 @@ establish full EasyMesh conformance or support for all OpenSync pods.
 
 ## Radio/client work
 
-The [optional hwsim harness](../deploy/hwsim/README.md) uses hostapd and
+The [optional hwsim harness](../../deploy/hwsim/README.md) uses hostapd and
 wpa_supplicant in separate LXD containers and interface-bound traffic after
 removing setup Ethernet. Its standalone scope must remain explicit.
 
-The [OVSDB/hwsim integration](radio-manager.md) now connects semantic EMOSA
+The [OVSDB/hwsim integration](../evaluation/radio-manager.md) now connects semantic EMOSA
 Config changes to a separate hostapd manager and derives State from
 hostapd/nl80211. Three selected runs passed 13 cases with independent clients,
 including wrong-key rejection, SSID/key change, lost reply, withholding, restart

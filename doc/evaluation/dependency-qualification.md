@@ -3,7 +3,7 @@
 The recorded development host is Ubuntu 22.04.5 x86-64, with CPython 3.13.7,
 uv 0.11.17 and LXD client/server 6.9. The pinned Ubuntu 24.04 image fingerprints
 in `deploy/images.lock.json` were resolved from the Ubuntu LXD remote. The later
-[dedicated-VM evidence](evidence/peer/qualification-summary.json) records Ubuntu
+[dedicated-VM evidence](../evidence/peer/qualification-summary.json) records Ubuntu
 24.04 component runtime compatibility, installed packages and a retained base
 image export. Final runtime image exports and full procedure reruns remain
 pending. Only the project-owned `emosa-lab` VM and its inner containers were
@@ -19,7 +19,7 @@ custom full OVSDB protocol stack was needed. See the upstream
 and [RFC 7047](https://www.rfc-editor.org/rfc/rfc7047.html).
 
 The locally built `ovsdb-server` and `ovsdb-tool` are version 4.0.0. Source archive
-and binary digests are in `docs/evidence/bootstrap.json`. Building just these
+and binary digests are in `doc/evidence/bootstrap.json`. Building just these
 targets first requires the upstream `BUILT_SOURCES`; the supplied build script
 generates them before linking. There is no `make install`, system daemon or
 switching datapath. TLS is disabled in this **simulation-only** binary build.
@@ -29,7 +29,7 @@ incremental update/delete/reference handling, set/map/optional values, guarded
 transactions, row counts, reconnect, independent manager application, lost
 responses, conflicts, resource exhaustion and four independent sessions.
 Both dialing via Unix sockets and database-initiated TCP to a listening manager
-are exercised. The [connecting-pod demo](connecting-pod.md) also verifies a Unix
+are exercised. The [connecting-pod demo](../guides/connecting-pod.md) also verifies a Unix
 listener in a separate service process. Three narrow upstream compatibility
 accommodations are required:
 
@@ -59,7 +59,7 @@ Larger physical schemas/snapshots and authenticated TLS remain unqualified.
 
 ## Provisioning crypto
 
-The separately scoped [WSC component](wsc-component.md) selects WPS 2.0.10 and
+The separately scoped [WSC component](../protocol/wsc-component.md) selects WPS 2.0.10 and
 pins `cryptography==50.0.1` for DH group 5 and AES-CBC. CPython's standard
 library supplies SHA-256, HMAC and randomness. The group-5 exchange, KDF,
 authentication tags and encrypted settings match two independently generated
@@ -77,7 +77,7 @@ from the WSC session keys.
 
 ## R0 native OpenSync experiment
 
-The [native manual](../deploy/native/README.md) records the completed bounded
+The [native manual](../../deploy/native/README.md) records the completed bounded
 investigation on Ubuntu 24.04. The pinned OWM/OW/OSW target builds from a fresh
 source extraction with two small lab patches and passes 39 selected upstream
 units. A C dummy-driver module receives Config through the normal EMOSA OVSDB
@@ -87,8 +87,8 @@ withheld-feedback checks work with the explicitly scoped native PSK interpretati
 N03 remains blocked: after a database restart EMOSA reconnects and commits a new
 Config change, but the surviving native manager produces no new driver callback
 or observed change within the deadline. The application native backend stays
-disabled. See [the qualification evidence](evidence/native/qualification.json).
+disabled. See [the qualification evidence](../evidence/native/qualification.json).
 The earlier `protoc-c` failure and initial Kconfig/build logs in `evidence/r0-*`
 are retained as history. The current dependency versions, source/Kconfig/patch
 hashes, failed assumptions, resource measurements and source rebuild are in
-`evidence/native/`. No physical pod or EasyMesh exchange was exercised.
+`../../doc/evidence/native`. No physical pod or EasyMesh exchange was exercised.

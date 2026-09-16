@@ -16,11 +16,11 @@ controller discovers and onboards an unchanged OpenSync extender as an agent
 represented by EMOSA, then manages it through the adapter. See the
 [viability roadmap](viability-roadmap.md).
 
-The optional [hwsim harness](../deploy/hwsim/README.md) was executed in a new
+The optional [hwsim harness](../../deploy/hwsim/README.md) was executed in a new
 dedicated `emosa-lab` VM, with separate unprivileged AP/station containers.
 A clean setup/retest passed WPA2 authentication, three wireless-interface-bound
 pings and virtual-medium capture. Four unprivileged tests cover VM mutation
-guards and cleanup ownership. [Retained evidence](evidence/hwsim/qualification-summary.json)
+guards and cleanup ownership. [Retained evidence](../evidence/hwsim/qualification-summary.json)
 includes the initial service-startup failure. Existing unrelated LXD instances
 and physical pods were not modified.
 
@@ -31,7 +31,7 @@ The tables below preserve the earlier foundation delivery's validation scope.
 
 ## Native OpenSync R0 increment
 
-The [bounded native experiment](../deploy/native/README.md) builds the pinned
+The [bounded native experiment](../../deploy/native/README.md) builds the pinned
 OWM/OW/OSW stack on Ubuntu 24.04 and passes 39 selected upstream tests. A normal
 EMOSA Config transaction reaches the native driver callback; synthetic feedback
 produces native State. Withheld feedback yields a timeout. A fresh source rebuild
@@ -67,15 +67,15 @@ These results add component evidence, with no EasyMesh or physical-pod acceptanc
 | --- | --- | --- |
 | `uv sync --frozen` | Passed on inspected development host | `bootstrap.json`, `uv.lock` |
 | Ruff lint and format | Passed | Final local checks |
-| `uv run pytest -m unit` | 40 passed, 15 deselected | `evidence/unit-results.xml` |
-| `uv run pytest -m ovsdb` | 13 passed, 42 deselected | `evidence/ovsdb-results.xml` |
-| Collector checks after schema-artifact correction | 3 passed | `evidence/qualification-results.xml` |
-| Local API checks after read-only capability correction | 2 passed | `evidence/api-results.xml` |
-| Installed wheel outside source checkout | CLI help, model run, contracts, schema, real OVSDB read-only collection passed; final API correction separately tested and wheel rebuilt | `evidence/wheel-smoke.json` |
-| Explicit wire-suite selection | 1 prerequisite failure, no wire exchange executed | `evidence/wire-gate.xml`, `evidence/wire-gate.log` |
+| `uv run pytest -m unit` | 40 passed, 15 deselected | `../evidence/unit-results.xml` |
+| `uv run pytest -m ovsdb` | 13 passed, 42 deselected | `../evidence/ovsdb-results.xml` |
+| Collector checks after schema-artifact correction | 3 passed | `../evidence/qualification-results.xml` |
+| Local API checks after read-only capability correction | 2 passed | `../evidence/api-results.xml` |
+| Installed wheel outside source checkout | CLI help, model run, contracts, schema, real OVSDB read-only collection passed; final API correction separately tested and wheel rebuilt | `../evidence/wheel-smoke.json` |
+| Explicit wire-suite selection | 1 prerequisite failure, no wire exchange executed | `../evidence/wire-gate.xml`, `../evidence/wire-gate.log` |
 | Hardware/external suites | Not executed against devices/peers; inputs absent | `open-inputs.md` |
-| Native OpenSync R0 | Build stopped at missing `protoc-c`, after resolving isolated Python/OVSDB-tool prerequisites | `evidence/r0-manifest.json`, build logs |
-| Ubuntu 24.04 nested-LXD runtime | Not executed; candidate image fingerprints resolved | `../deploy/images.lock.json` |
+| Native OpenSync R0 | Build stopped at missing `protoc-c`, after resolving isolated Python/OVSDB-tool prerequisites | `../evidence/r0-manifest.json`, build logs |
+| Ubuntu 24.04 nested-LXD runtime | Not executed; candidate image fingerprints resolved | `../../deploy/images.lock.json` |
 
 The suites overlap for the pure transaction-result validation test; do not add
 their counts to infer a unique-test total. Four real simulated database sessions
@@ -97,9 +97,9 @@ local `.lab` run directories and are not copied into distributable evidence.
 | `run-6bde1516e5784e72` | Earlier-build failure retained | Simulated manager reconnect handling failed during server-restart scenario |
 | `run-4023fccf9a144b47` | Successful retest | Test manager lifecycle now follows simulated pod/server restart and rebuilds its observation session |
 
-All are under `evidence/runs/`. Different source hashes identify different builds.
+All are under `../../doc/evidence/runs`. Different source hashes identify different builds.
 The passing lost-reply run's CLI watch/inspection output and a baseline/recovery
-comparison are also retained in `evidence/`. Reports keep interoperability
+comparison are also retained in `../../doc/evidence`. Reports keep interoperability
 `not_evaluated` for semantic experiments, even when the component expectation
 passes. No packet capture, real radio metric or independent client result was
 fabricated.
@@ -111,7 +111,7 @@ P0 research proposes **IEEE 1905.1-2013 + 1905.1a-2014, EasyMesh 6.1 and WPS
 publisher and hashed; the proposal is not a frozen selection. IEEE base/amendment
 and applicable 802.11-2024 text still need lawful access. Complete the normative
 rule matrix and independent packet/crypto vectors before I3/I4. See
-`protocol-inputs.md` for authoritative links, sections and document ambiguities.
+`../protocol/protocol-inputs.md` for authoritative links, sections and document ambiguities.
 
 The WSC radio-wide BSS semantics are a concrete scope constraint. Qualify a radio
 with only the selected existing BSS, or implement the complete requested radio
@@ -121,7 +121,7 @@ seamless provisioning.
 M0 still needs the named physical pod/build, trusted endpoint, actual schema,
 managed resources, verified cloud/local writer controls, management/recovery path
 and independent client. The next available device step is the read-only command
-in `pod-qualification.md`; its draft never enables writes automatically. X1 needs
+in `../guides/pod-qualification.md`; its draft never enables writes automatically. X1 needs
 a named independent controller/build and evaluator after the wire/hardware baseline.
 
 The next independent platform work is the Ubuntu 24.04 nested-LXD compatibility

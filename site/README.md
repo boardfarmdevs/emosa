@@ -5,7 +5,7 @@ modes, retained run timelines/comparisons, requirement traceability and next
 acceptance experiments. It has no connection to a running lab and exposes no
 control API. All command examples are copied as text for local use.
 
-The [team onboarding and operator manual](../docs/team-manual.md) provides the
+The [team onboarding and operator manual](../doc/guides/team-manual.md) provides the
 full learning path, setup procedures, CLI exercises, radio/native experiments,
 demo recipes and troubleshooting. It is linked from the site's manual section
 and searchable reference library; the full document opens on GitHub.

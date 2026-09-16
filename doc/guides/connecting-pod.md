@@ -12,7 +12,7 @@ exchange validation remain pending P0. `em-controller agents` remains gated.
 The simulated pod does not run OpenSync firmware or emulate vendor cloud
 bootstrap, certificates, redirects, or every OpenSync manager.
 
-The [reviewed verification summary](evidence/connecting-pod/qualification-summary.json)
+The [reviewed verification summary](../evidence/connecting-pod/qualification-summary.json)
 records a passing automated lifecycle and interactive CLI walkthrough, together
 with 183 unit and 20 OVSDB checks, pinned schema/source hashes and the initial
 listener startup failure that was corrected. Physical pods and LXD were unchanged.
@@ -212,7 +212,7 @@ duplicate mappings, and invalid AL addresses:
 uv run pytest tests/test_agents.py tests/test_connecting_pod.py
 ```
 
-For actual Wi-Fi/client behavior, use the separate [radio integration](radio-manager.md),
+For actual Wi-Fi/client behavior, use the separate [radio integration](../evaluation/radio-manager.md),
 which already exercises hwsim and a containerized `wpa_supplicant` client. The
 connecting-pod demonstration has not yet been combined with that radio harness.
 The final acceptance path remains **real EasyMesh messages → EMOSA → unchanged

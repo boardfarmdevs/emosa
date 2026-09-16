@@ -12,7 +12,7 @@ five fresh onboardings, three agent restarts, three managed controller restarts
 and three backhaul interruptions. Both independent clients pass before and after
 a 30-second stability observation in every selected case. This is a finite
 functional baseline with the native shutdown defect described below.
-The machine-readable [execution summary](evidence/peer-baseline/summary.json)
+The machine-readable [execution summary](../evidence/peer-baseline/summary.json)
 retains the full attempt history and hashes, including failed earlier procedures
 and preliminary checks that did not establish stable onboarding. It retains
 78 measured attempts; the 28 selected cases and the two final negative-control
@@ -148,25 +148,25 @@ security and independently observed traffic.
 
 ## Reproduce and extend
 
-Use the [deployment commands and topology](../deploy/peer-baseline/README.md)
-and [exact input/runtime profile](../deploy/peer-baseline/reference.json).
+Use the [deployment commands and topology](../../deploy/peer-baseline/README.md)
+and [exact input/runtime profile](../../deploy/peer-baseline/reference.json).
 The complete execution history and native logs remain in private lab storage;
 public artifacts contain reviewed synthetic observations and hashes.
 Representative completed samples also publish their original packet captures
-(see the [wired sample index](evidence/peer-baseline/samples/wired/index.json)
-and [wireless sample index](evidence/peer-baseline/samples/wireless/index.json)),
+(see the [wired sample index](../evidence/peer-baseline/samples/wired/index.json)
+and [wireless sample index](../evidence/peer-baseline/samples/wireless/index.json)),
 with source-attempt identifiers
 and file hashes. These contain only the isolated lab's public synthetic traffic;
 the full execution history and native debug logs remain in private storage.
-The [retention record](evidence/peer-baseline/retention.json) records hashes of
+The [retention record](../evidence/peer-baseline/retention.json) records hashes of
 the private bundle and native log archives. Owned baseline services were stopped
 after collection; the VM and containers remain running to preserve their PHY
 assignments. Retain package/image, kernel/module, runtime binary and harness
 identities when reproducing the run.
 
-Open the [wired IEEE 1905 capture](evidence/peer-baseline/samples/wired/ethernet.pcap),
-[wireless IEEE 1905 capture](evidence/peer-baseline/samples/wireless/ethernet.pcap)
-or [wireless radio capture](evidence/peer-baseline/samples/wireless/radio.pcap)
+Open the [wired IEEE 1905 capture](../evidence/peer-baseline/samples/wired/ethernet.pcap),
+[wireless IEEE 1905 capture](../evidence/peer-baseline/samples/wireless/ethernet.pcap)
+or [wireless radio capture](../evidence/peer-baseline/samples/wireless/radio.pcap)
 in Wireshark. Their companion TSV files identify discovery, WSC, WPS and
 four-address observations; the sample indexes retain the unedited capture hashes.
 

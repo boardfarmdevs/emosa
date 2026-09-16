@@ -19,8 +19,8 @@ def read_json(path):
 def build():
     content = read_json("site/content.json")
     # Validate preserved evidence before publishing any derived claims.
-    evidence = ROOT / "docs/evidence"
-    artifacts = read_json("docs/evidence/manifest.json")["artifacts"]
+    evidence = ROOT / "doc/evidence"
+    artifacts = read_json("doc/evidence/manifest.json")["artifacts"]
     for artifact in artifacts:
         path = (evidence / artifact["path"]).resolve()
         if not path.is_relative_to(evidence.resolve()) or not path.is_file():
@@ -48,7 +48,7 @@ def build():
     content["runs"] = []
     for item in content.pop("run_catalog"):
         # Only committed, curated simulation evidence is eligible for this public site.
-        path = Path("docs/evidence/runs") / item["id"]
+        path = Path("doc/evidence/runs") / item["id"]
         run = read_json(path / "run.json")
         if run["manifest"]["backend_mode"] not in {"model", "ovsdb-sim"}:
             raise ValueError("Public run catalog requires explicit review for new backend modes")
@@ -57,7 +57,7 @@ def build():
         run.update(label=item["label"], annotation=item["annotation"])
         run["events"] = read_json(path / "events.json")
         content["runs"].append(run)
-    content["traceability"] = read_json("docs/traceability.json")
+    content["traceability"] = read_json("doc/project/traceability.json")
     for item in content["references"]:
         if not (ROOT / item["path"]).is_file():
             raise ValueError(f"Missing manual reference: {item['path']}")

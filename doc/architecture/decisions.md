@@ -18,7 +18,7 @@
   scenario explicitly selects `semantic` and never emits protocol success.
 - The user requested specification resolution in parallel and confirmed that no
   physical profile exists. A bounded research subtask produced the proposed
-  corpus in `protocol-matrix.json`; exact selection and full P0 validation remain
+  corpus in `../protocol/protocol-matrix.json`; exact selection and full P0 validation remain
   pending. The radio-wide WSC scope finding is an additional mapping check.
 - Actual pod preparation is a separate read-only collector with a restricted
   monitor allowlist. It never retrieves PSKs/security maps and never enables

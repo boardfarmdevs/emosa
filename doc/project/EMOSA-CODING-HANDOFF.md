@@ -11,7 +11,7 @@ Build EMOSA to evaluate whether, and within which limits, a controller-side adap
 
 Read this handoff first, then architecture Sections 1–4, 7, 9–10, 16, 18–19 and 21. Consult the remaining sections while implementing their components. Files supplied with this handoff:
 
-- `minimal-easymesh-architecture-requirements.md`: authoritative architecture and behavioral requirements, version 3.6.
+- `../architecture/requirements.md`: authoritative architecture and behavioral requirements, version 3.6.
 - `emosa-input-manifest.example.json`: honest inventory of known and missing inputs. Copy to a local manifest; never commit secrets.
 
 The architecture is ready for staged implementation. It does not contain the normative EasyMesh/WSC specifications, actual pod connection credentials/schema, or an independent controller installation. Do not manufacture these facts. Missing inputs block only dependent stages.
@@ -66,7 +66,7 @@ Reference facts: [Python supported versions](https://devguide.python.org/version
 
 The supplied manifest uses `not_provided`/`not_selected`, not fictitious values. `qualified` is an evidence-backed status: validate referenced artifacts and current configuration, rather than trusting a boolean. An upstream schema is a simulation reference, not the actual pod's fingerprint.
 
-Create `docs/decisions.md` for implementation choices and `docs/open-inputs.md` for external gaps. State the affected tasks and proceed with independent work. Ask only for genuinely missing facts that cannot be inspected or responsibly resolved. Do not ask the user to choose ordinary function names, JSON libraries or test directory layouts.
+Create `doc/architecture/decisions.md` for implementation choices and `doc/project/open-inputs.md` for external gaps. State the affected tasks and proceed with independent work. Ask only for genuinely missing facts that cannot be inspected or responsibly resolved. Do not ask the user to choose ordinary function names, JSON libraries or test directory layouts.
 
 ## 4. Ordered implementation tasks
 
@@ -99,11 +99,11 @@ schemas/config.schema.json
 schemas/scenario.schema.json
 schemas/local-api.schema.json
 schemas/run-result.schema.json
-docs/protocol-matrix.json
-docs/supported-pods.json
-docs/traceability.json
-docs/decisions.md
-docs/open-inputs.md
+doc/protocol/protocol-matrix.json
+doc/evaluation/supported-pods.json
+doc/project/traceability.json
+doc/architecture/decisions.md
+doc/project/open-inputs.md
 tests/fixtures/model/              # explicitly synthetic, fixed identities
 tests/fixtures/opensync/           # schema provenance and sanitized observations
 tests/fixtures/protocol/           # independently sourced/derived vectors
@@ -163,8 +163,8 @@ Do not stop at empty interfaces, generated fixtures or CLI help when substantive
 ## 8. Ready-to-paste assignment
 
 ```text
-Implement EMOSA using EMOSA-CODING-HANDOFF.md and architecture version 3.6
-in minimal-easymesh-architecture-requirements.md. Inspect the repository
+Implement EMOSA using doc/project/EMOSA-CODING-HANDOFF.md and architecture
+version 3.6 in doc/architecture/requirements.md. Inspect the repository
 and execution environment first, then implement the ordered I0–I7 tasks
 as far as their actual prerequisites permit. Keep the implementation
 in Python, with no prplMesh dependencies or new software on physical pods.

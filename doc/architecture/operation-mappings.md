@@ -1,7 +1,7 @@
 # Existing BSS mapping: synthetic-existing-bss-v1
 
 Qualification is limited to the pinned upstream schema plus EMOSA's independent
-simulated manager. No actual pod/build appears in `supported-pods.json`.
+simulated manager. No actual pod/build appears in `../evaluation/supported-pods.json`.
 
 | Contract | Implementation |
 | --- | --- |

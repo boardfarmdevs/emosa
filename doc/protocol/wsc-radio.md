@@ -67,7 +67,7 @@ does not use M2's MAC attribute to infer a pod, radio or VIF identity. No new pa
 to the operation engine or OVSDB writes is enabled.
 
 These requirements remain in the [protocol matrix](protocol-matrix.json) and
-[pod qualification instructions](pod-qualification.md). The end state still needs
+[pod qualification instructions](../guides/pod-qualification.md). The end state still needs
 real controller discovery/onboarding and independently observed behavior on an
 unchanged physical OpenSync extender. The [acquisition checklist](specification-acquisition.md)
 continues to list the exact missing IEEE editions.
@@ -81,7 +81,7 @@ decryption, KWA and role parsing check that alternative. Hostap's ordinary
 AP-settings validator is deliberately not used to impose AP fields on teardown.
 This older implementation does not qualify the selected EasyMesh procedure.
 
-The [fixture provenance](../tests/fixtures/protocol/wsc-messages/provenance.json)
+The [fixture provenance](../../tests/fixtures/protocol/wsc-messages/provenance.json)
 records its source, harness and vector hashes. All entropy and credentials are
 public synthetic values. The two M2 alternatives are separate tests, not a valid
 combined response with reused N2. `tests/test_wsc_radio.py` adds 42 checks covering

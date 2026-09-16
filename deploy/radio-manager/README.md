@@ -113,7 +113,7 @@ EMOSA virtual-agent discovery/WSC → this OVSDB/radio boundary. The packet endp
 controller/exchange binding, full radio-wide request validation and normative
 vectors remain pending P0. Existing WSC payload components do not bypass that
 gate or authorize a write. The missing IEEE editions and related documents remain
-in the [acquisition checklist](../../docs/specification-acquisition.md).
+in the [acquisition checklist](../../doc/protocol/specification-acquisition.md).
 
 Once a private pod connection path arrives, collect its read-only profile and
 qualify the physical mapping. The eventual acceptance path remains real EasyMesh
@@ -126,7 +126,7 @@ VM history, the publication command for the recorded final selection is:
 ```sh
 python3 scripts/curate-radio-manager.py \
   --private-root .lab/radio-manager \
-  --output docs/evidence/radio-manager \
+  --output doc/evidence/radio-manager \
   --selected qualified-04 qualified-05 qualified-06
 ```
 

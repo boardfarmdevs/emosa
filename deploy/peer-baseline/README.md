@@ -5,7 +5,7 @@ prplMesh agent, without EMOSA or OpenSync in their protocol/data path. It is an
 observed interoperability baseline for these builds, not certification or an
 assertion that every EasyMesh device always works.
 
-The [retained report](../../docs/peer-baseline.md) records 14 selected functional
+The [retained report](../../doc/evaluation/peer-baseline.md) records 14 selected functional
 passes per backhaul mode under acceptance version 2. Earlier traffic checks
 missed an agent reset loop; the final selections use the native HAL fix and
 stricter operational/stability checks described below. Preliminary passes and
@@ -228,7 +228,7 @@ complete version 2 suites and retain all earlier failures and preliminary passes
 ```sh
 python3 scripts/curate-peer-baseline.py \
   --private-root .lab/peer-baseline/runs \
-  --output docs/evidence/peer-baseline/summary.json \
+  --output doc/evidence/peer-baseline/summary.json \
   --wired-suite wired-stable-suite-01 \
   --wireless-suite wireless-stable-suite-01 \
   --wired-negative wired-stable-suite-negatives-01 \
@@ -247,7 +247,7 @@ The curator rejects running, missing or weakly validated selections. It retains
 raw artifact hashes and reviewed synthetic observations. The published report
 also includes reviewed representative synthetic captures; the complete captures,
 configuration files and native logs stay in private storage. Inspect all public
-artifacts before adding their hashes to `docs/evidence/manifest.json`.
+artifacts before adding their hashes to `doc/evidence/manifest.json`.
 
 Hostap source licensing and the patch's retained upstream code are covered by
 [LICENSE.hostap](LICENSE.hostap). Preserve that notice with any distributed

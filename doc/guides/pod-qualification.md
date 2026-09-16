@@ -23,9 +23,9 @@ the lab; the examples are not evidence that the pod supports it:
 
 | Existing authorized access | Example | Private references |
 | --- | --- | --- |
-| Mutual TLS | [qualification.example.json](../deploy/qualification.example.json) | `certificate_ref`, `private_key_ref`, `ca_ref` resolve to files below `secret_directory`; replace the placeholder peer pin with a trusted certificate SHA-256 |
-| Authenticated tunnel to local TCP | [qualification-tunnel.example.json](../deploy/qualification-tunnel.example.json) | `evidence_ref` identifies a private description of the tunnel's authenticated endpoint binding; tunnel credentials stay with the tunnel tool |
-| Private local Unix socket | [qualification-unix.example.json](../deploy/qualification-unix.example.json) | Existing socket in an owned private directory; no invented password field |
+| Mutual TLS | [qualification.example.json](../../deploy/qualification.example.json) | `certificate_ref`, `private_key_ref`, `ca_ref` resolve to files below `secret_directory`; replace the placeholder peer pin with a trusted certificate SHA-256 |
+| Authenticated tunnel to local TCP | [qualification-tunnel.example.json](../../deploy/qualification-tunnel.example.json) | `evidence_ref` identifies a private description of the tunnel's authenticated endpoint binding; tunnel credentials stay with the tunnel tool |
+| Private local Unix socket | [qualification-unix.example.json](../../deploy/qualification-unix.example.json) | Existing socket in an owned private directory; no invented password field |
 
 Prepare the directory and copy **one** example. This does not contact a pod:
 

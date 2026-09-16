@@ -5,7 +5,7 @@
   "tasks": {
     "I0": "local and nested Ubuntu 24.04 component foundation tested; full reference wire/hardware deployment and runtime image exports pending",
     "I1": "implemented with model tests",
-    "I2": "real OVSDB component path and independent hostapd/hwsim manager tested with wired/wireless clients; semantic initiation only; see docs/radio-manager.md",
+    "I2": "real OVSDB component path and independent hostapd/hwsim manager tested with wired/wireless clients; semantic initiation only; see doc/evaluation/radio-manager.md",
     "R0": "native apply/withhold experiment runs; database-restart recovery N03 fails and production backend remains disabled",
     "I3": "blocked P0",
     "I4": "WSC M1/M2 payload component independently tested; full procedure remains blocked P0/I3",
@@ -63,7 +63,7 @@
         "tests/test_model.py"
       ],
       "evidence_refs": [
-        "docs/evidence/unit-results.xml"
+        "doc/evidence/unit-results.xml"
       ],
       "mode": "model",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -72,7 +72,7 @@
       "id": "ARCH-05",
       "status": "blocked",
       "implementation_refs": [
-        "docs/protocol-matrix.json"
+        "doc/protocol/protocol-matrix.json"
       ],
       "test_refs": [
         "tests/test_gated.py"
@@ -93,7 +93,7 @@
         "tests/test_model.py"
       ],
       "evidence_refs": [
-        "docs/evidence/unit-results.xml"
+        "doc/evidence/unit-results.xml"
       ],
       "mode": "model",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -108,7 +108,7 @@
         "tests/test_ovsdb.py"
       ],
       "evidence_refs": [
-        "docs/evidence/ovsdb-results.xml"
+        "doc/evidence/ovsdb-results.xml"
       ],
       "mode": "ovsdb-sim",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -123,7 +123,7 @@
         "tests/test_ovsdb.py"
       ],
       "evidence_refs": [
-        "docs/evidence/ovsdb-results.xml"
+        "doc/evidence/ovsdb-results.xml"
       ],
       "mode": "ovsdb-sim",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -146,7 +146,7 @@
       ],
       "test_refs": [],
       "evidence_refs": [
-        "docs/evidence/peer/qualification-summary.json"
+        "doc/evidence/peer/qualification-summary.json"
       ],
       "mode": null,
       "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
@@ -162,7 +162,7 @@
       ],
       "test_refs": [],
       "evidence_refs": [
-        "docs/evidence/peer/qualification-summary.json"
+        "doc/evidence/peer/qualification-summary.json"
       ],
       "mode": null,
       "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
@@ -178,7 +178,7 @@
       ],
       "test_refs": [],
       "evidence_refs": [
-        "docs/evidence/peer/qualification-summary.json"
+        "doc/evidence/peer/qualification-summary.json"
       ],
       "mode": null,
       "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
@@ -194,7 +194,7 @@
       ],
       "test_refs": [],
       "evidence_refs": [
-        "docs/evidence/peer/qualification-summary.json"
+        "doc/evidence/peer/qualification-summary.json"
       ],
       "mode": null,
       "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
@@ -210,7 +210,7 @@
       ],
       "test_refs": [],
       "evidence_refs": [
-        "docs/evidence/peer/qualification-summary.json"
+        "doc/evidence/peer/qualification-summary.json"
       ],
       "mode": null,
       "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
@@ -226,7 +226,7 @@
       ],
       "test_refs": [],
       "evidence_refs": [
-        "docs/evidence/peer/qualification-summary.json"
+        "doc/evidence/peer/qualification-summary.json"
       ],
       "mode": null,
       "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
@@ -242,7 +242,7 @@
       ],
       "test_refs": [],
       "evidence_refs": [
-        "docs/evidence/peer/qualification-summary.json"
+        "doc/evidence/peer/qualification-summary.json"
       ],
       "mode": null,
       "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
@@ -258,7 +258,7 @@
       ],
       "test_refs": [],
       "evidence_refs": [
-        "docs/evidence/peer/qualification-summary.json"
+        "doc/evidence/peer/qualification-summary.json"
       ],
       "mode": null,
       "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
@@ -274,7 +274,7 @@
       ],
       "test_refs": [],
       "evidence_refs": [
-        "docs/evidence/peer/qualification-summary.json"
+        "doc/evidence/peer/qualification-summary.json"
       ],
       "mode": null,
       "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
@@ -290,7 +290,7 @@
       ],
       "test_refs": [],
       "evidence_refs": [
-        "docs/evidence/peer/qualification-summary.json"
+        "doc/evidence/peer/qualification-summary.json"
       ],
       "mode": null,
       "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
@@ -306,7 +306,7 @@
       ],
       "test_refs": [],
       "evidence_refs": [
-        "docs/evidence/peer/qualification-summary.json"
+        "doc/evidence/peer/qualification-summary.json"
       ],
       "mode": null,
       "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
@@ -322,7 +322,7 @@
       ],
       "test_refs": [],
       "evidence_refs": [
-        "docs/evidence/peer/qualification-summary.json"
+        "doc/evidence/peer/qualification-summary.json"
       ],
       "mode": null,
       "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
@@ -333,7 +333,7 @@
       "id": "SW-01",
       "status": "blocked",
       "implementation_refs": [
-        "docs/protocol-matrix.json"
+        "doc/protocol/protocol-matrix.json"
       ],
       "test_refs": [
         "tests/test_gated.py"
@@ -381,7 +381,7 @@
         "tests/test_model.py"
       ],
       "evidence_refs": [
-        "docs/evidence/unit-results.xml"
+        "doc/evidence/unit-results.xml"
       ],
       "mode": "model",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -396,7 +396,7 @@
         "tests/test_model.py"
       ],
       "evidence_refs": [
-        "docs/evidence/unit-results.xml"
+        "doc/evidence/unit-results.xml"
       ],
       "mode": "model",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -455,7 +455,7 @@
         "tests/test_model.py"
       ],
       "evidence_refs": [
-        "docs/evidence/unit-results.xml"
+        "doc/evidence/unit-results.xml"
       ],
       "mode": "model",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -470,7 +470,7 @@
         "tests/test_model.py"
       ],
       "evidence_refs": [
-        "docs/evidence/unit-results.xml"
+        "doc/evidence/unit-results.xml"
       ],
       "mode": "model",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -552,7 +552,7 @@
       "id": "OWN-04",
       "status": "implemented",
       "implementation_refs": [
-        "docs/recovery.md"
+        "doc/architecture/recovery.md"
       ],
       "test_refs": [
         "tests/test_model.py"
@@ -641,7 +641,7 @@
         "tests/test_model.py"
       ],
       "evidence_refs": [
-        "docs/evidence/unit-results.xml"
+        "doc/evidence/unit-results.xml"
       ],
       "mode": "model",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -656,7 +656,7 @@
         "tests/test_model.py"
       ],
       "evidence_refs": [
-        "docs/evidence/unit-results.xml"
+        "doc/evidence/unit-results.xml"
       ],
       "mode": "model",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -665,13 +665,13 @@
       "id": "API-03",
       "status": "verified",
       "implementation_refs": [
-        "docs/operation-mappings.md"
+        "doc/architecture/operation-mappings.md"
       ],
       "test_refs": [
         "tests/test_ovsdb.py"
       ],
       "evidence_refs": [
-        "docs/evidence/ovsdb-results.xml"
+        "doc/evidence/ovsdb-results.xml"
       ],
       "mode": "ovsdb-sim",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -686,7 +686,7 @@
         "tests/test_ovsdb.py"
       ],
       "evidence_refs": [
-        "docs/evidence/ovsdb-results.xml"
+        "doc/evidence/ovsdb-results.xml"
       ],
       "mode": "ovsdb-sim",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -702,7 +702,7 @@
         "tests/test_api.py"
       ],
       "evidence_refs": [
-        "docs/evidence/unit-results.xml"
+        "doc/evidence/unit-results.xml"
       ],
       "mode": "model",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -751,7 +751,7 @@
         "tests/test_ovsdb.py"
       ],
       "evidence_refs": [
-        "docs/evidence/ovsdb-results.xml"
+        "doc/evidence/ovsdb-results.xml"
       ],
       "mode": "ovsdb-sim",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -766,7 +766,7 @@
         "tests/test_ovsdb.py"
       ],
       "evidence_refs": [
-        "docs/evidence/ovsdb-results.xml"
+        "doc/evidence/ovsdb-results.xml"
       ],
       "mode": "ovsdb-sim",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -781,7 +781,7 @@
         "tests/test_ovsdb.py"
       ],
       "evidence_refs": [
-        "docs/evidence/ovsdb-results.xml"
+        "doc/evidence/ovsdb-results.xml"
       ],
       "mode": "ovsdb-sim",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -796,7 +796,7 @@
         "tests/test_ovsdb.py"
       ],
       "evidence_refs": [
-        "docs/evidence/ovsdb-results.xml"
+        "doc/evidence/ovsdb-results.xml"
       ],
       "mode": "ovsdb-sim",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -811,7 +811,7 @@
         "tests/test_ovsdb.py"
       ],
       "evidence_refs": [
-        "docs/evidence/ovsdb-results.xml"
+        "doc/evidence/ovsdb-results.xml"
       ],
       "mode": "ovsdb-sim",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -826,7 +826,7 @@
         "tests/test_ovsdb.py"
       ],
       "evidence_refs": [
-        "docs/evidence/ovsdb-results.xml"
+        "doc/evidence/ovsdb-results.xml"
       ],
       "mode": "ovsdb-sim",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -841,7 +841,7 @@
         "tests/test_ovsdb.py"
       ],
       "evidence_refs": [
-        "docs/evidence/ovsdb-results.xml"
+        "doc/evidence/ovsdb-results.xml"
       ],
       "mode": "ovsdb-sim",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -856,7 +856,7 @@
         "tests/test_ovsdb.py"
       ],
       "evidence_refs": [
-        "docs/evidence/ovsdb-results.xml"
+        "doc/evidence/ovsdb-results.xml"
       ],
       "mode": "ovsdb-sim",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -871,7 +871,7 @@
         "tests/test_ovsdb.py"
       ],
       "evidence_refs": [
-        "docs/evidence/ovsdb-results.xml"
+        "doc/evidence/ovsdb-results.xml"
       ],
       "mode": "ovsdb-sim",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -886,7 +886,7 @@
         "tests/test_ovsdb.py"
       ],
       "evidence_refs": [
-        "docs/evidence/ovsdb-results.xml"
+        "doc/evidence/ovsdb-results.xml"
       ],
       "mode": "ovsdb-sim",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -901,7 +901,7 @@
         "tests/test_ovsdb.py"
       ],
       "evidence_refs": [
-        "docs/evidence/ovsdb-results.xml"
+        "doc/evidence/ovsdb-results.xml"
       ],
       "mode": "ovsdb-sim",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -916,7 +916,7 @@
         "tests/test_ovsdb.py"
       ],
       "evidence_refs": [
-        "docs/evidence/ovsdb-results.xml"
+        "doc/evidence/ovsdb-results.xml"
       ],
       "mode": "ovsdb-sim",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -948,7 +948,7 @@
         "tests/test_ovsdb.py"
       ],
       "evidence_refs": [
-        "docs/evidence/ovsdb-results.xml"
+        "doc/evidence/ovsdb-results.xml"
       ],
       "mode": "ovsdb-sim",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -963,7 +963,7 @@
         "tests/test_ovsdb.py"
       ],
       "evidence_refs": [
-        "docs/evidence/ovsdb-results.xml"
+        "doc/evidence/ovsdb-results.xml"
       ],
       "mode": "ovsdb-sim",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -978,7 +978,7 @@
         "tests/test_ovsdb.py"
       ],
       "evidence_refs": [
-        "docs/evidence/ovsdb-results.xml"
+        "doc/evidence/ovsdb-results.xml"
       ],
       "mode": "ovsdb-sim",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -993,7 +993,7 @@
         "tests/test_ovsdb.py"
       ],
       "evidence_refs": [
-        "docs/evidence/ovsdb-results.xml"
+        "doc/evidence/ovsdb-results.xml"
       ],
       "mode": "ovsdb-sim",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -1008,7 +1008,7 @@
         "tests/test_ovsdb.py"
       ],
       "evidence_refs": [
-        "docs/evidence/ovsdb-results.xml"
+        "doc/evidence/ovsdb-results.xml"
       ],
       "mode": "ovsdb-sim",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -1040,7 +1040,7 @@
         "tests/test_model.py"
       ],
       "evidence_refs": [
-        "docs/evidence/unit-results.xml"
+        "doc/evidence/unit-results.xml"
       ],
       "mode": "model",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -1055,7 +1055,7 @@
         "tests/test_model.py"
       ],
       "evidence_refs": [
-        "docs/evidence/unit-results.xml"
+        "doc/evidence/unit-results.xml"
       ],
       "mode": "model",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -1070,7 +1070,7 @@
         "tests/test_model.py"
       ],
       "evidence_refs": [
-        "docs/evidence/unit-results.xml"
+        "doc/evidence/unit-results.xml"
       ],
       "mode": "model",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -1085,7 +1085,7 @@
         "tests/test_model.py"
       ],
       "evidence_refs": [
-        "docs/evidence/unit-results.xml"
+        "doc/evidence/unit-results.xml"
       ],
       "mode": "model",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -1137,7 +1137,7 @@
         "tests/test_model.py"
       ],
       "evidence_refs": [
-        "docs/evidence/unit-results.xml"
+        "doc/evidence/unit-results.xml"
       ],
       "mode": "model",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -1165,7 +1165,7 @@
         "tests/test_api.py"
       ],
       "evidence_refs": [
-        "docs/evidence/unit-results.xml"
+        "doc/evidence/unit-results.xml"
       ],
       "mode": "model",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -1193,7 +1193,7 @@
         "tests/test_api.py"
       ],
       "evidence_refs": [
-        "docs/evidence/unit-results.xml"
+        "doc/evidence/unit-results.xml"
       ],
       "mode": "model",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -1235,7 +1235,7 @@
         "tests/test_api.py"
       ],
       "evidence_refs": [
-        "docs/evidence/unit-results.xml"
+        "doc/evidence/unit-results.xml"
       ],
       "mode": "model",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -1276,7 +1276,7 @@
         "tests/test_api.py"
       ],
       "evidence_refs": [
-        "docs/evidence/unit-results.xml"
+        "doc/evidence/unit-results.xml"
       ],
       "mode": "model",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -1298,7 +1298,7 @@
       "id": "CFG-06",
       "status": "blocked",
       "implementation_refs": [
-        "docs/protocol-matrix.json"
+        "doc/protocol/protocol-matrix.json"
       ],
       "test_refs": [
         "tests/test_gated.py"
@@ -1361,7 +1361,7 @@
       "id": "OBS-05",
       "status": "blocked",
       "implementation_refs": [
-        "docs/protocol-matrix.json"
+        "doc/protocol/protocol-matrix.json"
       ],
       "test_refs": [
         "tests/test_gated.py"
@@ -1430,7 +1430,7 @@
       "id": "WIRE-01",
       "status": "blocked",
       "implementation_refs": [
-        "docs/protocol-matrix.json"
+        "doc/protocol/protocol-matrix.json"
       ],
       "test_refs": [
         "tests/test_gated.py"
@@ -1445,7 +1445,7 @@
       "id": "WIRE-02",
       "status": "blocked",
       "implementation_refs": [
-        "docs/protocol-matrix.json"
+        "doc/protocol/protocol-matrix.json"
       ],
       "test_refs": [
         "tests/test_gated.py"
@@ -1460,7 +1460,7 @@
       "id": "WIRE-03",
       "status": "blocked",
       "implementation_refs": [
-        "docs/protocol-matrix.json"
+        "doc/protocol/protocol-matrix.json"
       ],
       "test_refs": [
         "tests/test_gated.py"
@@ -1475,7 +1475,7 @@
       "id": "WIRE-04",
       "status": "blocked",
       "implementation_refs": [
-        "docs/protocol-matrix.json"
+        "doc/protocol/protocol-matrix.json"
       ],
       "test_refs": [
         "tests/test_gated.py"
@@ -1490,7 +1490,7 @@
       "id": "WIRE-05",
       "status": "blocked",
       "implementation_refs": [
-        "docs/protocol-matrix.json"
+        "doc/protocol/protocol-matrix.json"
       ],
       "test_refs": [
         "tests/test_gated.py"
@@ -1505,7 +1505,7 @@
       "id": "WIRE-06",
       "status": "blocked",
       "implementation_refs": [
-        "docs/protocol-matrix.json"
+        "doc/protocol/protocol-matrix.json"
       ],
       "test_refs": [
         "tests/test_gated.py"
@@ -1520,12 +1520,12 @@
       "id": "WIRE-07",
       "status": "blocked",
       "implementation_refs": [
-        "docs/protocol-matrix.json",
+        "doc/protocol/protocol-matrix.json",
         "src/emosa/wsc.py",
-        "docs/wsc-component.md",
+        "doc/protocol/wsc-component.md",
         "src/emosa/wsc_messages.py",
         "src/emosa/wsc_radio.py",
-        "docs/wsc-radio.md"
+        "doc/protocol/wsc-radio.md"
       ],
       "test_refs": [
         "tests/test_gated.py",
@@ -1535,9 +1535,9 @@
       ],
       "evidence_refs": [
         "tests/fixtures/protocol/wsc/provenance.json",
-        "docs/evidence/unit-results.xml",
-        "docs/evidence/wsc-messages.json",
-        "docs/evidence/wsc-radio.json"
+        "doc/evidence/unit-results.xml",
+        "doc/evidence/wsc-messages.json",
+        "doc/evidence/wsc-radio.json"
       ],
       "mode": null,
       "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
@@ -1548,10 +1548,10 @@
       "id": "WIRE-08",
       "status": "blocked",
       "implementation_refs": [
-        "docs/protocol-matrix.json",
+        "doc/protocol/protocol-matrix.json",
         "src/emosa/wsc_messages.py",
         "src/emosa/wsc_radio.py",
-        "docs/wsc-radio.md"
+        "doc/protocol/wsc-radio.md"
       ],
       "test_refs": [
         "tests/test_gated.py",
@@ -1559,8 +1559,8 @@
         "tests/test_wsc_radio.py"
       ],
       "evidence_refs": [
-        "docs/evidence/wsc-messages.json",
-        "docs/evidence/wsc-radio.json"
+        "doc/evidence/wsc-messages.json",
+        "doc/evidence/wsc-radio.json"
       ],
       "mode": null,
       "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
@@ -1571,7 +1571,7 @@
       "id": "WIRE-09",
       "status": "blocked",
       "implementation_refs": [
-        "docs/protocol-matrix.json"
+        "doc/protocol/protocol-matrix.json"
       ],
       "test_refs": [
         "tests/test_gated.py"
@@ -1586,7 +1586,7 @@
       "id": "WIRE-10",
       "status": "blocked",
       "implementation_refs": [
-        "docs/protocol-matrix.json"
+        "doc/protocol/protocol-matrix.json"
       ],
       "test_refs": [
         "tests/test_gated.py"
@@ -1607,7 +1607,7 @@
         "tests/test_evaluation.py"
       ],
       "evidence_refs": [
-        "docs/evidence/unit-results.xml"
+        "doc/evidence/unit-results.xml"
       ],
       "mode": "model",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -1635,7 +1635,7 @@
         "tests/test_evaluation.py"
       ],
       "evidence_refs": [
-        "docs/evidence/unit-results.xml"
+        "doc/evidence/unit-results.xml"
       ],
       "mode": "model",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -1671,7 +1671,7 @@
       "id": "EVAL-06",
       "status": "blocked",
       "implementation_refs": [
-        "docs/protocol-matrix.json"
+        "doc/protocol/protocol-matrix.json"
       ],
       "test_refs": [
         "tests/test_gated.py"
@@ -1692,7 +1692,7 @@
         "tests/test_evaluation.py"
       ],
       "evidence_refs": [
-        "docs/evidence/unit-results.xml"
+        "doc/evidence/unit-results.xml"
       ],
       "mode": "model",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -1720,7 +1720,7 @@
         "tests/test_evaluation.py"
       ],
       "evidence_refs": [
-        "docs/evidence/unit-results.xml"
+        "doc/evidence/unit-results.xml"
       ],
       "mode": "model",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -1742,7 +1742,7 @@
       "id": "EVAL-11",
       "status": "blocked",
       "implementation_refs": [
-        "docs/protocol-matrix.json"
+        "doc/protocol/protocol-matrix.json"
       ],
       "test_refs": [
         "tests/test_gated.py"
@@ -1790,7 +1790,7 @@
         "tests/test_evaluation.py"
       ],
       "evidence_refs": [
-        "docs/evidence/unit-results.xml"
+        "doc/evidence/unit-results.xml"
       ],
       "mode": "model",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -1805,7 +1805,7 @@
         "tests/test_evaluation.py"
       ],
       "evidence_refs": [
-        "docs/evidence/unit-results.xml"
+        "doc/evidence/unit-results.xml"
       ],
       "mode": "model",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -1820,7 +1820,7 @@
         "tests/test_evaluation.py"
       ],
       "evidence_refs": [
-        "docs/evidence/unit-results.xml"
+        "doc/evidence/unit-results.xml"
       ],
       "mode": "model",
       "scope": "Verified only at the named component mode; any physical/protocol portions remain unqualified."
@@ -1862,7 +1862,7 @@
       "id": "TP-04",
       "status": "implemented",
       "implementation_refs": [
-        "docs/THIRD-PARTY-NOTICES.md"
+        "doc/project/THIRD-PARTY-NOTICES.md"
       ],
       "test_refs": [],
       "evidence_refs": [],
@@ -1877,7 +1877,7 @@
       ],
       "test_refs": [],
       "evidence_refs": [
-        "docs/evidence/peer/qualification-summary.json"
+        "doc/evidence/peer/qualification-summary.json"
       ],
       "mode": null,
       "scope": "Implemented foundation path; full requirement/environment qualification is incomplete.",
@@ -1929,8 +1929,8 @@
         "deploy/native/check-path.py"
       ],
       "evidence_refs": [
-        "docs/evidence/native/qualification.json",
-        "docs/evidence/native/path-summary.json"
+        "doc/evidence/native/qualification.json",
+        "doc/evidence/native/path-summary.json"
       ],
       "mode": "opensync-native",
       "scope": "Bounded R0 native experiment only; one synthetic existing AP with probe-specific PSK interpretation; no production native backend, wire, radio or physical qualification."
@@ -1948,8 +1948,8 @@
         "deploy/native/check-path.py"
       ],
       "evidence_refs": [
-        "docs/evidence/native/qualification.json",
-        "docs/evidence/native/path-summary.json"
+        "doc/evidence/native/qualification.json",
+        "doc/evidence/native/path-summary.json"
       ],
       "mode": "opensync-native",
       "scope": "Bounded R0 native experiment only; one synthetic existing AP with probe-specific PSK interpretation; no production native backend, wire, radio or physical qualification."
@@ -1967,8 +1967,8 @@
         "deploy/native/check-path.py"
       ],
       "evidence_refs": [
-        "docs/evidence/native/qualification.json",
-        "docs/evidence/native/path-summary.json"
+        "doc/evidence/native/qualification.json",
+        "doc/evidence/native/path-summary.json"
       ],
       "mode": "opensync-native",
       "scope": "Bounded R0 native experiment only; one synthetic existing AP with probe-specific PSK interpretation; no production native backend, wire, radio or physical qualification."
@@ -1999,8 +1999,8 @@
         "deploy/native/check-path.py"
       ],
       "evidence_refs": [
-        "docs/evidence/native/qualification.json",
-        "docs/evidence/native/path-summary.json"
+        "doc/evidence/native/qualification.json",
+        "doc/evidence/native/path-summary.json"
       ],
       "mode": "opensync-native",
       "scope": "Bounded R0 native experiment only; one synthetic existing AP with probe-specific PSK interpretation; no production native backend, wire, radio or physical qualification."
@@ -2434,7 +2434,7 @@
       "id": "W01",
       "status": "blocked",
       "implementation_refs": [
-        "docs/protocol-matrix.json"
+        "doc/protocol/protocol-matrix.json"
       ],
       "test_refs": [
         "tests/test_gated.py"
@@ -2449,7 +2449,7 @@
       "id": "W02",
       "status": "blocked",
       "implementation_refs": [
-        "docs/protocol-matrix.json"
+        "doc/protocol/protocol-matrix.json"
       ],
       "test_refs": [
         "tests/test_gated.py"
@@ -2464,7 +2464,7 @@
       "id": "W03",
       "status": "blocked",
       "implementation_refs": [
-        "docs/protocol-matrix.json"
+        "doc/protocol/protocol-matrix.json"
       ],
       "test_refs": [
         "tests/test_gated.py"
@@ -2479,7 +2479,7 @@
       "id": "W04",
       "status": "blocked",
       "implementation_refs": [
-        "docs/protocol-matrix.json"
+        "doc/protocol/protocol-matrix.json"
       ],
       "test_refs": [
         "tests/test_gated.py"
@@ -2494,7 +2494,7 @@
       "id": "W05",
       "status": "blocked",
       "implementation_refs": [
-        "docs/protocol-matrix.json"
+        "doc/protocol/protocol-matrix.json"
       ],
       "test_refs": [
         "tests/test_gated.py"
@@ -2509,7 +2509,7 @@
       "id": "W06",
       "status": "blocked",
       "implementation_refs": [
-        "docs/protocol-matrix.json"
+        "doc/protocol/protocol-matrix.json"
       ],
       "test_refs": [
         "tests/test_gated.py"
@@ -2657,7 +2657,7 @@
       ],
       "test_refs": [],
       "evidence_refs": [
-        "docs/evidence/peer/qualification-summary.json"
+        "doc/evidence/peer/qualification-summary.json"
       ],
       "mode": null,
       "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
@@ -2673,7 +2673,7 @@
       ],
       "test_refs": [],
       "evidence_refs": [
-        "docs/evidence/peer/qualification-summary.json"
+        "doc/evidence/peer/qualification-summary.json"
       ],
       "mode": null,
       "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
@@ -2689,7 +2689,7 @@
       ],
       "test_refs": [],
       "evidence_refs": [
-        "docs/evidence/peer/qualification-summary.json"
+        "doc/evidence/peer/qualification-summary.json"
       ],
       "mode": null,
       "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
@@ -2705,7 +2705,7 @@
       ],
       "test_refs": [],
       "evidence_refs": [
-        "docs/evidence/peer/qualification-summary.json"
+        "doc/evidence/peer/qualification-summary.json"
       ],
       "mode": null,
       "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
@@ -2721,7 +2721,7 @@
       ],
       "test_refs": [],
       "evidence_refs": [
-        "docs/evidence/peer/qualification-summary.json"
+        "doc/evidence/peer/qualification-summary.json"
       ],
       "mode": null,
       "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
@@ -2741,8 +2741,8 @@
         "deploy/native/check-path.py"
       ],
       "evidence_refs": [
-        "docs/evidence/native/qualification.json",
-        "docs/evidence/native/path-summary.json"
+        "doc/evidence/native/qualification.json",
+        "doc/evidence/native/path-summary.json"
       ],
       "mode": "opensync-native",
       "scope": "Bounded R0 native experiment only; one synthetic existing AP with probe-specific PSK interpretation; no production native backend, wire, radio or physical qualification."
@@ -2760,8 +2760,8 @@
         "deploy/native/check-path.py"
       ],
       "evidence_refs": [
-        "docs/evidence/native/qualification.json",
-        "docs/evidence/native/path-summary.json"
+        "doc/evidence/native/qualification.json",
+        "doc/evidence/native/path-summary.json"
       ],
       "mode": "opensync-native",
       "scope": "Bounded R0 native experiment only; one synthetic existing AP with probe-specific PSK interpretation; no production native backend, wire, radio or physical qualification."
@@ -2779,8 +2779,8 @@
         "deploy/native/check-path.py"
       ],
       "evidence_refs": [
-        "docs/evidence/native/qualification.json",
-        "docs/evidence/native/path-summary.json"
+        "doc/evidence/native/qualification.json",
+        "doc/evidence/native/path-summary.json"
       ],
       "mode": "opensync-native",
       "scope": "Bounded R0 native experiment only; one synthetic existing AP with probe-specific PSK interpretation; no production native backend, wire, radio or physical qualification.",
@@ -2800,8 +2800,8 @@
         "deploy/native/check-path.py"
       ],
       "evidence_refs": [
-        "docs/evidence/native/qualification.json",
-        "docs/evidence/native/path-summary.json"
+        "doc/evidence/native/qualification.json",
+        "doc/evidence/native/path-summary.json"
       ],
       "mode": "opensync-native",
       "scope": "Bounded R0 native experiment only; one synthetic existing AP with probe-specific PSK interpretation; no production native backend, wire, radio or physical qualification."

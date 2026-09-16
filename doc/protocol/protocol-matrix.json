@@ -11,7 +11,7 @@
   },
   "selected_profile": null,
   "selection_status": "proposal_only_not_frozen",
-  "research_notes": "docs/protocol-inputs.md",
+  "research_notes": "doc/protocol/protocol-inputs.md",
   "proposed_specifications": {
     "ieee1905": {
       "id": "ieee1905-2013-with-2014-amendment",
@@ -166,7 +166,7 @@
       "id": "prplmesh-6.0.0-lab-baseline",
       "kind": "observed_controller_capture_not_a_normative_substitute",
       "profile": "deploy/peer/prplmesh.reference.json",
-      "evidence": "docs/evidence/peer/qualification-summary.json",
+      "evidence": "doc/evidence/peer/qualification-summary.json",
       "reviewed_scope": "Outbound topology discovery captured on isolated VM bridge and received in EMOSA container; interpreted by Wireshark 4.2.2",
       "validation_status": "Peer baseline only; no EMOSA decoder or procedure validation; IEEE normative gate remains blocked",
       "normative_substitute": false
@@ -518,7 +518,7 @@
       "status": "selected_component_only",
       "specification": "wfa-wps-2.0.10",
       "content_sha256": "49f7a566a5cc7996982d601b5607664c3cf79a2e7ae0d01d2b589fdd934080cf",
-      "rules": "docs/wsc-component.md",
+      "rules": "doc/protocol/wsc-component.md",
       "implementation": "src/emosa/wsc.py",
       "procedure_gate_satisfied": false,
       "scope": "TLV structure, group-5 key derivation, message authenticator and authenticated encrypted settings only; no complete M1/M2 procedure or wire transport",
@@ -535,7 +535,7 @@
         "wfa-wps-2.0.10",
         "wfa-easymesh-6.1"
       ],
-      "rules": "docs/wsc-messages.md",
+      "rules": "doc/protocol/wsc-messages.md",
       "implementation": "src/emosa/wsc_messages.py",
       "procedure_gate_satisfied": false,
       "scope": "M1 builder, M2 required-field structure/transcript authentication/AP settings decryption and within-set nonce/index checks; no IEEE messages, peer trust, radio binding, replay state or write permission",
@@ -544,7 +544,7 @@
       ],
       "vectors": "tests/fixtures/protocol/wsc-messages/vectors.json",
       "provenance": "tests/fixtures/protocol/wsc-messages/provenance.json",
-      "evidence": "docs/evidence/wsc-messages.json",
+      "evidence": "doc/evidence/wsc-messages.json",
       "validation": "55 unit component cases; independent native M1 builder, strict M1/M2/AP settings validators and message/KWA verification"
     },
     "wsc_radio_payloads": {
@@ -553,7 +553,7 @@
         "wfa-wps-2.0.10",
         "wfa-easymesh-6.1"
       ],
-      "rules": "docs/wsc-radio.md",
+      "rules": "doc/protocol/wsc-radio.md",
       "normative_sections": [
         "EasyMesh 6.1 section 3.1.2 and section 7.1 Table 20",
         "WPS 2.0.10 sections 7.2-3, 7.5, 8.3.9 Table 20 and section 12 Network Key/Table 40"
@@ -570,10 +570,10 @@
       "tests": [
         "tests/test_wsc_radio.py"
       ],
-      "evidence": "docs/evidence/wsc-radio.json"
+      "evidence": "doc/evidence/wsc-radio.json"
     }
   },
-  "acquisition_checklist": "docs/specification-acquisition.md",
+  "acquisition_checklist": "doc/protocol/specification-acquisition.md",
   "additional_normative_inputs": [
     {
       "id": "ieee80211-2024",

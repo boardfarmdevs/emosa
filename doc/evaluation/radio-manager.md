@@ -6,11 +6,11 @@ with separate wired and wpa_supplicant client containers. The experiment uses
 the pinned OpenSync schema, one synthetic AP and wired backhaul. **No EasyMesh
 controller exchange or unchanged physical pod was exercised.**
 
-The [deployment manual and architecture](../deploy/radio-manager/README.md)
+The [deployment manual and architecture](../../deploy/radio-manager/README.md)
 describe the process boundaries and reproduction commands. The
-[execution summary](evidence/radio-manager/summary.json) retains all eight runs,
+[execution summary](../evidence/radio-manager/summary.json) retains all eight runs,
 including the earlier development and simpler-key runs, and identifies the three final
-selections. The [sample index](evidence/radio-manager/sample/index.json) links
+selections. The [sample index](../evidence/radio-manager/sample/index.json) links
 the reviewed synthetic capture, manager observations and independent client
 records from the final run.
 
@@ -58,8 +58,8 @@ private synthetic configuration and sources are retained in `.lab/radio-manager/
 Next, connect the pinned controller to EMOSA's virtual-agent packet endpoint,
 complete discovery/WSC and bind the full validated radio request to this boundary.
 The exact missing IEEE editions and related materials remain in the
-[acquisition checklist](specification-acquisition.md). No specification-dependent
+[acquisition checklist](../protocol/specification-acquisition.md). No specification-dependent
 wire gate was removed. Physical qualification remains pending a populated private
-connection file; the [read-only collector](pod-qualification.md) is ready for that
+connection file; the [read-only collector](../guides/pod-qualification.md) is ready for that
 input. The final viability criterion is still real EasyMesh → EMOSA → unchanged
 OpenSync pod → independently observed behavior.
