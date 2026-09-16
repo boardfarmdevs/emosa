@@ -14,6 +14,13 @@ as well, so a disabled/no-op strict validator cannot produce a passing result.
 `provenance.json` pins the official archive, source files, build defines, harness
 and vector hashes. The full archive hash also covers included upstream headers.
 
+The fixture also contains a separately authenticated teardown M2 alternative.
+Native parsing verifies both fronthaul and teardown flags in decrypted ConfigData.
+The teardown alternative omits ordinary AP fields; hostap checks its envelope and
+crypto, not its normal AP-settings validator. The alternatives reuse synthetic
+M1/N2 material for separate tests and must not be combined into a response batch.
+See [radio payload interpretation](../../../../docs/wsc-radio.md).
+
 The normative contract is [wsc-messages.md](../../../../docs/wsc-messages.md).
 Hostap 2.11 predates the selected WFA editions. Its parser ignores BSS_Index as
 an unknown attribute; the harness does not establish its semantic interpretation
@@ -23,7 +30,7 @@ Reproduce both crypto and payload references with:
 
 ```sh
 python3 scripts/check-wsc-reference.py
-uv run pytest tests/test_wsc.py tests/test_wsc_messages.py
+uv run pytest tests/test_wsc.py tests/test_wsc_messages.py tests/test_wsc_radio.py
 ```
 
 The script downloads the pinned official hostap archive into a temporary

@@ -14,7 +14,8 @@ selected [WSC cryptographic component](wsc-component.md) has synthetic payload
 vectors independently checked with hostap 2.11.
 The [M1/M2 payload component](wsc-messages.md) also has independent required-field
 and cryptographic checks; actual IEEE messages, exchange state and complete
-radio mapping remain gated.
+radio mapping remain gated. The [radio payload interpreter](wsc-radio.md)
+now checks encrypted roles and whole-set candidate scope, without a write path.
 
 The user confirmed that no specification editions or actual pod profile have yet
 been selected/supplied. See [the proposed corpus and access details](protocol-inputs.md).

@@ -130,6 +130,7 @@ int main(void)
     assert(wps_build_key_wrap_auth(&registrar, plain) == 0);
     assert(wps_validate_m8_encr(plain, 1, 1) == 0); /* Same AP settings Table 20. */
     random_base = 0xa0;
+    const size_t prefix_len = wpabuf_len(m2);
     assert(wps_build_encr_settings(&registrar, m2, plain) == 0);
     /* New EasyMesh BSS_Index is not interpreted by this older hostap version. */
     const u8 index = 1;
@@ -145,7 +146,33 @@ int main(void)
     assert(decrypted && wps_validate_m8_encr(decrypted, 1, 1) == 0);
     assert(wps_process_key_wrap_auth(&registrar, decrypted,
         wpabuf_head_u8(decrypted) + wpabuf_len(decrypted) - WPS_KWA_LEN) == 0);
+    struct wps_parse_attr config;
+    assert(wps_parse_msg(decrypted, &config) == 0);
+    assert(config.multi_ap_ext == MULTI_AP_FRONTHAUL_BSS);
     emit("m2", wpabuf_head(m2), wpabuf_len(m2));
+    /* Separate teardown alternative, not a second M2 in the same response.
+     * EasyMesh 7.1 ignores other settings for teardown. Validate the envelope,
+     * native role parsing and crypto, not hostap's ordinary AP-field validator. */
+    struct wpabuf *teardown = wpabuf_alloc(4096), *empty = wpabuf_alloc(128);
+    assert(teardown && empty);
+    wpabuf_put_data(teardown, wpabuf_head(m2), prefix_len);
+    assert(wps_build_wfa_ext(empty, 0, NULL, 0, MULTI_AP_TEAR_DOWN) == 0);
+    emit("teardown_settings", wpabuf_head(empty), wpabuf_len(empty));
+    assert(wps_build_key_wrap_auth(&registrar, empty) == 0);
+    random_base = 0xb0;
+    assert(wps_build_encr_settings(&registrar, teardown, empty) == 0);
+    assert(wps_build_authenticator(&registrar, teardown) == 0);
+    assert(wps_validate_m2(teardown) == 0);
+    assert(wps_process_authenticator(&registrar,
+        wpabuf_head_u8(teardown) + wpabuf_len(teardown) - WPS_AUTHENTICATOR_LEN, teardown) == 0);
+    assert(wps_parse_msg(teardown, &parsed) == 0);
+    struct wpabuf *teardown_data = wps_decrypt_encr_settings(
+        &registrar, parsed.encr_settings, parsed.encr_settings_len);
+    assert(teardown_data && wps_parse_msg(teardown_data, &config) == 0);
+    assert(config.multi_ap_ext == MULTI_AP_TEAR_DOWN);
+    assert(wps_process_key_wrap_auth(&registrar, teardown_data,
+        wpabuf_head_u8(teardown_data) + wpabuf_len(teardown_data) - WPS_KWA_LEN) == 0);
+    emit("teardown_m2", wpabuf_head(teardown), wpabuf_len(teardown));
     /* Each validator must actually reject a missing required Version attribute. */
     struct wpabuf *bad = wpabuf_alloc_copy(wpabuf_head_u8(m1) + 5, wpabuf_len(m1) - 5);
     assert(wps_validate_m1(bad) < 0); wpabuf_free(bad);

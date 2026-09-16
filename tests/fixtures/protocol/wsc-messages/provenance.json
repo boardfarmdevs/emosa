@@ -37,12 +37,13 @@
     "src/wps/wps_validate.c": "e78da3692d714c3a5f6c0f6b4f09b27b5149906a5499ff91261ccd843953b28c",
     "src/wps/wps_enrollee.c": "4969b154e9544498e865a91b16426253b76b52738b5cce43654a31b03c123e95"
   },
-  "harness_sha256": "e7de1e0fd807fa088449a2573c5890569cf41f59acb01e4bfaee3bab0fed1a5d",
-  "vectors_sha256": "99b8678106afc5eab9538cfcb95a967317b5d4919f16019175c2aabcef683af3",
-  "result": "native M1 builder and strict M1/M2/AP settings validators pass; missing-Version negatives rejected; native message/KWA verification passes",
+  "harness_sha256": "22fc5e53151bd3c87059c30b83d46940a7a4032d6799bbb21d53a911da20b498",
+  "vectors_sha256": "2f4e4b8374e697935d02b381493f683d75fe612e852989cc36fb95847482cbae",
+  "result": "Native M1/M2/AP field and crypto checks pass; native decrypted Multi-AP role parses as fronthaul; alternative teardown M2 passes envelope/HMAC/KWA and native role parsing without ordinary AP settings validation.",
   "limitations": [
     "Hostap 2.11 cross-checks WPS base fields and crypto, not complete EasyMesh 6.1 requirements",
     "BSS_Index is assembled from the selected WFA specification and ignored as unknown by hostap",
-    "Synthetic identities, capabilities, keys and IVs; no actual controller or pod"
+    "Synthetic identities, capabilities, keys and IVs; no actual controller or pod",
+    "The teardown alternative shares synthetic M1/N2 material for an independent test, not a second M2 in the same received batch. It does not validate a complete EasyMesh teardown procedure."
   ]
 }

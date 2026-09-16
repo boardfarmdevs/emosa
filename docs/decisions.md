@@ -50,3 +50,9 @@
   validate a whole M2 payload set, and keep the result separate from write
   authorization. Use the native hostap M1 builder and strict message/crypto
   checks as independent evidence, with their older-version limits recorded.
+- Select EasyMesh 6.1 sections 3.1.2 and 7.1 and the applicable WPS AP/Network Key
+  rules for independent M2 radio-payload interpretation. Authenticate the entire
+  set before interpreting roles, recognize teardown without ordinary AP settings,
+  preserve unsupported roles, and expose only a narrow non-authorizing candidate.
+  The full CMDU, controller/radio binding and actual pod mapping remain required;
+  this component opens no path to writes and does not satisfy P0.

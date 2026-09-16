@@ -72,7 +72,9 @@ traffic separation and all accompanying TLVs. Unknown optional WPS data remains
 in authentication and output; this does not permit ignoring a mandatory EasyMesh
 request. In particular, the one-existing-BSS OVSDB patch cannot apply a convenient
 part of a larger radio configuration. No path from these results to OVSDB writes
-is enabled in this increment.
+is enabled. The separately selected [radio payload interpreter](wsc-radio.md)
+now distinguishes encrypted roles/teardown and extracts a narrow candidate; all
+peer/radio and complete-request mapping checks above still apply.
 
 ## Independent validation
 

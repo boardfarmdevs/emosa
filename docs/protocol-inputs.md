@@ -69,7 +69,9 @@ synthetic hostap vectors and negative decryption tests. Full M1/M2 validation,
 exchange state, profile semantics and packet/peer tests are still required.
 The additional [M1/M2 payload component](wsc-messages.md) now builds M1,
 checks required M2 fields and authenticates/decrypts an entire payload set using
-the original M1. Its independent full-payload fixtures are not IEEE frames.
+the original M1. Its independent full-payload fixtures are not IEEE frames. The [radio payload
+interpreter](wsc-radio.md) adds selected encrypted-role and teardown semantics,
+plus a narrow candidate projection; complete CMDU and radio mapping remain pending.
 
 ## Consequence for the one-BSS experiment
 

@@ -546,6 +546,31 @@
       "provenance": "tests/fixtures/protocol/wsc-messages/provenance.json",
       "evidence": "docs/evidence/wsc-messages.json",
       "validation": "55 unit component cases; independent native M1 builder, strict M1/M2/AP settings validators and message/KWA verification"
+    },
+    "wsc_radio_payloads": {
+      "status": "selected_component_only",
+      "specifications": [
+        "wfa-wps-2.0.10",
+        "wfa-easymesh-6.1"
+      ],
+      "rules": "docs/wsc-radio.md",
+      "normative_sections": [
+        "EasyMesh 6.1 section 3.1.2 and section 7.1 Table 20",
+        "WPS 2.0.10 sections 7.2-3, 7.5, 8.3.9 Table 20 and section 12 Network Key/Table 40"
+      ],
+      "implementation": "src/emosa/wsc_radio.py",
+      "procedure_gate_satisfied": false,
+      "scope": "Whole M2 payload-set authentication, encrypted roles, teardown distinction and narrow candidate projection; no complete CMDU, controller/radio binding, pod qualification or writes",
+      "local_policies": [
+        "Reject ambiguous/misplaced Multi-AP role data; internal error reasons only",
+        "Candidate projection supports one pure fronthaul WPA2-Personal/AES payload with UTF-8 SSID and printable 8-63 byte passphrase; not a claim that other protocol representations are invalid"
+      ],
+      "validation": "42 component cases; native hostap role parsing and independent teardown envelope/crypto checks",
+      "provenance": "tests/fixtures/protocol/wsc-messages/provenance.json",
+      "tests": [
+        "tests/test_wsc_radio.py"
+      ],
+      "evidence": "docs/evidence/wsc-radio.json"
     }
   },
   "acquisition_checklist": "docs/specification-acquisition.md",

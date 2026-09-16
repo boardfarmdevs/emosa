@@ -274,8 +274,8 @@
     },
     {
       "path": "unit-results.xml",
-      "sha256": "07c041923bb1d2d643742282fd1976db06f0c6359226192c8eb62dc90613b23e",
-      "size": 4276865
+      "sha256": "b7daf3d2fabacaa6996ba7cbd33e762eac72c8715fb19bbd2554e32be1325274",
+      "size": 4282469
     },
     {
       "path": "watch-smoke.log",
@@ -656,6 +656,21 @@
       "path": "native/unit-summary.json",
       "sha256": "d57f02d8455f9203ea2d907a97c2f8ecb26f508fa42768e7b0e2fc337ff2c1e1",
       "size": 866
+    },
+    {
+      "path": "wsc-radio-unit-results.xml",
+      "sha256": "d34e7934695b8a6f976db284dc4533837753a5880ee796d42bce64ae2b27b1b4",
+      "size": 13376
+    },
+    {
+      "path": "wsc-radio-reference.log",
+      "sha256": "5fe6d7c3a0bc303c99184f163d5e0cf6dbaa1dd62508f37f028192b6f6e358b9",
+      "size": 133
+    },
+    {
+      "path": "wsc-radio.json",
+      "sha256": "e5e79d7e4d3a54b2bbe03fcdec22d2ac5055c650f5876d788874b23acda83530",
+      "size": 2742
     }
   ]
 }

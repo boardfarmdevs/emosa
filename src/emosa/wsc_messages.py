@@ -200,6 +200,24 @@ class APSettings:
     mac_address: bytes = field(repr=False)
     attributes: tuple[Attribute, ...] = field(repr=False)
 
+    @classmethod
+    def parse(cls, attributes):
+        settings = _singletons(
+            attributes,
+            {0x1045: (0, 32), 0x1003: 2, 0x100F: 2, 0x1027: (0, 64), 0x1020: 6},
+            {0x1028: 1, 0x102A: (0, 64), 0x1012: 2},
+        )
+        if 0x102A in settings and 0x1012 not in settings:
+            raise _invalid()
+        return cls(
+            settings[0x1045],
+            int.from_bytes(settings[0x1003], "big"),
+            int.from_bytes(settings[0x100F], "big"),
+            settings[0x1027],
+            settings[0x1020],
+            attributes,
+        )
+
 
 @dataclass(frozen=True)
 class AuthenticatedM2:
@@ -208,6 +226,31 @@ class AuthenticatedM2:
     bss_index: int | None
     settings: APSettings = field(repr=False)
     attributes: tuple[Attribute, ...] = field(repr=False)
+
+
+@dataclass(frozen=True)
+class AuthenticatedM2Envelope:
+    """Verified M2 and ConfigData; their procedure semantics are still unvalidated.
+
+    Separating authentication from AP parsing permits EasyMesh teardown to ignore
+    other settings, as required by section 7.1, without bypassing authentication.
+    Like the other Python result records, this is not a configuration capability.
+    """
+
+    registrar_nonce: bytes = field(repr=False)
+    registrar_uuid: bytes = field(repr=False)
+    bss_index: int | None
+    config_data: tuple[Attribute, ...] = field(repr=False)
+    attributes: tuple[Attribute, ...] = field(repr=False)
+
+    def ap_configuration(self):
+        return AuthenticatedM2(
+            self.registrar_nonce,
+            self.registrar_uuid,
+            self.bss_index,
+            APSettings.parse(self.config_data),
+            self.attributes,
+        )
 
 
 @dataclass(frozen=True)
@@ -234,7 +277,7 @@ class M1Transcript:
         _message(message, 4)
         return cls(message, pair)
 
-    def authenticate_m2(self, message: bytes) -> AuthenticatedM2:
+    def authenticate_m2_envelope(self, message: bytes) -> AuthenticatedM2Envelope:
         """Verify the transcript, then decrypt. This does not authenticate peer identity."""
         _, enrollee = _message(self.message, 4)
         attributes, registrar = _message(message, 5)
@@ -255,30 +298,19 @@ class M1Transcript:
             )
         plain = decrypt_settings(keys, registrar[ENCRYPTED_SETTINGS])
         settings_attributes = decode_attributes(plain)
-        settings = _singletons(
-            settings_attributes,
-            {0x1045: (0, 32), 0x1003: 2, 0x100F: 2, 0x1027: (0, 64), 0x1020: 6},
-            {0x1028: 1, 0x102A: (0, 64), 0x1012: 2},
-        )
-        if 0x102A in settings and 0x1012 not in settings:
-            raise _invalid()
         vendor_subelements(settings_attributes)
-        return AuthenticatedM2(
+        return AuthenticatedM2Envelope(
             registrar[REGISTRAR_NONCE],
             registrar[0x1048],
             registrar[BSS_INDEX][0] if BSS_INDEX in registrar else None,
-            APSettings(
-                settings[0x1045],
-                int.from_bytes(settings[0x1003], "big"),
-                int.from_bytes(settings[0x100F], "big"),
-                settings[0x1027],
-                settings[0x1020],
-                settings_attributes,
-            ),
+            settings_attributes,
             attributes,
         )
 
-    def authenticate_m2_batch(self, messages: tuple[bytes, ...], *, max_bss: int):
+    def authenticate_m2(self, message: bytes) -> AuthenticatedM2:
+        return self.authenticate_m2_envelope(message).ap_configuration()
+
+    def authenticate_m2_envelopes(self, messages: tuple[bytes, ...], *, max_bss: int):
         """Return the entire checked payload set, or raise without returning any settings.
 
         This verifies nonce/index uniqueness within one received set only, not
@@ -288,9 +320,15 @@ class M1Transcript:
             raise _invalid()
         if not isinstance(messages, tuple) or not 1 <= len(messages) <= max_bss:
             raise _invalid()
-        results = tuple(self.authenticate_m2(message) for message in messages)
+        results = tuple(self.authenticate_m2_envelope(message) for message in messages)
         nonces = [r.registrar_nonce for r in results]
         indexes = [r.bss_index for r in results if r.bss_index is not None]
         if len(set(nonces)) != len(nonces) or len(set(indexes)) != len(indexes):
             raise _invalid()
         return results
+
+    def authenticate_m2_batch(self, messages: tuple[bytes, ...], *, max_bss: int):
+        return tuple(
+            result.ap_configuration()
+            for result in self.authenticate_m2_envelopes(messages, max_bss=max_bss)
+        )

@@ -356,6 +356,12 @@
       "description": "39 upstream tests, Config/driver/State evidence and the recorded recovery failure.",
       "path": "deploy/native/README.md",
       "category": "Lab deployment"
+    },
+    {
+      "title": "Authenticated radio payloads",
+      "description": "Encrypted BSS roles, teardown and whole-set candidate checks; controller/radio binding and writes remain pending.",
+      "path": "docs/wsc-radio.md",
+      "category": "Protocol components"
     }
   ]
 }

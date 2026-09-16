@@ -1523,41 +1523,49 @@
         "docs/protocol-matrix.json",
         "src/emosa/wsc.py",
         "docs/wsc-component.md",
-        "src/emosa/wsc_messages.py"
+        "src/emosa/wsc_messages.py",
+        "src/emosa/wsc_radio.py",
+        "docs/wsc-radio.md"
       ],
       "test_refs": [
         "tests/test_gated.py",
         "tests/test_wsc.py",
-        "tests/test_wsc_messages.py"
+        "tests/test_wsc_messages.py",
+        "tests/test_wsc_radio.py"
       ],
       "evidence_refs": [
         "tests/fixtures/protocol/wsc/provenance.json",
         "docs/evidence/unit-results.xml",
-        "docs/evidence/wsc-messages.json"
+        "docs/evidence/wsc-messages.json",
+        "docs/evidence/wsc-radio.json"
       ],
       "mode": null,
       "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
       "blocker": "P0: selected complete normative corpus, independent vectors and wire procedures required.",
-      "independent_work": "WSC M1/M2 payload structure and crypto verified with independent hostap output; peer/radio binding, full CMDU/profile semantics, replay/state and pod writes remain gated."
+      "independent_work": "M1/M2 crypto, payload structure and encrypted radio role/teardown semantics have scoped component evidence; complete CMDU/profile rules, controller/radio binding, replay/state and pod writes remain gated."
     },
     {
       "id": "WIRE-08",
       "status": "blocked",
       "implementation_refs": [
         "docs/protocol-matrix.json",
-        "src/emosa/wsc_messages.py"
+        "src/emosa/wsc_messages.py",
+        "src/emosa/wsc_radio.py",
+        "docs/wsc-radio.md"
       ],
       "test_refs": [
         "tests/test_gated.py",
-        "tests/test_wsc_messages.py"
+        "tests/test_wsc_messages.py",
+        "tests/test_wsc_radio.py"
       ],
       "evidence_refs": [
-        "docs/evidence/wsc-messages.json"
+        "docs/evidence/wsc-messages.json",
+        "docs/evidence/wsc-radio.json"
       ],
       "mode": null,
       "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
       "blocker": "P0: selected complete normative corpus, independent vectors and wire procedures required.",
-      "independent_work": "WSC M1/M2 payload structure and crypto verified with independent hostap output; peer/radio binding, full CMDU/profile semantics, replay/state and pod writes remain gated."
+      "independent_work": "M1/M2 crypto, payload structure and encrypted radio role/teardown semantics have scoped component evidence; complete CMDU/profile rules, controller/radio binding, replay/state and pod writes remain gated."
     },
     {
       "id": "WIRE-09",
