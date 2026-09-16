@@ -18,6 +18,17 @@ def test_every_architecture_requirement_and_acceptance_has_a_traceability_row():
         if row["status"] == "blocked":
             assert row["blocker"] and row["independent_work"]
         if row["status"] == "verified":
-            assert row["mode"] in {"model", "ovsdb-sim"} and row["test_refs"]
+            assert row["mode"] in {"model", "ovsdb-sim", "opensync-native"} and row["test_refs"]
+            if row["mode"] == "opensync-native":
+                assert row["evidence_refs"]
+                assert row["id"] in {
+                    "CORE-01",
+                    "CORE-02",
+                    "CORE-03",
+                    "CORE-05",
+                    "N01",
+                    "N02",
+                    "N04",
+                }
         for ref in row["test_refs"] + row["implementation_refs"]:
             assert Path(ref).exists(), (row["id"], ref)

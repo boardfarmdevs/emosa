@@ -31,6 +31,8 @@ been provided or created**. Credentials-free TLS, tunnel and Unix examples are
 available; populate the selected copy outside this repository on the EMOSA
 machine, then provide only its absolute path. Physical connection stays pending.
 
-R0 stopped at missing `protoc-c` after isolated Python build dependencies and the
-local OVSDB tools were supplied. Its native container, further C dependencies and
-driver harness remain unqualified; see the preserved build evidence.
+The bounded [native OpenSync R0 experiment](../deploy/native/README.md) now
+builds and runs, with 39 upstream units and the native apply/withhold path checked.
+N03 recovery fails after database restart, so the backend remains disabled.
+This is an implementation/qualification gap, not another external specification
+or pod credential request.

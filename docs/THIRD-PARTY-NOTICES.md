@@ -5,7 +5,10 @@ plume-design/opensync commit `78d8a7194d5e77635877cc456231e7be5cf03d68`.
 The original license is retained as `tests/fixtures/opensync/LICENSE.opensync`;
 the corresponding source path, hash and provenance are in `provenance.json`.
 The native Kconfig evidence is also from that pinned source. No full OpenSync
-source checkout is included in the Python package.
+source checkout is included in the Python package. The separate native lab
+retains upstream LICENSE/NOTICE in its source extraction and in `deploy/native/`.
+Its two documented lab patches and C glue are separately recorded; native binaries
+and runtime image exports are not distributed in the Python wheel.
 
 Python dependencies are distributed under their upstream licenses: Open vSwitch
 (`ovs`, Apache-2.0), jsonschema (MIT), and their locked transitive dependencies.

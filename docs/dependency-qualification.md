@@ -70,22 +70,18 @@ from the WSC session keys.
 
 ## R0 native OpenSync experiment
 
-The separate checkout is pinned to
-`78d8a7194d5e77635877cc456231e7be5cf03d68`. The upstream script expects a `core/`
-directory in a device tree. The local experiment supplies that layout with a
-symlink, builds only `src/owm` and `ovsdb-create`, and does not run upstream boot
-scripts or managers on the host.
+The [native manual](../deploy/native/README.md) records the completed bounded
+investigation on Ubuntu 24.04. The pinned OWM/OW/OSW target builds from a fresh
+source extraction with two small lab patches and passes 39 selected upstream
+units. A C dummy-driver module receives Config through the normal EMOSA OVSDB
+boundary and publishes simulated feedback; OWM creates State. Applied and
+withheld-feedback checks work with the explicitly scoped native PSK interpretation.
 
-The initial build lacked `kconfiglib`. An isolated uv environment with
-`kconfiglib==14.1.0` got past Kconfig. Supplying the locally built `ovsdb-tool`
-got past database creation; `jinja2==3.1.6` got past seed templating. Compilation
-then stopped at **`protoc-c: No such file or directory`**. Logs and Kconfig hash
-are retained in `docs/evidence/r0-*`. Additional compiled dependencies and
-platform requirements may surface after that blocker is resolved.
-
-The dummy-driver API was inspected: an actual backend needs registration,
-PHY/VIF/client seeding and configuration callbacks that publish driver feedback.
-No native manager, dummy-driver harness or platform stub was executed or
-qualified. N01–N03 remain blocked; N04 has isolated build evidence only. Next R0
-work belongs in a dedicated Ubuntu 24.04 LXD container with pinned C build
-dependencies. It does not gate the real-pod path once P0 and M0 are ready.
+N03 remains blocked: after a database restart EMOSA reconnects and commits a new
+Config change, but the surviving native manager produces no new driver callback
+or observed change within the deadline. The application native backend stays
+disabled. See [the qualification evidence](evidence/native/qualification.json).
+The earlier `protoc-c` failure and initial Kconfig/build logs in `evidence/r0-*`
+are retained as history. The current dependency versions, source/Kconfig/patch
+hashes, failed assumptions, resource measurements and source rebuild are in
+`evidence/native/`. No physical pod or EasyMesh exchange was exercised.

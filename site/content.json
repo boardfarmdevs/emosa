@@ -350,6 +350,12 @@
       "description": "Native hostap M1 match, authenticated M2 settings, whole-set checks and explicit remaining procedure gates.",
       "path": "docs/wsc-messages.md",
       "category": "Component implementation"
+    },
+    {
+      "title": "Native OpenSync manager experiment",
+      "description": "39 upstream tests, Config/driver/State evidence and the recorded recovery failure.",
+      "path": "deploy/native/README.md",
+      "category": "Lab deployment"
     }
   ]
 }

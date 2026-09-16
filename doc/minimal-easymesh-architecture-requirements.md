@@ -1152,4 +1152,8 @@ Stop expanding the native experiment once these criteria are established; teleme
 | N03: non-application is visible | Delayed/withheld driver feedback does not become false applied success; session restart resynchronizes correctly |
 | N04: isolated and honestly labelled | No host or physical-pod changes; simulation provenance, native patches, limits and resource use recorded |
 
-**Verification status:** source inspection supports this integration approach. The native target has not been compiled or run in this task; compatibility and required harness effort remain to be established by R0.
+**Verification status:** the bounded [R0 experiment](../deploy/native/README.md)
+builds and runs the pinned target, passes 39 selected upstream tests, and exercises
+native application/withholding with a dummy driver. N03 remains blocked by a
+reproducible post-database-restart failure to process new Config. The native
+application backend remains gated; wire and physical acceptance are still pending.

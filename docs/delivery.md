@@ -29,6 +29,16 @@ application deployment, package/image exports, controller-visible onboarding,
 physical-pod acceptance and independent-peer interoperability remain pending.
 The tables below preserve the earlier foundation delivery's validation scope.
 
+## Native OpenSync R0 increment
+
+The [bounded native experiment](../deploy/native/README.md) builds the pinned
+OWM/OW/OSW stack on Ubuntu 24.04 and passes 39 selected upstream tests. A normal
+EMOSA Config transaction reaches the native driver callback; synthetic feedback
+produces native State. Withheld feedback yields a timeout. A fresh source rebuild
+reproduces a recovery failure: Config changes after database restart stop reaching
+the driver. N03 remains blocked and the application native backend stays disabled.
+These results add component evidence, with no EasyMesh or physical-pod acceptance.
+
 ## Implemented behavior
 
 - CPython 3.13.7, locked uv package, three console entry points, strict versioned

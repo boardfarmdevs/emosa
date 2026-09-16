@@ -1910,38 +1910,60 @@
     },
     {
       "id": "CORE-01",
-      "status": "implemented",
+      "status": "verified",
       "implementation_refs": [
-        "scripts/native-r0.sh"
+        "deploy/native/README.md",
+        "deploy/native/driver.c",
+        "deploy/native/build.sh"
       ],
-      "test_refs": [],
-      "evidence_refs": [],
-      "mode": null,
-      "scope": "Implemented foundation path; full requirement/environment qualification is incomplete."
+      "test_refs": [
+        "deploy/native/check-units.py",
+        "deploy/native/check-path.py"
+      ],
+      "evidence_refs": [
+        "docs/evidence/native/qualification.json",
+        "docs/evidence/native/path-summary.json"
+      ],
+      "mode": "opensync-native",
+      "scope": "Bounded R0 native experiment only; one synthetic existing AP with probe-specific PSK interpretation; no production native backend, wire, radio or physical qualification."
     },
     {
       "id": "CORE-02",
-      "status": "implemented",
+      "status": "verified",
       "implementation_refs": [
-        "scripts/native-r0.sh"
+        "deploy/native/README.md",
+        "deploy/native/driver.c",
+        "deploy/native/build.sh"
       ],
-      "test_refs": [],
-      "evidence_refs": [],
-      "mode": null,
-      "scope": "Implemented foundation path; full requirement/environment qualification is incomplete."
+      "test_refs": [
+        "deploy/native/check-units.py",
+        "deploy/native/check-path.py"
+      ],
+      "evidence_refs": [
+        "docs/evidence/native/qualification.json",
+        "docs/evidence/native/path-summary.json"
+      ],
+      "mode": "opensync-native",
+      "scope": "Bounded R0 native experiment only; one synthetic existing AP with probe-specific PSK interpretation; no production native backend, wire, radio or physical qualification."
     },
     {
       "id": "CORE-03",
-      "status": "blocked",
-      "implementation_refs": [],
-      "test_refs": [],
-      "evidence_refs": [
-        "docs/evidence/r0-manifest.json"
+      "status": "verified",
+      "implementation_refs": [
+        "deploy/native/README.md",
+        "deploy/native/driver.c",
+        "deploy/native/build.sh"
       ],
-      "mode": null,
-      "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
-      "blocker": "R0: protoc-c and remaining native C/container/harness qualification.",
-      "independent_work": "Model/OVSDB path and future physical pod testing."
+      "test_refs": [
+        "deploy/native/check-units.py",
+        "deploy/native/check-path.py"
+      ],
+      "evidence_refs": [
+        "docs/evidence/native/qualification.json",
+        "docs/evidence/native/path-summary.json"
+      ],
+      "mode": "opensync-native",
+      "scope": "Bounded R0 native experiment only; one synthetic existing AP with probe-specific PSK interpretation; no production native backend, wire, radio or physical qualification."
     },
     {
       "id": "CORE-04",
@@ -1958,16 +1980,22 @@
     },
     {
       "id": "CORE-05",
-      "status": "blocked",
-      "implementation_refs": [],
-      "test_refs": [],
-      "evidence_refs": [
-        "docs/evidence/r0-manifest.json"
+      "status": "verified",
+      "implementation_refs": [
+        "deploy/native/README.md",
+        "deploy/native/driver.c",
+        "deploy/native/build.sh"
       ],
-      "mode": null,
-      "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
-      "blocker": "R0: protoc-c and remaining native C/container/harness qualification.",
-      "independent_work": "Model/OVSDB path and future physical pod testing."
+      "test_refs": [
+        "deploy/native/check-units.py",
+        "deploy/native/check-path.py"
+      ],
+      "evidence_refs": [
+        "docs/evidence/native/qualification.json",
+        "docs/evidence/native/path-summary.json"
+      ],
+      "mode": "opensync-native",
+      "scope": "Bounded R0 native experiment only; one synthetic existing AP with probe-specific PSK interpretation; no production native backend, wire, radio or physical qualification."
     },
     {
       "id": "A01",
@@ -2694,55 +2722,81 @@
     },
     {
       "id": "N01",
-      "status": "blocked",
-      "implementation_refs": [],
-      "test_refs": [],
-      "evidence_refs": [
-        "docs/evidence/r0-manifest.json"
+      "status": "verified",
+      "implementation_refs": [
+        "deploy/native/README.md",
+        "deploy/native/driver.c",
+        "deploy/native/build.sh"
       ],
-      "mode": null,
-      "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
-      "blocker": "R0: protoc-c and remaining native C/container/harness qualification.",
-      "independent_work": "Model/OVSDB path and future physical pod testing."
+      "test_refs": [
+        "deploy/native/check-units.py",
+        "deploy/native/check-path.py"
+      ],
+      "evidence_refs": [
+        "docs/evidence/native/qualification.json",
+        "docs/evidence/native/path-summary.json"
+      ],
+      "mode": "opensync-native",
+      "scope": "Bounded R0 native experiment only; one synthetic existing AP with probe-specific PSK interpretation; no production native backend, wire, radio or physical qualification."
     },
     {
       "id": "N02",
-      "status": "blocked",
-      "implementation_refs": [],
-      "test_refs": [],
-      "evidence_refs": [
-        "docs/evidence/r0-manifest.json"
+      "status": "verified",
+      "implementation_refs": [
+        "deploy/native/README.md",
+        "deploy/native/driver.c",
+        "deploy/native/build.sh"
       ],
-      "mode": null,
-      "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
-      "blocker": "R0: protoc-c and remaining native C/container/harness qualification.",
-      "independent_work": "Model/OVSDB path and future physical pod testing."
+      "test_refs": [
+        "deploy/native/check-units.py",
+        "deploy/native/check-path.py"
+      ],
+      "evidence_refs": [
+        "docs/evidence/native/qualification.json",
+        "docs/evidence/native/path-summary.json"
+      ],
+      "mode": "opensync-native",
+      "scope": "Bounded R0 native experiment only; one synthetic existing AP with probe-specific PSK interpretation; no production native backend, wire, radio or physical qualification."
     },
     {
       "id": "N03",
       "status": "blocked",
-      "implementation_refs": [],
-      "test_refs": [],
-      "evidence_refs": [
-        "docs/evidence/r0-manifest.json"
+      "implementation_refs": [
+        "deploy/native/README.md",
+        "deploy/native/driver.c",
+        "deploy/native/build.sh"
       ],
-      "mode": null,
-      "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
-      "blocker": "R0: protoc-c and remaining native C/container/harness qualification.",
-      "independent_work": "Model/OVSDB path and future physical pod testing."
+      "test_refs": [
+        "deploy/native/check-units.py",
+        "deploy/native/check-path.py"
+      ],
+      "evidence_refs": [
+        "docs/evidence/native/qualification.json",
+        "docs/evidence/native/path-summary.json"
+      ],
+      "mode": "opensync-native",
+      "scope": "Bounded R0 native experiment only; one synthetic existing AP with probe-specific PSK interpretation; no production native backend, wire, radio or physical qualification.",
+      "blocker": "blocked: post-database-restart Config commits but no further driver request within deadline",
+      "independent_work": "Recorded model/OVSDB evaluation, selected WSC components, and future physical qualification remain independent of R0."
     },
     {
       "id": "N04",
-      "status": "blocked",
-      "implementation_refs": [],
-      "test_refs": [],
-      "evidence_refs": [
-        "docs/evidence/r0-manifest.json"
+      "status": "verified",
+      "implementation_refs": [
+        "deploy/native/README.md",
+        "deploy/native/driver.c",
+        "deploy/native/build.sh"
       ],
-      "mode": null,
-      "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
-      "blocker": "R0: protoc-c and remaining native C/container/harness qualification.",
-      "independent_work": "Model/OVSDB path and future physical pod testing."
+      "test_refs": [
+        "deploy/native/check-units.py",
+        "deploy/native/check-path.py"
+      ],
+      "evidence_refs": [
+        "docs/evidence/native/qualification.json",
+        "docs/evidence/native/path-summary.json"
+      ],
+      "mode": "opensync-native",
+      "scope": "Bounded R0 native experiment only; one synthetic existing AP with probe-specific PSK interpretation; no production native backend, wire, radio or physical qualification."
     }
   ]
 }

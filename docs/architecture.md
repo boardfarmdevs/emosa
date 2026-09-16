@@ -49,6 +49,14 @@ wire agent, physical mapping and independent-controller path remain gated.
 | Independent client | Observe authentication, connectivity and recovery | Standalone hwsim smoke passed; physical client pending |
 | Evaluator | Preserve inputs, outcomes, failures, comparisons and artifact hashes | Retained component runs |
 
+## Optional native manager reference
+
+The [native R0 container](../deploy/native/README.md) runs pinned OpenSync
+OWM/OW/OSW against a disposable OVSDB server and a C dummy driver. It has exercised
+the Config → native manager → simulated feedback → native State path, and exposed
+a database-recovery failure. This separate test service needs no radio and remains
+disabled as an application backend until N01–N04 qualification is complete.
+
 ## Optional radio lab
 
 ```mermaid

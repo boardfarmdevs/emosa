@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "scope": "Component, nested Ubuntu runtime, standalone hwsim, independent controller outbound baseline and guide evidence; no EMOSA onboarding or physical qualification",
+  "scope": "Component, nested Ubuntu runtime, native manager R0 with recovery failure, standalone hwsim, independent controller outbound baseline and guide evidence; no EMOSA onboarding or physical qualification",
   "artifacts": [
     {
       "path": "api-results.xml",
@@ -521,6 +521,141 @@
       "path": "wsc-messages.json",
       "sha256": "5deb243c12ef05012d99744ce9e5a1edf706649323d989057486e8aa03c7cba5",
       "size": 2042
+    },
+    {
+      "path": "native/build-baseline.log",
+      "sha256": "e468a0aa88a73f5e09c7f132e3e5ea13a9b3bfcef86839044f9796fa6fcf8a4f",
+      "size": 9115
+    },
+    {
+      "path": "native/build-cares.log",
+      "sha256": "ff499f146e1ce261e97690cb1c3948ce24fc70cc00c5d0a4836d46bfde06c779",
+      "size": 21487
+    },
+    {
+      "path": "native/build-null-diagnostic.log",
+      "sha256": "07086c554d341e34b2f8d05d0c15c917f23be7b94e420a12d89b5a15f2c00a6c",
+      "size": 597
+    },
+    {
+      "path": "native/build-reproduction.log",
+      "sha256": "63729d8bb7a6e61a5d705b5b6074197bd4e3a3cc6f1dd5fae90af8eaf53c19cb",
+      "size": 27441
+    },
+    {
+      "path": "native/build-units.log",
+      "sha256": "38ac820f8bdc8aaf3e5c0015dd96d7860aa4b5ab3d5aa60874fba2e44e513b5a",
+      "size": 701
+    },
+    {
+      "path": "native/config-native.txt",
+      "sha256": "99036e917d612c6a0f1b5e603026c179945e6909367600762bae63568793d42a",
+      "size": 21615
+    },
+    {
+      "path": "native/container-config.yaml",
+      "sha256": "9e641ff72832d889e01cadd8d94fdb9cdea8ec0b156251bc7211d69d766d1438",
+      "size": 1357
+    },
+    {
+      "path": "native/driver-events.log",
+      "sha256": "fc85b8b9678737516ab6ee6fbc9775ad086b6693e8c3b70e057d7e80119fc599",
+      "size": 343
+    },
+    {
+      "path": "native/emosa-unit-results.xml",
+      "sha256": "a77d3ef68e6a1733f15b910edf6d12053d5acab6c9f07fe63d6d4f834b21d965",
+      "size": 4276865
+    },
+    {
+      "path": "native/host-final-state.txt",
+      "sha256": "7bf6bcee9468fd81ba3063d1b78d8a5e83ada978c3198736467246eaaaaefe98",
+      "size": 169
+    },
+    {
+      "path": "native/initial-recovery-failure.json",
+      "sha256": "da10fd980fe5f0b71d53809bc7a1fcd2501405108a33ceb180f563fa6c3cbc1e",
+      "size": 10653
+    },
+    {
+      "path": "native/initial-security-mismatch.json",
+      "sha256": "460189205f255eee6dead1e5b8a4a02f3eede3856663fa433b2e25e1a426cb55",
+      "size": 1373
+    },
+    {
+      "path": "native/inner-stopped.txt",
+      "sha256": "04c6f265d03ee1dd1af76e5f9954f9166cd6c635c899e4c4bd9a78a244796ea3",
+      "size": 63
+    },
+    {
+      "path": "native/missing-cipher-columns.json",
+      "sha256": "fdf48c5572da6ce4419d2426fe550bc9ba5f02198d5204dd9f2194917fe40652",
+      "size": 1373
+    },
+    {
+      "path": "native/osw_ut_func_osw_confsync.log",
+      "sha256": "bd8a9b029afeb59b1eb1936cf1b9ef960ee4995754d6c9a139cf6091a8776c1d",
+      "size": 501
+    },
+    {
+      "path": "native/osw_ut_func_osw_drv.log",
+      "sha256": "b770a0674aa3357fb8571804d90aa8890f7ec20c16d3c814ba2c20750c3dcdab",
+      "size": 13231
+    },
+    {
+      "path": "native/osw_ut_func_osw_types.log",
+      "sha256": "f21756fdb4393baa6f022d32e63d5d7d6dce3f7e23ecc59106f7090d0e4de685",
+      "size": 781
+    },
+    {
+      "path": "native/osw_ut_func_ow_conf.log",
+      "sha256": "6889ee171685fed5157449488324e383a4cfa5163878095bf672c978f4f2015b",
+      "size": 579
+    },
+    {
+      "path": "native/osw_ut_func_ow_ovsdb.log",
+      "sha256": "82ec44046428bd8c8d5a1653c0857cf5b997e3672c1c17afd99e738400ff7c15",
+      "size": 1263
+    },
+    {
+      "path": "native/packages.txt",
+      "sha256": "9d9a27085055e83d26c09b57442df782eea6c20df7572588e00778d45f263669",
+      "size": 23011
+    },
+    {
+      "path": "native/path-summary.json",
+      "sha256": "e185b331a6883c0ba15cade17b9802de4ab64b6dd1f2455e722e7b1a5ba3d983",
+      "size": 19808
+    },
+    {
+      "path": "native/qualification.json",
+      "sha256": "c31a4bb6d3f68fd66130fafcc085727c1292003fef68a83dfbf5704e907948a7",
+      "size": 4527
+    },
+    {
+      "path": "native/runtime.txt",
+      "sha256": "cdb20864d8431b9c51fb5d34d1feeace1c4d6c3b06b74a53cf5396d3d1186ca2",
+      "size": 1055
+    },
+    {
+      "path": "native/server.log",
+      "sha256": "014517ce8ee5694b6b4be6a63b4d505635daaac1153db275cd7d198ce46368c4",
+      "size": 512
+    },
+    {
+      "path": "native/site-smoke.json",
+      "sha256": "8501e23b1c7d052c6cca0b28a51245ad15561471678e3d80a79d16cf79494371",
+      "size": 275
+    },
+    {
+      "path": "native/unit-rstate-prefix-failure.log",
+      "sha256": "714a0ecc0b09c1a101dbeb75380c2278866bcea6a979138a11c40a0725ea6354",
+      "size": 363
+    },
+    {
+      "path": "native/unit-summary.json",
+      "sha256": "d57f02d8455f9203ea2d907a97c2f8ecb26f508fa42768e7b0e2fc337ff2c1e1",
+      "size": 866
     }
   ]
 }
