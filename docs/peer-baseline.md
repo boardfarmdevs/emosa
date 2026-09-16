@@ -49,10 +49,10 @@ sequenceDiagram
     participant A as Native external agent
     participant P as Agent hostapd / hwsim
     participant U as Independent client containers
-    H->>C: Start native services; install BSS policy through BML
+    H->>C: Start native services and install BSS policy through BML
     opt Wireless backhaul
         A->>C: Multi-AP WPS from empty supplicant profile
-        C-->>A: Backhaul credentials; four-address association
+        C-->>A: Backhaul credentials and four-address association
     end
     A->>C: AP Autoconfiguration Search
     C-->>A: AP Autoconfiguration Response
