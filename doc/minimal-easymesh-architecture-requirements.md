@@ -1,4 +1,4 @@
-# EMOSA — EasyMesh OVSDB Adapter
+# EMOSA — EasyMesh to OpenSync Adapter
 
 ## Evaluation Platform: Architecture, Design, and Implementation Requirements
 
@@ -7,7 +7,7 @@
 | Document version | 3.6 |
 | Date | 2026-09-15 |
 | Status | Ready for staged implementation; protocol, hardware and independent-peer gates remain explicit |
-| Project | EMOSA — EasyMesh OVSDB Adapter |
+| Project | EMOSA — EasyMesh to OpenSync Adapter |
 | Primary purpose | Evaluate whether controller-side adaptation lets unchanged OpenSync pods work seamlessly with an EasyMesh controller; expose results, limitations and repeatable experiments |
 | Managed devices | Existing OpenSync 6.6.0 pods only |
 | Planned hardware access | Physical pods reachable over wired or wireless management paths |
@@ -24,6 +24,9 @@
 | Pod-facing protocol | Existing pod OVSDB management interface |
 | Fast development path | Direct semantic API for component tests; insufficient for end-to-end acceptance |
 | Independent evaluation | Reproducible evaluator package and replaceable test-controller endpoint; independent wire-peer results required for claimed interoperability |
+
+Naming clarified on 2026-09-16: EMOSA means **EasyMesh to OpenSync Adapter**.
+OVSDB is the selected OpenSync management interface, not the expansion of EMOSA.
 
 **Primary objective:** evaluate whether, and within which limits, a controller-side adaptation layer can make unchanged OpenSync pods work seamlessly with an EasyMesh controller. The platform must let an evaluator observe the whole interaction, change experiment parameters, reproduce results, and identify why an operation succeeds or fails. Seamless interoperability is the hypothesis under test, not an assumed outcome.
 

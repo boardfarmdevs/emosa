@@ -1,5 +1,8 @@
 # EMOSA architecture
 
+**EMOSA = EasyMesh to OpenSync Adapter.** OVSDB is its current OpenSync management
+interface; it is one building block within the adapter.
+
 The target is a controller-side adapter that lets a real EasyMesh controller
 manage an unchanged OpenSync pod through its existing OVSDB interface. New code
 runs outside the pod. The controller must discover and onboard the OpenSync
@@ -46,7 +49,7 @@ wire agent, physical mapping and independent-controller path remain gated.
 | Journal / secret mechanism | Preserve operations and attribution through restart | SQLite and private-secret tests |
 | OVSDB mapper / session | Schema, resource bindings, guarded Config patches, fresh State | Real server and separate manager simulator |
 | Existing pod managers and radio | Apply configuration without added pod software | Actual M0 qualification pending |
-| Independent client | Observe authentication, connectivity and recovery | Standalone hwsim smoke passed; physical client pending |
+| Independent client | Observe authentication, connectivity and recovery | Standalone smoke and integrated OVSDB/hwsim client checks passed; physical client pending |
 | Evaluator | Preserve inputs, outcomes, failures, comparisons and artifact hashes | Retained component runs |
 
 ## Optional native manager reference
@@ -70,12 +73,15 @@ flowchart LR
   end
 ```
 
-The radio harness is a standalone Linux Wi-Fi smoke test. It is not currently
-connected to the EMOSA OVSDB manager simulator. To integrate it, a separate lab
-manager must translate accepted Config into hostapd configuration and publish
-State only from actual daemon/driver observations. Client results must remain an
-independent evidence source. That integration must not substitute synthetic
-State for an actual association or data-path observation.
+The two-container radio harness is a standalone Linux Wi-Fi smoke test. The
+separate [OVSDB/hwsim integration](radio-manager.md) now connects semantic EMOSA
+requests through real OVSDB to an independent hostapd/nl80211 manager. It reuses
+the native baseline's four containers with native peer services stopped. State
+comes from actual daemon/driver observations, while wired and wpa_supplicant
+clients independently check the data path. Three retained runs passed 13 cases
+each. EasyMesh initiation, native OpenSync firmware and physical RF remain outside
+that integration's evidence. See the [team manual](team-manual.md#11-run-emosa-through-ovsdb-to-hwsim-and-real-clients)
+for preparation, commands and demo interpretation.
 
 For physical pods, the station needs a real Wi-Fi NIC reachable through the
 dedicated VM/container (or a separate independent client). hwsim simulates

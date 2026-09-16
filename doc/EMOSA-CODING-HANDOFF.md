@@ -4,6 +4,9 @@ Version 1.4 — accompanies architecture version 3.6, dated 2026-09-15.
 
 ## 1. Outcome and reading order
 
+EMOSA means **EasyMesh to OpenSync Adapter**. OVSDB is the current OpenSync
+management interface used by the adapter.
+
 Build EMOSA to evaluate whether, and within which limits, a controller-side adapter can let unchanged OpenSync pods work seamlessly with an EasyMesh controller. Provide repeatable experiments, live visibility and inspectable results. A reference or independent controller sends real IEEE 1905/EasyMesh packets to the virtual agent, which maps supported operations to existing OVSDB interfaces. Simulators support development; physical pods establish actual behavior. All new code stays off the pods. No prplMesh build-time or runtime dependencies.
 
 Read this handoff first, then architecture Sections 1–4, 7, 9–10, 16, 18–19 and 21. Consult the remaining sections while implementing their components. Files supplied with this handoff:

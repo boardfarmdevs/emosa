@@ -257,6 +257,12 @@
   ],
   "references": [
     {
+      "title": "Team onboarding, operator and demo manual",
+      "description": "Step-by-step installation, architecture, every CLI workflow, OVSDB and wireless labs, demonstrations, recovery and competency checklist.",
+      "path": "docs/team-manual.md",
+      "category": "Start here"
+    },
+    {
       "title": "Architecture & system boundaries",
       "description": "Main building blocks, target acceptance path and where hwsim fits.",
       "path": "docs/architecture.md",

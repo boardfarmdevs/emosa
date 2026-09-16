@@ -2,7 +2,7 @@
 
 ![EMOSA — エモさ — Emotional resonance: a Japanese riverside at sunset](assets/emosa-banner.png)
 
-EMOSA Lab is the integration and evaluation platform for **EMOSA (EasyMesh OVSDB Adapter)**. This repository contains the adapter implementation and tools for exploring whether a controller-side adaptation layer can make **unchanged OpenSync pods work seamlessly with an EasyMesh controller**.
+EMOSA Lab is the integration and evaluation platform for **EMOSA (EasyMesh to OpenSync Adapter)**. This repository contains the adapter implementation and tools for exploring whether a controller-side adaptation layer can make **unchanged OpenSync pods work seamlessly with an EasyMesh controller**. OVSDB is the current OpenSync management interface used by the adapter.
 
 The concrete proof is an EasyMesh controller **discovering and onboarding an
 OpenSync extender as another EasyMesh agent**, represented by EMOSA around the
@@ -15,6 +15,8 @@ The name also echoes **エモさ (*emosa*)**, a Japanese expression for emotiona
 
 ## Architecture
 
+[**New team members: step-by-step setup, operator and demo manual**](docs/team-manual.md)
+
 [Interactive explorer & lab manual](https://boardfarmdevs.github.io/emosa-lab/) ·
 [Architecture diagram and boundaries](docs/architecture.md) ·
 [Next viability experiments](docs/viability-roadmap.md)
@@ -23,7 +25,7 @@ The name also echoes **エモさ (*emosa*)**, a Japanese expression for emotiona
 EasyMesh controller
         │ Real IEEE 1905 / EasyMesh messages
         ▼
-EMOSA virtual agent + OVSDB adapter
+EMOSA virtual agent + OpenSync mapping
         │ Existing OVSDB management interface
         ▼
 Unchanged OpenSync pods

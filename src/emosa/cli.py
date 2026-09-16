@@ -36,7 +36,8 @@ def error_exit(exc):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(
-        prog="emosa", description="OpenSync adapter; semantic diagnostics are component tests"
+        prog="emosa",
+        description="EasyMesh to OpenSync Adapter; semantic diagnostics are component tests",
     )
     parser.add_argument("--socket", default="/run/emosa/control.sock")
     sub = parser.add_subparsers(dest="command", required=True)
