@@ -506,7 +506,7 @@
       ],
       "vectors": "tests/fixtures/protocol/wsc/vectors.json",
       "provenance": "tests/fixtures/protocol/wsc/provenance.json",
-      "validation": "23 unit component cases and two independently generated hostap cases; full protocol vectors remain pending"
+      "validation": "25 unit component cases and two independently generated hostap cases; full protocol vectors remain pending"
     }
   }
 }

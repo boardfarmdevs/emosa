@@ -27,7 +27,9 @@ defensive admission rules, not new protocol error codes.
 
 The decoder has a 1 MiB input and 4096-attribute component resource budget.
 These are bounded admission limits, not IEEE fragmentation or WSC message-size
-rules. Authentication trailers must be unique and final. Unknown attributes
+rules. Encoders reserve capacity for the authentication trailer, and encrypted
+settings including IV and padding must fit the TLV's two-byte length field.
+Authentication trailers must be unique and final. Unknown attributes
 remain byte-for-byte in authentication inputs. Decryption failures have one
 public error and return no plaintext. Key containers and attribute values are
 excluded from default object representations; Python cannot guarantee erasure

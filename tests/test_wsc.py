@@ -174,3 +174,28 @@ def test_bad_settings_lengths_and_keys():
     with pytest.raises(EmosaError):
         encode_attribute(1, bytes(0x10000))
     assert decode_attributes(encode_attribute(0xFFFF, b""))[0].value == b""
+
+
+def test_reserve_attribute_budget_for_authentication_trailer():
+    session = keys(FIXTURE[0])
+    allowed = encode_attribute(0xFFFF, b"") * (MAX_COMPONENT_ATTRIBUTES - 1)
+    assert verify_message(session, b"", authenticate_message(session, b"", allowed)) == allowed
+    assert decrypt_settings(session, encrypt_settings(session, allowed)) == allowed
+    exhausted = allowed + encode_attribute(0xFFFF, b"")
+    with pytest.raises(EmosaError):
+        authenticate_message(session, b"", exhausted)
+    with pytest.raises(EmosaError):
+        encrypt_settings(session, exhausted)
+
+
+def test_encrypted_settings_fit_wire_attribute_length():
+    session = keys(FIXTURE[0])
+    # Largest plaintext whose IV/padding/KWA fit a two-byte attribute length.
+    allowed = encode_attribute(0xFFFF, bytes(65487))
+    encrypted = encrypt_settings(session, allowed)
+    assert len(encrypted) == 65520
+    assert decrypt_settings(session, encrypted) == allowed
+    with pytest.raises(EmosaError):
+        encrypt_settings(session, encode_attribute(0xFFFF, bytes(65488)))
+    with pytest.raises(EmosaError):
+        decrypt_settings(session, bytes(65536))

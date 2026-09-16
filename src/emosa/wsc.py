@@ -169,7 +169,9 @@ def authenticate_message(keys: SessionKeys, previous: bytes, current: bytes) -> 
     """Append an authenticator; inputs still require procedure-specific validation."""
     _bounded(previous)
     attributes = decode_attributes(current)
-    if any(a.kind == AUTHENTICATOR for a in attributes):
+    if len(attributes) >= MAX_COMPONENT_ATTRIBUTES or any(
+        a.kind == AUTHENTICATOR for a in attributes
+    ):
         raise _invalid()
     return _bounded(current + encode_attribute(AUTHENTICATOR, _tag(keys, previous + current)))
 
@@ -185,7 +187,13 @@ def verify_message(keys: SessionKeys, previous: bytes, current: bytes) -> bytes:
 
 def encrypt_settings(keys: SessionKeys, plaintext: bytes) -> bytes:
     """Return the value of an Encrypted Settings TLV with a fresh random IV."""
-    if any(a.kind == KEY_WRAP_AUTHENTICATOR for a in decode_attributes(plaintext)):
+    attributes = decode_attributes(plaintext)
+    if len(attributes) >= MAX_COMPONENT_ATTRIBUTES or any(
+        a.kind == KEY_WRAP_AUTHENTICATOR for a in attributes
+    ):
+        raise _invalid()
+    # IV + padded plaintext/KWA must fit the attribute's two-byte length field.
+    if 16 + ((len(plaintext) + 12) // 16 + 1) * 16 > 0xFFFF:
         raise _invalid()
     authenticated = plaintext + encode_attribute(KEY_WRAP_AUTHENTICATOR, _tag(keys, plaintext))
     padder = padding.PKCS7(128).padder()
@@ -198,7 +206,7 @@ def encrypt_settings(keys: SessionKeys, plaintext: bytes) -> bytes:
 def decrypt_settings(keys: SessionKeys, encrypted: bytes) -> bytes:
     """Return plaintext TLVs only after padding, structure and KWA verification."""
     _bounded(encrypted)
-    if len(encrypted) < 32 or len(encrypted) % 16:
+    if not 32 <= len(encrypted) <= 0xFFFF or len(encrypted) % 16:
         raise _invalid()
     try:
         decryptor = Cipher(algorithms.AES(keys.key_wrap_key), modes.CBC(encrypted[:16])).decryptor()
