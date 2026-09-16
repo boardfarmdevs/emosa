@@ -86,12 +86,14 @@ and `--apply-seconds` create parameterized reruns with new identities.
 require genuine EasyMesh provisioning. They currently produce blocked reports,
 exit 5, and perform no semantic fallback. `pytest -m wire`, `-m hardware` or
 `-m external` fails explicitly at its missing gate instead of reporting success
-with no applicable tests. Default CI runs unit and OVSDB component suites only.
+with no applicable tests. Default CI runs unit/OVSDB component suites and rebuilds
+the independent hostap WSC reference vectors; it never selects hardware tests.
 
 Prepare actual pod evidence without changing it using
 [read-only qualification](docs/pod-qualification.md). Review
 [deployment](deploy/README.md), [mapping scope](docs/operation-mappings.md),
 [dependency/R0 findings](docs/dependency-qualification.md),
+[WSC component scope](docs/wsc-component.md),
 [open inputs](docs/open-inputs.md), and [traceability](docs/traceability.json).
 The Ubuntu 24.04 LXD layout has pinned candidate images. Its standalone radio
 smoke has passed; full application deployment and retained image exports remain

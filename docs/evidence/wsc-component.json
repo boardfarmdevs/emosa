@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "scope": "WPS cryptographic component only; no complete exchange, wire traffic or pod access",
+  "python": "3.13.7",
+  "cryptography": "50.0.1",
+  "cryptography_openssl": "OpenSSL 4.0.2 25 Aug 2026",
+  "component_cases_passed": 23,
+  "unit_suite_passed": 67,
+  "ovsdb_suite_passed": 13,
+  "independent_hostap_cases_passed": 2,
+  "expected_deprecation": "cryptography 50.0.1 deprecates FFDH; retained for the WPS-required group with upgrade requalification required",
+  "physical_connection": "pending; operator has not created a private connection file",
+  "source_files": {
+    "src/emosa/wsc.py": "ef06f0a75b5b2e7ade4eb803691d1b2f1b34a1835062f680e48898c81418d1d1",
+    "tests/test_wsc.py": "43cea8dfdf15a7dc27231db812b7d3c04008f2333fcd09945725a47b88f790a6",
+    "tests/fixtures/protocol/wsc/provenance.json": "09176ffa7a89dea66c20ed4d2bddcf29281945a192631d78c19fe31a2dbdb4c6",
+    "tests/fixtures/protocol/wsc/vectors.json": "a093e5a892ee758b6bbea67c8367f21c8273ee247904ca0df08a566138471db4"
+  },
+  "guide_smoke": {
+    "browser": "Chromium 139",
+    "viewports": [
+      "1440x1100",
+      "390x844"
+    ],
+    "checks": [
+      "8 architecture selections",
+      "4 lab modes",
+      "run attribution and comparison",
+      "event and traceability filtering",
+      "no horizontal overflow",
+      "updated count of 67 unit passes"
+    ],
+    "page_errors": []
+  }
+}

@@ -24,7 +24,7 @@
     },
     {
       "path": "ovsdb-results.xml",
-      "sha256": "d748c6514e71528cb3285c5a79dca54a06b8253cd89d0d2a2f1a90df328cd705",
+      "sha256": "46f95519f6129b428acff252f6feb7a473096f3f5bd9bba80c043b44e64b6687",
       "size": 1720
     },
     {
@@ -274,8 +274,8 @@
     },
     {
       "path": "unit-results.xml",
-      "sha256": "ae6bc80dd6c74ecf225d430508282cc5ac20d898b833684db39275b15d360663",
-      "size": 4642
+      "sha256": "035e1707063f378d7a3235e4a78d2d4dcbab8d8785592c1f718763e574e5080a",
+      "size": 4269110
     },
     {
       "path": "watch-smoke.log",
@@ -346,6 +346,11 @@
       "path": "site-browser.json",
       "sha256": "c4b6dd0b9cd228b7e9abf77cac8ac781b3459a0c9b285684e1618c19f8d2146c",
       "size": 653
+    },
+    {
+      "path": "wsc-component.json",
+      "sha256": "a9e5ddb19f8d35fde1ed9fa755e8cfe5958246f56dca978d6794c5655be40621",
+      "size": 1398
     }
   ]
 }

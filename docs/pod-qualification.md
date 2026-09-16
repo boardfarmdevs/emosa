@@ -5,17 +5,75 @@ basic OVSDB monitor requests and echo/connection handling. Its session rejects
 modifying transactions. It installs nothing on the pod and never changes Config,
 State, manager endpoints, cloud settings or firmware.
 
-Create a private directory (`0700`) for existing credentials and trust material.
-Files must be owned by the CLI user, regular files, mode `0600`, with no symlinks.
-Start from `deploy/qualification.example.json`, replace its placeholders with
-the authorized endpoint/database/direction and secret **references**, and put
-the existing CA/client certificate/private key in that directory. Obtain the
-expected peer certificate SHA-256 from the trusted provisioning channel; do not
-learn a pin by accepting an unauthenticated connection.
+No actual endpoint or authentication material has been supplied. Physical-pod
+connection remains **pending** until the operator populates a private file and
+provides its absolute path. EMOSA does not create or infer pod credentials.
+
+## Private file location and examples
+
+Keep the populated configuration, secrets and collected pod evidence **outside
+the repository**, on the machine/user account running EMOSA. For user `rev`, use
+`/home/rev/.config/emosa/pods/pod-1/connection.json` and its sibling `secrets/`
+directory. If EMOSA runs in a container, these are paths inside that container;
+mount/copy the private files there with the same ownership restrictions.
+
+The following checked-in files contain no credentials and match the implemented
+`qualification` configuration loader. Choose the transport actually provided by
+the lab; the examples are not evidence that the pod supports it:
+
+| Existing authorized access | Example | Private references |
+| --- | --- | --- |
+| Mutual TLS | [qualification.example.json](../deploy/qualification.example.json) | `certificate_ref`, `private_key_ref`, `ca_ref` resolve to files below `secret_directory`; replace the placeholder peer pin with a trusted certificate SHA-256 |
+| Authenticated tunnel to local TCP | [qualification-tunnel.example.json](../deploy/qualification-tunnel.example.json) | `evidence_ref` identifies a private description of the tunnel's authenticated endpoint binding; tunnel credentials stay with the tunnel tool |
+| Private local Unix socket | [qualification-unix.example.json](../deploy/qualification-unix.example.json) | Existing socket in an owned private directory; no invented password field |
+
+Prepare the directory and copy **one** example. This does not contact a pod:
 
 ```sh
-uv run emosa qualify-pod --connection /private/lab-pod-01.json \
-  --output .lab/qualification/lab-pod-01-first-read
+umask 077
+emosa_private_dir="$HOME/.config/emosa/pods/pod-1"
+mkdir -p "$emosa_private_dir/secrets" "$emosa_private_dir/sockets"
+chmod 700 "$emosa_private_dir" "$emosa_private_dir/secrets" "$emosa_private_dir/sockets"
+# Use the tunnel or Unix example instead if that is the actual authorized path.
+cp -n deploy/qualification.example.json "$emosa_private_dir/connection.json"
+chmod 600 "$emosa_private_dir/connection.json"
+```
+
+Edit that private copy locally: actual endpoint/direction/database, pod ID,
+absolute `secret_directory`, trusted pin and any known expected identifiers.
+Example hostnames, usernames and all-zero pin values must be replaced. Install
+existing certificates/key/trust files locally with mode `0600`; do not paste
+their contents into chat. `*_ref` values are **file basenames**, not absolute
+paths. `~` and environment variables inside JSON paths are not expanded.
+
+For an SSH/VPN-backed access path, configure that external tunnel using its local
+key/password/agent mechanism and verify its remote binding. EMOSA does not create
+the tunnel or change the pod. The loader supports the three trust kinds above;
+it does not implement an OVSDB username/password login or an arbitrary vendor
+authentication flow. If the pod requires another mechanism, qualify that access
+path explicitly instead of inserting unsupported JSON fields or disabling TLS.
+
+Validate the private JSON without loading keys or opening a connection:
+
+```sh
+uv run python -c 'from emosa.config import load; import sys; load("qualification", sys.argv[1]); print("Configuration shape valid; endpoint/trust still unverified")' \
+  "$HOME/.config/emosa/pods/pod-1/connection.json"
+```
+
+Only send the populated file's absolute path to the coding agent. No populated
+private file has been created by this implementation work.
+
+## Read-only collection
+
+Use the private configuration prepared above. Referenced files must be owned by
+the CLI user, regular files, mode `0600`, with no symlinks. For mutual TLS, obtain
+the expected peer certificate SHA-256 from the trusted provisioning channel;
+do not learn a pin by accepting an unauthenticated connection.
+
+```sh
+uv run emosa qualify-pod \
+  --connection "$HOME/.config/emosa/pods/pod-1/connection.json" \
+  --output "$HOME/.local/state/emosa/qualification/pod-1-first-read"
 ```
 
 The output directory must be new. It contains `schema.json`,

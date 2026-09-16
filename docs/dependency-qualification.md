@@ -49,9 +49,21 @@ Larger physical schemas/snapshots and authenticated TLS remain unqualified.
 
 ## Provisioning crypto
 
-No crypto dependency is selected: P0 does not identify the exact required
-procedure/primitives/vectors. HMAC-SHA256 here protects local secret equality
-fingerprints; it is not an implementation of WSC.
+The separately scoped [WSC component](wsc-component.md) selects WPS 2.0.10 and
+pins `cryptography==50.0.1` for DH group 5 and AES-CBC. CPython's standard
+library supplies SHA-256, HMAC and randomness. The group-5 exchange, KDF,
+authentication tags and encrypted settings match two independently generated
+hostap 2.11 cases. Negative tests cover malformed TLVs, nonce/MAC binding,
+out-of-range/nonmember public keys, altered tags, IV/ciphertext and padding.
+
+[Cryptography 50.0.1](https://cryptography.io/en/50.0.1/hazmat/primitives/asymmetric/dh/)
+still supports finite-field DH but deprecates it for removal in a future release.
+WPS requires this group; silently substituting ECDH would change the protocol.
+The dependency is pinned, its deprecation warnings remain visible, and upgrading
+requires requalification. This bounded compatibility result is not a security
+audit or completion of P0. The component is not yet wired to an exchange state
+machine or pod operations. HMAC used by the operation journal remains separate
+from the WSC session keys.
 
 ## R0 native OpenSync experiment
 

@@ -26,7 +26,7 @@
         "Authenticate and validate genuine WSC provisioning.",
         "Bind the complete radio BSS request to supported semantic operations."
       ],
-      "next": "Complete the rule matrix and packet/crypto vectors, then implement I3 and I4. There is no private protocol substitute.",
+      "next": "WPS payload cryptography now has independent hostap component vectors. Complete the IEEE rule matrix, message/profile validation and discovery/onboarding state machine; P0 still blocks actual wire provisioning.",
       "path": "docs/protocol-inputs.md"
     },
     "engine": {
@@ -163,7 +163,7 @@
       "proves": "Read-only collection establishes available schema and inventory facts. Later wire-driven hardware runs establish behavior only for the named pod/build and procedure.",
       "limits": "A schema match alone does not qualify mappings, writer ownership, recovery or radio-wide WSC behavior. hwsim cannot associate with a physical pod.",
       "prerequisites": "Trusted endpoint and credentials in private local files; actual model/build, radio/VIF scope, verified cloud-writer control, recovery path and an independent client with a real Wi-Fi interface.",
-      "command": "# Create the private connection file per docs/pod-qualification.md\n# The output directory must not already exist.\nuv run emosa qualify-pod \\\n  --connection /run/emosa-secrets/pod-connection.json \\\n  --output .lab/qualification/pod-draft",
+      "command": "# Create the private connection file per docs/pod-qualification.md\n# The output directory must not already exist.\nuv run emosa qualify-pod \\\n  --connection /home/rev/.config/emosa/pods/pod-1/connection.json \\\n  --output /home/rev/.local/state/emosa/qualification/pod-1-first-read",
       "note": "The first actuation experiment should use wired management and one qualified sole-BSS radio. Test lost replies and restart before progressing to wireless management and an independent controller.",
       "reference": "docs/pod-qualification.md"
     }
@@ -320,6 +320,12 @@
       "description": "WPA2 station status, interface-bound traffic, capture count and exact guest/package versions. No EMOSA actuation claim.",
       "path": "docs/evidence/hwsim/qualification-summary.json",
       "category": "Retained radio evidence"
+    },
+    {
+      "title": "WSC payload cryptography",
+      "description": "Selected WPS rules, independent hostap vectors, negative tests and limits before full onboarding.",
+      "path": "docs/wsc-component.md",
+      "category": "Component implementation"
     }
   ]
 }

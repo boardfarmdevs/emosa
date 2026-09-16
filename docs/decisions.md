@@ -28,3 +28,10 @@
   may be active and excess requests receive `BUSY`. This is a finite queue and
   avoids retaining stale queued intents; a bounded waiting queue can be added
   after its scheduling policy is selected.
+- WPS 2.0.10 is selected only for the bounded cryptographic component, with its
+  rules recorded before implementation. Complete IEEE/EasyMesh procedures stay
+  gated by P0. Upstream hostap 2.11 generates independent synthetic expected
+  bytes in a test-only C harness; it adds no EMOSA runtime/build dependency.
+- No populated pod connection file exists. Operator examples use local secret
+  references; actual configuration, credentials and raw pod evidence belong
+  outside the repository on the EMOSA machine. Collection remains read-only.

@@ -128,7 +128,7 @@
     "A complete mandatory/optional/conditional field and profile-applicability audit is pending; current entries are partial source-backed research.",
     "Byte-level lengths, ordering, duplicate detection, message-ID rollover, all timers/retries, reassembly limits and malformed/unknown-field behavior are not yet frozen.",
     "IEEE 802.11-2024 reference [1] must be accessible wherever capability fields require its operating-class and radio-capability definitions; no such values may be fabricated.",
-    "Independent packet and cryptographic vectors with provenance, expected outcomes and parser/peer interpretation have not been obtained.",
+    "Independent full-message packet vectors and peer interpretation remain pending. Synthetic WSC crypto component vectors are now retained separately.",
     "No physical-pod mapping or independent-controller qualification has been completed."
   ],
   "document_ambiguities": [
@@ -413,7 +413,7 @@
             "8.3.1 Table 8",
             "8.3.2 Table 9",
             "8.3.9 Table 20",
-            "11 Tables 28 and 29"
+            "12 Tables 28 and 29"
           ],
           "verification": "publisher_pdf_reviewed",
           "pages": [
@@ -491,5 +491,22 @@
     "unchanged physical pod",
     "independently observed behavior"
   ],
-  "simulator_results_complete_acceptance": false
+  "simulator_results_complete_acceptance": false,
+  "component_selections": {
+    "wsc_crypto": {
+      "status": "selected_component_only",
+      "specification": "wfa-wps-2.0.10",
+      "content_sha256": "49f7a566a5cc7996982d601b5607664c3cf79a2e7ae0d01d2b589fdd934080cf",
+      "rules": "docs/wsc-component.md",
+      "implementation": "src/emosa/wsc.py",
+      "procedure_gate_satisfied": false,
+      "scope": "TLV structure, group-5 key derivation, message authenticator and authenticated encrypted settings only; no complete M1/M2 procedure or wire transport",
+      "tests": [
+        "tests/test_wsc.py"
+      ],
+      "vectors": "tests/fixtures/protocol/wsc/vectors.json",
+      "provenance": "tests/fixtures/protocol/wsc/provenance.json",
+      "validation": "23 unit component cases and two independently generated hostap cases; full protocol vectors remain pending"
+    }
+  }
 }

@@ -8,7 +8,8 @@ WIRE-08 and the P0 gate. The machine-readable record is
 its public publisher site. IEEE full text, a complete rule matrix and independent
 vectors are still missing. The proposed editions and profile are not a frozen
 selection: `specifications` and `selected_profile` remain null in the matrix.
-No wire implementation or interoperability result follows from this research.
+The [WSC cryptographic component](wsc-component.md) separately selects WPS 2.0.10
+for its bounded payload rules. This does not satisfy P0 or establish interoperability.
 
 ## Proposed compatible corpus
 
@@ -49,7 +50,7 @@ The JSON matrix records that distinction on each entry.
 | Topology discovery/query/response | EasyMesh 6.1 sections 6.2, 7.2, 17.1.4, 17.2.1, 17.2.4–5 and 17.2.47; pages 63–64, 71, 111–112, 125–126 and 157. | EasyMesh cites IEEE section 8 and response section 6.3.3. Retrieve discovery framing, timers and the complete base TLV rules. |
 | AP autoconfiguration search/response | EasyMesh 6.1 sections 6.1, 17.1.1–2, 17.2.1–2, 17.2.47–48 and 18; pages 62–63, 111, 125, 157 and 197. | IEEE section 10 and message sections 6.3.7–8, including transmission, relaying and retry behavior. |
 | AP capability query/report | EasyMesh 6.1 sections 9.1, 17.1.6–7 and relevant 17.2 capability definitions; pages 79–80 and 112. Read these with section 18. | IEEE CMDU framing and any referenced 802.11 definitions needed to encode actual capabilities. |
-| AP autoconfiguration WSC M1/M2 | EasyMesh 6.1 sections 7.1 and 17.1.3, pages 66–69 and 111; WPS 2.0.10 sections 7.1–3, 7.5, 7.9, 8.1, 8.3.1–2, Table 20 in 8.3.9 and Tables 28–29 in section 11. | IEEE section 10.1 and the WSC message/TLV, procedure, ordering and failure definitions. |
+| AP autoconfiguration WSC M1/M2 | EasyMesh 6.1 sections 7.1 and 17.1.3, pages 66–69 and 111; WPS 2.0.10 sections 7.1–3, 7.5, 7.9, 8.1, 8.3.1–2, Table 20 in 8.3.9 and Tables 28–29 in section 12. | IEEE section 10.1 and the WSC message/TLV, procedure, ordering and failure definitions. |
 | Shared framing and reliability | EasyMesh 6.1 sections 15, 17 and 18; pages 104–105, 107 and 197–198. Appendix A.3.3, page 214, is an informative legacy-fragment note. | IEEE sections 6.2 and 7, including 7.1.1–2 and the relevant multicast/unicast send/receive clauses; all amendment effects. |
 
 The partial matrix includes source-backed message IDs from EasyMesh Table 22
@@ -63,8 +64,9 @@ WPS 2.0.10 supplies the registration-message attributes, nonce and authenticator
 handling, key derivation, authenticated key wrapping and encrypted AP settings.
 The selected IEEE/EasyMesh transport and procedure rules must be applied around
 those definitions. Reading the crypto specification does not establish crypto
-validation: independent valid/invalid vectors and authenticated-decryption tests
-are still required.
+validation. The [bounded crypto component](wsc-component.md) now has independent
+synthetic hostap vectors and negative decryption tests. Full M1/M2 validation,
+exchange state, profile semantics and packet/peer tests are still required.
 
 ## Consequence for the one-BSS experiment
 
@@ -107,7 +109,8 @@ must be kept distinct from the actual pod's physical topology.
    capability values remain dependent on pod qualification.
 4. Obtain independently derived packet and cryptographic vectors with permitted
    provenance, exact expected outcomes and a pinned independent parser or peer.
-   No captures or test vectors were produced by this research.
+   The separate crypto component supplies synthetic payload vectors only;
+   complete message vectors and independently interpreted captures are pending.
 
 The WFA PDFs are currently downloadable without user credentials. If those
 publisher URLs change or become unavailable, supply the exact digest-matching

@@ -1496,16 +1496,22 @@
       "id": "WIRE-07",
       "status": "blocked",
       "implementation_refs": [
-        "docs/protocol-matrix.json"
+        "docs/protocol-matrix.json",
+        "src/emosa/wsc.py",
+        "docs/wsc-component.md"
       ],
       "test_refs": [
-        "tests/test_gated.py"
+        "tests/test_gated.py",
+        "tests/test_wsc.py"
       ],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "tests/fixtures/protocol/wsc/provenance.json",
+        "docs/evidence/unit-results.xml"
+      ],
       "mode": null,
       "scope": "Architecture requirement; no implied hardware or interoperability qualification.",
       "blocker": "P0: selected complete normative corpus, independent vectors and wire procedures required.",
-      "independent_work": "Model, OVSDB simulation, read-only qualification and reports."
+      "independent_work": "WPS 2.0.10 crypto component checked with hostap vectors; full M1/M2 procedure, identity, replay, whole-radio mapping and no-write guarantees remain pending."
     },
     {
       "id": "WIRE-08",
