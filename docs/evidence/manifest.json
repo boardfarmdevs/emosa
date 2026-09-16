@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "scope": "Component, nested Ubuntu runtime, native manager R0 with recovery failure, standalone hwsim, bounded native controller-agent onboarding/recovery and guide evidence; no EMOSA onboarding or physical qualification",
+  "scope": "Component, native manager R0 with recovery failure, bounded native peer baseline, semantic EMOSA/OVSDB/hostapd-hwsim client integration and guide evidence; no EMOSA wire onboarding or physical qualification",
   "artifacts": [
     {
       "path": "api-results.xml",
@@ -871,6 +871,141 @@
       "path": "peer-baseline/summary.json",
       "sha256": "4318abd5f9935d52d0bc3bbdd8702905afc0997db7b5034e1bc28b8e2418fa25",
       "size": 1154412
+    },
+    {
+      "path": "radio-manager/curator-regression.json",
+      "sha256": "2f7e1e6de6830340a81465e51636a7d7ce30fd624ad7a73fa2012356b1b5f108",
+      "size": 211
+    },
+    {
+      "path": "radio-manager/ovsdb-results.xml",
+      "sha256": "55828c59811e9c78fc87ed4efdf29eaf247227e6a26c3c4c3a80dca0947ba437",
+      "size": 1861
+    },
+    {
+      "path": "radio-manager/review.json",
+      "sha256": "4a9904cad8104bea8f40273352b93a28caf5adb16eae763c596b237b991eedd5",
+      "size": 909
+    },
+    {
+      "path": "radio-manager/sample/backhaul-loss.json",
+      "sha256": "589f8fa5539c2adf501eb966964fb3d14ed4d4d48cb34d52fd9acf33358d2833",
+      "size": 487
+    },
+    {
+      "path": "radio-manager/sample/clients-adapter-restart.json",
+      "sha256": "2b7613b0d93158ccbc598776ec4b7619cb1d79a7ce85afe1dd35a92173ccdc6b",
+      "size": 2642
+    },
+    {
+      "path": "radio-manager/sample/clients-ap-recovery.json",
+      "sha256": "ef73b418a0769e6b5acc55f0965a15e9a9107a2e71772db3e2e3f3abbb6e2117",
+      "size": 2622
+    },
+    {
+      "path": "radio-manager/sample/clients-backhaul-recovery.json",
+      "sha256": "14a843ca025daf922dd327fc48853ad435e464c469c8e3462f03eb5cb88f6dc5",
+      "size": 2645
+    },
+    {
+      "path": "radio-manager/sample/clients-changed.json",
+      "sha256": "f385d9fae4db6a2f5eb865a8ae600e613b3146e5cff44dadcf7a58de883d81f2",
+      "size": 2608
+    },
+    {
+      "path": "radio-manager/sample/clients-correct-key-restored.json",
+      "sha256": "8facf91d3217d29042705028c40be36d67a285d96a4164637a39067b1d073786",
+      "size": 2640
+    },
+    {
+      "path": "radio-manager/sample/clients-database-restart.json",
+      "sha256": "b685977757e041b1fed568626bc54e590a9d8884a02f03e564a31c7b71e98c3a",
+      "size": 2631
+    },
+    {
+      "path": "radio-manager/sample/clients-initial.json",
+      "sha256": "e233e1f1e819ce7a104a2e98ccad83a78e89427fe925af45759335d3ae37c679",
+      "size": 2608
+    },
+    {
+      "path": "radio-manager/sample/clients-late-application.json",
+      "sha256": "e78ef2913fb657e86bf3c460a1f0a2dd43ea5dc884f3f57186b2b41f9c941609",
+      "size": 2627
+    },
+    {
+      "path": "radio-manager/sample/clients-lost-reply.json",
+      "sha256": "367c7a6f6293a30f6835d1964b05f53f1d83c0af14fffb94699e79f54b80c8e9",
+      "size": 2620
+    },
+    {
+      "path": "radio-manager/sample/clients-unsupported-channel.json",
+      "sha256": "32094e46265f7bafb4c46501eabcaf9f560aacf8572b0e3a1423b9015b4ff807",
+      "size": 2649
+    },
+    {
+      "path": "radio-manager/sample/clients-withheld-old-radio.json",
+      "sha256": "6ea48abde1a4d50fdfb4f22404ea1bc82f0f58a0f1566edd55de03a8d2a2ec58",
+      "size": 2642
+    },
+    {
+      "path": "radio-manager/sample/eapol.tsv",
+      "sha256": "41db3a34d8146355dff0541296717d53d9ff40d44cf7065d0df83cb5eb294efc",
+      "size": 216
+    },
+    {
+      "path": "radio-manager/sample/index.json",
+      "sha256": "ccc9fcda1b35e289701419a6465764a5ac0d9562b25e2d15c357970350f9a739",
+      "size": 2085
+    },
+    {
+      "path": "radio-manager/sample/manager.jsonl",
+      "sha256": "dcec8b813928709480c0be04340d2d5a2f4b445322a82c57319e28a7e458b12d",
+      "size": 23533
+    },
+    {
+      "path": "radio-manager/sample/operations.json",
+      "sha256": "887f2f40e233e58dc22f28fb100b71cf4b7bc99748d69ced9b467ffc74564d5b",
+      "size": 9030
+    },
+    {
+      "path": "radio-manager/sample/packet-observations.json",
+      "sha256": "fc07459606def48142ba533f0aad388389909a8c1369c629fbbc9c08f854654f",
+      "size": 314
+    },
+    {
+      "path": "radio-manager/sample/radio.pcap",
+      "sha256": "6aea11ce62421b9b847e428f12f9d52806498c47c20095619195b66e236cd488",
+      "size": 207373
+    },
+    {
+      "path": "radio-manager/sample/result.json",
+      "sha256": "253b49421b64a6441957ac1af3f4555f5956ba6ff5dbfee93392285945cc042b",
+      "size": 15190
+    },
+    {
+      "path": "radio-manager/sample/source-hashes.json",
+      "sha256": "b7d66300cc9c35000714728b39061724ce8995ef0c82936bbaffefbd4c2fc8c2",
+      "size": 1028
+    },
+    {
+      "path": "radio-manager/sample/wrong-key.log",
+      "sha256": "1212bb76be801d80bc34bb500e732c595b0d2efe5fb5198683604fe80e9f708e",
+      "size": 1098
+    },
+    {
+      "path": "radio-manager/site-smoke.json",
+      "sha256": "5c30848fe189fae4df1ba3ea76a39ee3eda25214fe1d040457fb358566891ac4",
+      "size": 227
+    },
+    {
+      "path": "radio-manager/summary.json",
+      "sha256": "bf66edb46f080ac672d802b9514c177addafb8354f9f6544e9c5731e870b02f5",
+      "size": 298634
+    },
+    {
+      "path": "radio-manager/unit-results.xml",
+      "sha256": "62b0f019787a741dced3273bc816e58e857f3d8f238b355f9a0ba0656dbde27a",
+      "size": 4283820
     }
   ]
 }

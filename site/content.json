@@ -32,7 +32,7 @@
     "engine": {
       "label": "03",
       "title": "Intent becomes an observable operation",
-      "status": "Model & OVSDB component tested",
+      "status": "Model, OVSDB and hwsim path tested",
       "state": "pass",
       "description": "The operation engine separates desired configuration, an acknowledged database commit, and fresh observed application.",
       "responsibilities": [
@@ -88,7 +88,7 @@
     "client": {
       "label": "07",
       "title": "Observe what a station experiences",
-      "status": "hwsim smoke passed · physical client pending",
+      "status": "Integrated hwsim clients passed · physical client pending",
       "state": "pending",
       "description": "A wpa_supplicant station in an LXD container can observe authentication and traffic independently of the adapter’s database view.",
       "responsibilities": [
@@ -142,17 +142,17 @@
       "reference": "docs/operation-mappings.md"
     },
     "hwsim": {
-      "title": "Add a simulated 802.11 link",
-      "status": "Standalone radio smoke passed · EMOSA binding pending",
+      "title": "Drive hwsim through EMOSA and OVSDB",
+      "status": "Three integrated runs passed · semantic initiation",
       "state": "pass",
-      "description": "Two mac80211_hwsim radios live in the dedicated lab VM’s kernel. One is assigned to an AP container running hostapd, the other to a station container running wpa_supplicant.",
-      "path": "em-radio-ap / hostapd ⇄ mac80211_hwsim virtual medium ⇄ em-radio-client / wpa_supplicant",
-      "proves": "Executed in the dedicated Ubuntu/LXD VM: WPA2-PSK association, three successful interface-bound pings, and a virtual-medium capture. Clean setup and retest passed.",
-      "limits": "The harness is separate from the current OVSDB manager simulator. Its radio smoke test cannot prove EMOSA actuation, EasyMesh provisioning, RF behavior or real-pod compatibility.",
-      "prerequisites": "A dedicated emosa-lab VM, initialized inner LXD, pinned Ubuntu image, available hwsim module and documented VM/container packages. See the full procedure before setup.",
-      "command": "# Inside the dedicated emosa-lab VM\npython3 deploy/hwsim/lab.py check\nsudo python3 deploy/hwsim/lab.py setup\nsudo python3 deploy/hwsim/lab.py smoke\n# Remove only resources created by this harness\nsudo python3 deploy/hwsim/lab.py cleanup",
-      "note": "The retained smoke passed with no setup Ethernet interface. This is a working AP/station harness; a manager-to-hostapd binding and controller discovery/onboarding remain separate implementation gates.",
-      "reference": "deploy/hwsim/README.md"
+      "description": "EMOSA commits Config through real OVSDB. A separate manager applies it to hostapd and derives State from live hostapd/nl80211 observations. Independent wired and wpa_supplicant clients check traffic.",
+      "path": "Semantic request → EMOSA → OVSDB → independent hostapd/hwsim manager → wired and Wi-Fi clients",
+      "proves": "Three repeat runs passed 13 cases each: SSID/key change, withholding and late application, lost reply, wrong key, unsupported channel, adapter/database/manager restart, and AP/backhaul failure and recovery. Captures show the SSIDs and client WPA handshakes.",
+      "limits": "One synthetic single-BSS profile with wired management. No EasyMesh exchange, native OpenSync firmware, physical RF or pod qualification. Applying configuration restarts hostapd and interrupts Wi-Fi; periodic State reads are not a production freshness lease.",
+      "prerequisites": "The prepared native-baseline VM/containers with native services stopped, retained Python dependencies, Open vSwitch 4.0.0 tools and the pinned hostapd build. Read the staging guide first.",
+      "command": "# From the repository host; choose an unused run label\npython3 deploy/radio-manager/stage.py\nlxc exec emosa-lab -- env \\\n  PYTHONPATH=/opt/emosa-radio-manager/source \\\n  EMOSA_OVS_BIN=/opt/emosa-radio-manager/ovsdb \\\n  /opt/emosa/.venv/bin/python /opt/emosa-radio-manager/run.py \\\n  --label radio-rerun-01",
+      "note": "The wired client sits behind the AP bridge. The wireless client is pinned to the AP BSSID. Both probes bind their data interfaces and require fresh application nonces. Raw private evidence and earlier attempts are retained.",
+      "reference": "deploy/radio-manager/README.md"
     },
     "physical": {
       "title": "Qualify the unchanged target first",
@@ -387,6 +387,16 @@
       "description": "Independent packet/client observations, required controller restart sequence, compatibility fixes and retained failures.",
       "path": "docs/peer-baseline.md",
       "category": "Observed peer behavior"
+    },
+    {
+      "path": "docs/radio-manager.md",
+      "title": "OVSDB-to-hwsim integration results",
+      "description": "Three runs, independent radio State and client traffic, retained negative and recovery observations.",
+      "category": "Retained radio evidence"
     }
-  ]
+  ],
+  "suite_evidence": {
+    "unit": "radio-manager/unit-results.xml",
+    "ovsdb": "radio-manager/ovsdb-results.xml"
+  }
 }

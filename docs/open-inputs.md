@@ -32,6 +32,11 @@ been provided or created**. Credentials-free TLS, tunnel and Unix examples are
 available; populate the selected copy outside this repository on the EMOSA
 machine, then provide only its absolute path. Physical connection stays pending.
 
+The [OVSDB/hwsim boundary](radio-manager.md) now passes semantic EMOSA changes
+with live radio reads and independent clients. This advances I2/evaluation; it
+does not satisfy P0, I3/I4 or M0. No new external inputs are needed for that
+completed component experiment.
+
 The bounded [native OpenSync R0 experiment](../deploy/native/README.md) now
 builds and runs, with 39 upstream units and the native apply/withhold path checked.
 N03 recovery fails after database restart, so the backend remains disabled.

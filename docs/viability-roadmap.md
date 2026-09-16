@@ -78,11 +78,12 @@ The [optional hwsim harness](../deploy/hwsim/README.md) uses hostapd and
 wpa_supplicant in separate LXD containers and interface-bound traffic after
 removing setup Ethernet. Its standalone scope must remain explicit.
 
-The next integration should connect simulator Config to a separate hostapd
-manager, derive State from hostapd/nl80211, and correlate independent client
-observations by run and operation ID. Add wrong-key rejection, SSID
-change/reconnect and data-path failure cases. A state echo does not implement
-this boundary.
+The [OVSDB/hwsim integration](radio-manager.md) now connects semantic EMOSA
+Config changes to a separate hostapd manager and derives State from
+hostapd/nl80211. Three selected runs passed 13 cases with independent clients,
+including wrong-key rejection, SSID/key change, lost reply, withholding, restart
+and data-path failures. The next integration is genuine controller discovery/WSC
+through EMOSA into this boundary, once the missing normative inputs are available.
 
 For real pods use a physical Wi-Fi NIC in the observer, with an isolated client
 data path and a separately verified management/recovery path. Archive captures

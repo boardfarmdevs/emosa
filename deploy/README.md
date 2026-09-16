@@ -102,3 +102,7 @@ path and controller discovery captures delivered to the EMOSA container. Its
 controller-only helper requires one hwsim radio, and both native controller and
 helper abort on shutdown. No EMOSA discovery/onboarding or physical-pod
 interoperability is established by that baseline.
+
+The [OVSDB/hwsim integration](radio-manager/README.md) exercises semantic EMOSA
+changes through an independent hostapd/nl80211 manager with both client types.
+It reuses stopped native-baseline resources and does not enable wire or pod gates.

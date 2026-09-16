@@ -56,3 +56,9 @@
   preserve unsupported roles, and expose only a narrow non-authorizing candidate.
   The full CMDU, controller/radio binding and actual pod mapping remain required;
   this component opens no path to writes and does not satisfy P0.
+
+- Add a separate lab radio manager using the pinned hostapd binary and actual
+  hwsim interfaces. It publishes State only from agreeing hostapd/nl80211 reads,
+  uses a single existing BSS/PSK profile, and exposes client success separately
+  from radio State. Reuse the stopped native baseline containers and retained
+  database/Python tools; keep the native OpenSync backend and wire gates closed.

@@ -118,6 +118,11 @@ The Ubuntu 24.04 LXD layout has pinned candidate images. Its standalone radio
 smoke has passed; full application deployment and retained image exports remain
 pending.
 
+The [integrated OVSDB/hwsim experiment](docs/radio-manager.md) now connects the
+semantic EMOSA engine to a separate hostapd/nl80211 manager. Three repeat runs
+passed 13 change, failure and recovery cases with independent wired and wireless
+clients. Genuine EasyMesh initiation and physical-pod qualification remain pending.
+
 When a simulated radio is useful, use the optional
 [mac80211_hwsim AP and wpa_supplicant LXD client](deploy/hwsim/README.md).
 That standalone radio smoke harness is separate from the current OVSDB simulator.

@@ -109,3 +109,7 @@ Authoritative references:
 - [Linux iw documentation](https://wireless.docs.kernel.org/en/latest/en/users/documentation/iw.html).
 - [Upstream wpa_supplicant](https://w1.fi/wpa_supplicant/).
 - [Canonical LXD network devices](https://documentation.ubuntu.com/lxd/latest/reference/devices_nic/).
+
+For semantic EMOSA Config → actual radio → independent client checks, use the
+[OVSDB/hwsim integration](../radio-manager/README.md). It reuses the native
+baseline topology and must run separately from this standalone smoke lab.
