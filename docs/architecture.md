@@ -41,10 +41,16 @@ The diagram describes the intended acceptance path. The semantic operation
 engine, journal, OVSDB simulator and evaluation tools are implemented. The real
 wire agent, physical mapping and independent-controller path remain gated.
 
+The [connecting-pod demonstration](connecting-pod.md) implements the local
+diagnostic representation: a simulated extender dials EMOSA, supplies observed
+identity/radio/BSS data, and appears in `emosa agents`. Its configured AL address
+survives reconnect and adapter restart. It does not yet advertise that identity
+in EasyMesh frames or populate a real controller's agent inventory.
+
 | Building block | Responsibility | Current evidence |
 | --- | --- | --- |
 | Reference controller / independent peer | Originate actual protocol messages | Candidate discovery baseline captured; EMOSA exchanges and clean recovery pending |
-| Virtual agent | Terminate selected EasyMesh procedures and bind the complete request | Normative research; implementation pending |
+| Virtual agent | Terminate selected EasyMesh procedures and bind the complete request | Local diagnostic directory tested; wire endpoint pending |
 | Operation engine | Validate, guard, serialize, track deadlines and reconcile | Model and OVSDB component tests |
 | Journal / secret mechanism | Preserve operations and attribution through restart | SQLite and private-secret tests |
 | OVSDB mapper / session | Schema, resource bindings, guarded Config patches, fresh State | Real server and separate manager simulator |

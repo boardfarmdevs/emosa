@@ -17,9 +17,9 @@
     "agent": {
       "label": "02",
       "title": "The extender’s EasyMesh representation",
-      "status": "P0 blocked",
+      "status": "Local diagnostic representation tested · wire P0 blocked",
       "state": "pending",
-      "description": "EMOSA represents an unchanged OpenSync extender as an agent that a real EasyMesh controller can discover and onboard. The agent endpoint runs around the controller; the extender keeps OpenSync.",
+      "description": "EMOSA represents an unchanged OpenSync extender as an agent that a real EasyMesh controller can discover and onboard. The agent endpoint runs around the controller; the extender keeps OpenSync. The connecting-pod demonstration now exposes a stable, freshness-bounded local diagnostic agent after an observed pod-initiated OVSDB connection; this does not populate a real controller inventory.",
       "responsibilities": [
         "Map stable agent/radio/BSS identities and advertised capabilities to a qualified actual pod.",
         "Bound framing, TLVs, reassembly, retries and timers using the selected specifications.",
@@ -132,12 +132,12 @@
       "title": "Cross the real database boundary",
       "status": "Implemented & tested",
       "state": "pass",
-      "description": "Use a real ovsdb-server with the pinned OpenSync schema and a separate manager simulator. Only that manager writes simulated State.",
+      "description": "Use a real ovsdb-server with the pinned OpenSync schema and a separate manager simulator. Only that manager writes simulated State. A connecting-pod demo also exposes observed inventory through emosa agents and tests reconnect/restart.",
       "path": "Semantic scenario → EMOSA → real OVSDB → simulated manager → observed State",
       "proves": "Schema/monitor handling, guarded Config edits, independent simulated application and lost-reply reconciliation.",
       "limits": "The initiating request is semantic. There are no EasyMesh packets, Linux Wi-Fi association or physical device claims.",
       "prerequisites": "Locked Python environment plus a C compiler, make, libc headers and pkg-config for the isolated OVSDB build.",
-      "command": "bash scripts/build-ovsdb.sh\nuv run pytest -m ovsdb\nuv run emosa-lab run scenarios/component-bss-change.json --backend ovsdb-sim\nuv run emosa-lab run scenarios/component-lost-reply.json --backend ovsdb-sim",
+      "command": "bash scripts/build-ovsdb.sh\nuv run pytest -m ovsdb\nuv run emosa-lab run scenarios/component-bss-change.json --backend ovsdb-sim\nuv run emosa-lab run scenarios/component-lost-reply.json --backend ovsdb-sim\n# Choose a new run directory for the connecting-pod demo\nuv run python -m emosa.simulation.connecting_pod --directory .lab/connecting-pod-01 --verify",
       "note": "The upstream plume-design/opensync schema is pinned at 78d8a7194d5e77635877cc456231e7be5cf03d68. It is not a qualified profile of any actual pod.",
       "reference": "docs/operation-mappings.md"
     },
@@ -261,6 +261,18 @@
       "description": "Step-by-step installation, architecture, every CLI workflow, OVSDB and wireless labs, demonstrations, recovery and competency checklist.",
       "path": "docs/team-manual.md",
       "category": "Start here"
+    },
+    {
+      "title": "Simulated extender connects to EMOSA",
+      "description": "Step-by-step pod-initiated OVSDB, local northbound virtual-agent inventory, semantic configuration, disconnect/reconnect and restart. Actual EasyMesh onboarding remains pending.",
+      "path": "docs/connecting-pod.md",
+      "category": "Operator walkthrough"
+    },
+    {
+      "title": "Connecting-pod verification evidence",
+      "description": "Observed local registration, semantic Config/State, disconnect, reconnect and service restart; 183 unit and 20 OVSDB checks. No EasyMesh or physical proof.",
+      "path": "docs/evidence/connecting-pod/qualification-summary.json",
+      "category": "Retained component evidence"
     },
     {
       "title": "Architecture & system boundaries",
@@ -402,7 +414,7 @@
     }
   ],
   "suite_evidence": {
-    "unit": "radio-manager/unit-results.xml",
-    "ovsdb": "radio-manager/ovsdb-results.xml"
+    "unit": "connecting-pod/unit-results.xml",
+    "ovsdb": "connecting-pod/ovsdb-results.xml"
   }
 }

@@ -21,6 +21,10 @@ The name also echoes **エモさ (*emosa*)**, a Japanese expression for emotiona
 [Architecture diagram and boundaries](docs/architecture.md) ·
 [Next viability experiments](docs/viability-roadmap.md)
 
+[Simulate an extender connecting to EMOSA](docs/connecting-pod.md): pod-initiated
+OVSDB, a local northbound virtual-agent directory, semantic configuration and
+reconnect. Actual EasyMesh-controller discovery/onboarding remains pending.
+
 ```text
 EasyMesh controller
         │ Real IEEE 1905 / EasyMesh messages

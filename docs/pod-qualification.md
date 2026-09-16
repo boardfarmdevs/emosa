@@ -121,3 +121,45 @@ experiment needs a sole existing BSS on that radio or a complete-radio mapping.
 The eventual acceptance path remains **real EasyMesh messages → EMOSA → unchanged
 physical pod → independent observed behavior**. This collector and the simulator
 are preparation and component evidence, respectively.
+
+## Supplementary root-pod/cloud packet capture
+
+An operator-provided passive capture can help establish transport initiation,
+endpoints, bootstrap ordering, steady-state traffic and reconnect behavior. It
+can also test whether the actual cloud interface uses OVSDB JSON-RPC at all.
+Do not assume a cloud connection and the direct OVSDB interface used by EMOSA
+are the same path. A root-pod capture may show the root's own management or
+traffic forwarded for extenders; identify which is being observed. A paired
+extender capture would help establish differences.
+
+Collect on an existing authorized network observation point so the pod remains
+unchanged. Include normal startup or naturally occurring reconnect if available;
+an outage, reboot, configuration change or cloud redirection requires its own
+lab plan. Capture provision is not authorization for EMOSA to change the pod.
+
+Keep these items outside Git, with access restricted to the lab operator:
+
+- The original pcap/pcapng and its SHA-256, with capture interface/location,
+  time zone, time synchronization and known capture gaps.
+- Pod model/firmware, root-versus-extender role, wired/wireless management path,
+  and an event timeline with timestamps. Pseudonymize identities in public copies.
+- The actual schema or read-only qualification output, when available. Schema
+  requests may be absent from a capture that starts after synchronization.
+- Whether payloads are encrypted and whether existing authorized endpoint logs
+  provide the corresponding message sequence. TLS captures alone usually expose
+  transport behavior, not JSON-RPC bodies. Do not weaken TLS or provide private
+  keys merely to make a trace readable.
+
+Where plaintext OVSDB messages are available, useful evidence includes
+`get_schema`, `monitor`/other monitor variants, initial table snapshots, update
+notifications, transactions, replies/errors and echo handling. Preserve message
+IDs, ordering, relative timing, types and row/reference consistency in sanitized
+fixtures. Wi-Fi keys, tokens, certificates, device/client identifiers and SSIDs
+may require redaction; a capture must be reviewed before publication. Share only
+the local file paths through chat, not credentials or raw message bodies.
+
+The next analysis would identify the actual protocol and roles, compare observed
+columns and sequencing with the [connecting-pod simulator](connecting-pod.md),
+and derive reviewed fixtures or explicit incompatibilities. Replaying recorded
+success responses is not a substitute for a stateful simulator, pod qualification
+or independent evidence that an EMOSA-driven change actually took effect.

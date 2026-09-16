@@ -1006,6 +1006,21 @@
       "path": "radio-manager/unit-results.xml",
       "sha256": "62b0f019787a741dced3273bc816e58e857f3d8f238b355f9a0ba0656dbde27a",
       "size": 4283820
+    },
+    {
+      "path": "connecting-pod/ovsdb-results.xml",
+      "sha256": "baf0f2d9c9c839380e8890f47cbfca9a7e212e277bd8fcd1bc271d2f589e8f1a",
+      "size": 2615
+    },
+    {
+      "path": "connecting-pod/qualification-summary.json",
+      "sha256": "2a3c0a6e4df02643fcdc5be13ef30585ba38f0707c66388084af1255d7b1e329",
+      "size": 8023
+    },
+    {
+      "path": "connecting-pod/unit-results.xml",
+      "sha256": "b4938252a517dfb2e3ceb945f60a26d39298f4ee557eb6a988fb72276282423a",
+      "size": 4284777
     }
   ]
 }

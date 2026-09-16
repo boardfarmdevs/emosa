@@ -173,6 +173,45 @@ Read [architecture.md](architecture.md) after this overview. For hands-on work:
 | `docs/evidence/`, `site/`, `scripts/build-site.py` | Reviewed evidence and static explorer |
 | `doc/EMOSA-CODING-HANDOFF.md`, `docs/traceability.json` | Requirements/handoff and implementation/evidence mapping |
 
+### 2.5 Languages and upstream reuse
+
+EMOSA's adapter and evaluation logic are Python. Native C/C++ programs provide
+the database, reference managers, protocol peers and radio stack around it.
+
+| Component | Language | Implemented here or reused? |
+| --- | --- | --- |
+| Service, local API/CLI, diagnostic agent directory, operation engine, journal, OpenSync mapping, qualification and evaluator | Python | Implemented in `src/emosa/` |
+| OVSDB session wrapper | Python | Our bounded wrapper around upstream Open vSwitch `ovs==4.0.0`; JSON-RPC/stream/reconnect/schema primitives are reused |
+| Regular simulated manager, connecting-pod fixture and hwsim manager/observers | Python | Our test infrastructure; not full OpenSync firmware |
+| WSC payload construction, validation and radio-scope admission | Python | Implemented here using `cryptography` and standard-library primitives; complete wire onboarding remains pending |
+| `ovsdb-server` and `ovsdb-tool` | C | Upstream Open vSwitch 4.0.0, built separately |
+| OpenSync OWM/OW/OSW native managers and dummy-driver facilities | C | Pinned upstream OpenSync, used only in the optional R0 experiment |
+| Native dummy-driver glue | C | Our `deploy/native/driver.c`, calling OpenSync's existing dummy-driver API |
+| Independent WSC reference harnesses | C | Our two `tests/fixtures/protocol/*/reference.c` harnesses call upstream hostap 2.11 functions; they do not link EMOSA |
+| hostapd / wpa_supplicant | C | Upstream hostap; native peer baseline uses the recorded 2.10 build and explicit lab patch, separately from the 2.11 vector reference |
+| Reference EasyMesh controller and standard agent | Primarily C++ | Pinned prplMesh 6.0.0/companion build, plus documented lab patches; separate executables |
+| mac80211_hwsim and Linux wireless stack | C | Existing Linux kernel code, configured by lab scripts |
+| Pages explorer and build | JavaScript, HTML, CSS; Python builder | Implemented in `site/` and `scripts/build-site.py` |
+| OpenSync schema | JSON | Unmodified upstream `interfaces/opensync.ovsschema` at the pinned commit; an upstream reference, not an actual-pod profile |
+
+EMOSA does not import, link or package prplMesh. Its Python package also does not
+contain the complete OpenSync source tree. The connecting-pod demonstration uses
+the upstream C database server and our Python manager; the optional native R0
+path substitutes selected real OpenSync managers and remains unqualified because
+of its recorded recovery failure. Physical pods retain their existing firmware.
+
+The native prplMesh controller and native baseline agent **retain their required
+prplMesh libraries and runtime dependencies**. They are not stripped standalone
+implementations. They must be distinguished from EMOSA's separate Python virtual
+agent, whose full wire endpoint is still pending. The intended adaptation path
+is prplMesh controller ↔ EMOSA virtual agent ↔ unchanged OpenSync pod; the native
+prplMesh agent validates the reference controller in a separate baseline.
+
+Reuse is recorded in [dependency qualification](dependency-qualification.md),
+[third-party notices](THIRD-PARTY-NOTICES.md), per-fixture provenance files and
+native lab reference manifests. Open-source behavior cross-checks do not replace
+the normative IEEE/Wi-Fi Alliance specification requirements.
+
 ## 3. Set up a developer checkout
 
 ### 3.1 Prerequisites and versions
@@ -191,7 +230,7 @@ The OpenSync schema is `interfaces/opensync.ovsschema` from
 needed for model/OVSDB work. This schema is an upstream simulation reference,
 not a qualified profile of our physical pods.
 
-### 3.2 Install the selected uv and clone
+### 3.2 Install the selected uv and clone (HOST)
 
 If uv is absent, use the versioned official installer. It installs into your
 account; it does not install system Python. You may inspect the downloaded
@@ -216,7 +255,7 @@ regenerate the lockfile to work around a failed download. Resolve the dependency
 or network error first. Internet is needed for initial downloads; offline use
 requires the selected dependencies and source artifacts to be retained locally.
 
-### 3.3 Verify the basic installation
+### 3.3 Verify the basic installation (HOST)
 
 ```bash
 uv run emosa --help
@@ -680,6 +719,25 @@ then leave them unreadable to `emosa`. The unit does not launch a simulator mana
 database, radio or wire controller. The three-terminal exercise is the supported
 self-contained starting point; a supervised deployment needs separately managed
 backend lifecycle and restart qualification.
+
+### 6.10 Pod-initiated connection and virtual-agent inventory
+
+The [connecting-pod walkthrough](connecting-pod.md) adds the other connection
+direction: a simulated OpenSync extender initiates its OVSDB connection to an
+EMOSA listener, then appears in `emosa agents` through the local diagnostic
+northbound API. It covers identity binding, semantic configuration, loss of
+freshness, reconnect and adapter restart, with automated and three-terminal demos.
+
+Run this on HOST using the same development prerequisites as chapters 3 and 5:
+
+```sh
+uv run python -m emosa.simulation.connecting_pod \
+  --directory .lab/connecting-pod-01 --verify
+```
+
+Choose a new directory each time. The directory report explicitly records that
+real EasyMesh-controller onboarding, physical-pod behavior and radio behavior
+are unproven. A ready diagnostic agent is not an on-wire onboarded agent.
 
 ## 7. Explore evidence and the GitHub Pages manual
 

@@ -29,7 +29,9 @@ incremental update/delete/reference handling, set/map/optional values, guarded
 transactions, row counts, reconnect, independent manager application, lost
 responses, conflicts, resource exhaustion and four independent sessions.
 Both dialing via Unix sockets and database-initiated TCP to a listening manager
-are exercised. Two narrow upstream compatibility accommodations are required:
+are exercised. The [connecting-pod demo](connecting-pod.md) also verifies a Unix
+listener in a separate service process. Three narrow upstream compatibility
+accommodations are required:
 
 - Python `PassiveStream` interprets `ptcp:HOST:PORT`, unlike the C client's
   `ptcp:PORT:HOST`. The public session configuration retains the latter syntax;
@@ -37,6 +39,11 @@ are exercised. Two narrow upstream compatibility accommodations are required:
 - Python 4.0.0 creates a blocking TCP listening socket. The wrapper makes that
   socket nonblocking immediately after creation, preserving the documented
   nonblocking accept behavior and preventing a worker from stalling.
+- Unix listeners register socket-unlink hooks through upstream signal handling.
+  The wrapper initializes that machinery with the public `add_hook` API on the
+  main thread before its worker opens the listener. Otherwise first use in a
+  fresh service process raises Python's main-thread-only signal error. Upstream
+  preserves existing application signal handlers; no dependency files are edited.
 
 These workarounds live in `src/emosa/opensync/session.py`, with a real
 listening-manager regression test. No files in the installed dependency are
